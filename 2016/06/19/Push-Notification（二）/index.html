@@ -1,0 +1,569 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x9700;&amp;#x6C42;&amp;#x8BF4;&amp;#x597D;&amp;#x7684;&amp;#xFF08;&amp;#x4E8C;&amp;#xFF09;&amp;#x662F;&amp;#x7528;&amp;#x6765;&amp;#x4ECB;&amp;#x7ECD;push&amp;#x8BC1;&amp;#x4E66;&amp;#x7684;&amp;#x5236;&amp;#x4F5C;&amp;#x6D41;&amp;#x7A0B;&amp;#x7684;&amp;#xFF0C;&amp;#x4E0D;&amp;#x8FC7;&amp;#x4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Push_Notification（二）">
+<meta property="og:url" content="http://yoursite.com/2016/06/19/Push-Notification（二）/index.html">
+<meta property="og:site_name" content="NSBlacker">
+<meta property="og:description" content="&amp;#x9700;&amp;#x6C42;&amp;#x8BF4;&amp;#x597D;&amp;#x7684;&amp;#xFF08;&amp;#x4E8C;&amp;#xFF09;&amp;#x662F;&amp;#x7528;&amp;#x6765;&amp;#x4ECB;&amp;#x7ECD;push&amp;#x8BC1;&amp;#x4E66;&amp;#x7684;&amp;#x5236;&amp;#x4F5C;&amp;#x6D41;&amp;#x7A0B;&amp;#x7684;&amp;#xFF0C;&amp;#x4E0D;&amp;#x8FC7;&amp;#x4">
+<meta property="og:updated_time" content="2016-06-19T11:09:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Push_Notification（二）">
+<meta name="twitter:description" content="&amp;#x9700;&amp;#x6C42;&amp;#x8BF4;&amp;#x597D;&amp;#x7684;&amp;#xFF08;&amp;#x4E8C;&amp;#xFF09;&amp;#x662F;&amp;#x7528;&amp;#x6765;&amp;#x4ECB;&amp;#x7ECD;push&amp;#x8BC1;&amp;#x4E66;&amp;#x7684;&amp;#x5236;&amp;#x4F5C;&amp;#x6D41;&amp;#x7A0B;&amp;#x7684;&amp;#xFF0C;&amp;#x4E0D;&amp;#x8FC7;&amp;#x4">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Push_Notification（二） | NSBlacker </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">NSBlacker</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">永远年轻 永远臭名昭著</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Push_Notification（二）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-19T19:00:08+08:00" content="2016-06-19">
+              2016-06-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="&#x9700;&#x6C42;"><a href="#&#x9700;&#x6C42;" class="headerlink" title="&#x9700;&#x6C42;"></a>&#x9700;&#x6C42;</h3><p>&#x8BF4;&#x597D;&#x7684;&#xFF08;&#x4E8C;&#xFF09;&#x662F;&#x7528;&#x6765;&#x4ECB;&#x7ECD;push&#x8BC1;&#x4E66;&#x7684;&#x5236;&#x4F5C;&#x6D41;&#x7A0B;&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x65F6;&#x95F4;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x6B21;&#x8D81;&#x7740;&#x4E00;&#x4E2A;&#x5173;&#x4E8E;&#x8BED;&#x97F3;&#x547C;&#x53EB;&#x7684;&#x9879;&#x76EE;&#x521A;&#x521A;&#x51FA;&#x4E86;push&#x7684;&#x5751;&#xFF0C;&#x6240;&#x4EE5;&#x7528;&#x5C0F;&#x7BC7;&#x5E45;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;iOS&#x6210;&#x529F;&#x6536;&#x5230;push&#x4E4B;&#x540E;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x4E8B;&#x513F;&#x3002;</p>
+<p>&#x5728;&#x6536;&#x5230;&#x4E86;&#x6D88;&#x606F;&#x540E;&#xFF0C;&#x6B64;&#x65F6;&#xFF0C;<strong>app&#x72B6;&#x6001;</strong>&#xFF0B;<strong>&#x540E;&#x7EED;&#x64CD;&#x4F5C;</strong> &#x8FDB;&#x5165;&#x7A0B;&#x5E8F;&#xFF0C;&#x53EF;&#x4EE5;&#x5927;&#x81F4;&#x5206;&#x6210;&#x4E0B;&#x9762;&#x56DB;&#x79CD;&#xFF1A;</p>
+<ol>
+<li>&#x7A0B;&#x5E8F;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x542F;&#x52A8;&#xFF0B;&#x70B9;&#x51FB;push&#x6D88;&#x606F;&#xFF1B;</li>
+<li>&#x7A0B;&#x5E8F;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#xFF0C;&#x5373;&#x5904;&#x5728;didEnterBackground&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E2D;&#xFF0B;&#x70B9;&#x51FB;push&#x6D88;&#x606F;&#xFF1B;</li>
+<li>&#x7A0B;&#x5E8F;&#x6B63;&#x5728;&#x524D;&#x53F0;&#x8FD0;&#x884C;&#xFF0B;&#x70B9;&#x51FB;push&#x6D88;&#x606F;&#xFF1B;</li>
+<li>&#x65E0;&#x8BBA;&#x5904;&#x5728;&#x4F55;&#x79CD;&#x72B6;&#x6001;&#xFF0B;&#x70B9;&#x51FB;&#x684C;&#x9762;&#x56FE;&#x6807;&#xFF1B;</li>
+</ol>
+<p>&#x81F3;&#x4E8E;&#x5728;&#x9501;&#x5C4F;&#x72B6;&#x6001;&#xFF0C;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#x3002;<br>&#x8C8C;&#x4F3C;&#x5C31;&#x8FD9;&#x51E0;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5176;&#x4E2D;&#x7B2C;&#x56DB;&#x79CD;&#x6CA1;&#x6709;&#x628A;app&#x72B6;&#x6001;&#x5206;&#x51FA;&#x6765;&#xFF0C;&#x53EA;&#x628A;&#x540E;&#x7EED;&#x64CD;&#x4F5C;&#x201C;&#x70B9;&#x51FB;&#x684C;&#x9762;&#x201D;&#x5206;&#x4E3A;&#x4E00;&#x4E2A;&#x7C7B;&#x3002;</p>
+<h4 id="&#x60C5;&#x51B5;&#x4E00;"><a href="#&#x60C5;&#x51B5;&#x4E00;" class="headerlink" title="&#x60C5;&#x51B5;&#x4E00;"></a>&#x60C5;&#x51B5;&#x4E00;</h4><p>&#x7A0B;&#x5E8F;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x542F;&#x52A8;&#xFF0C;&#x6B64;&#x65F6;&#x542F;&#x52A8;&#x7A0B;&#x5E8F;&#x8FD8;&#x662F;&#x8981;&#x9996;&#x5148;&#x76F4;&#x63A5;&#x8C03;&#x7528;AppDelegate&#x4E2D;&#x7684;<br><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</code><br>&#x5176;&#x4E2D;&#xFF0C;launchOptions&#x5E26;&#x6709;&#x542F;&#x52A8;&#x4FE1;&#x606F;&#xFF0C;&#x7528;&#x5B83;&#x5C31;&#x80FD;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x901A;&#x8FC7;&#x70B9;&#x51FB;push&#x6D88;&#x606F;&#x542F;&#x52A8;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x5177;&#x4F53;&#x5904;&#x7406;&#x5C31;&#x662F;&#x5982;&#x4E0B;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/&#x7A0B;&#x5E8F;&#x5728;&#x672A;&#x542F;&#x52A8;&#x65F6;&#x901A;&#x8FC7;&#x70B9;&#x51FB;push&#x6D88;&#x606F;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x5165;&#x7A0B;&#x5E8F;  </span><br><span class="line">    if (launchOptions) {  </span><br><span class="line">        NSDictionary* pushNotificationKey = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];  </span><br><span class="line">        if (pushNotificationKey) {  </span><br><span class="line">           //our code;  </span><br><span class="line">        }  </span><br><span class="line">    }</span><br></pre></td></tr></table></figure></p>
+<h4 id="&#x60C5;&#x51B5;&#x4E8C;"><a href="#&#x60C5;&#x51B5;&#x4E8C;" class="headerlink" title="&#x60C5;&#x51B5;&#x4E8C;"></a>&#x60C5;&#x51B5;&#x4E8C;</h4><p> &#x7A0B;&#x5E8F;&#x5728;&#x540E;&#x53F0;&#xFF0C;&#x6BD4;&#x5982;&#x521A;&#x521A;&#x6309;&#x8FC7;home&#xFF0C;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#x6B63;&#x5728;Active&#xFF0C;&#x8FD9;&#x65F6;&#x70B9;&#x51FB;push&#x6D88;&#x606F;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x8FDB;&#x5165;didFinishLaunching&#x4E2D;&#xFF0C;&#x800C;&#x662F;&#x8C03;&#x7528;<br><code>-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo</code></p>
+<p>&#x5176;&#x4E2D;&#xFF0C;&#x6709;&#x597D;&#x591A;&#x8D44;&#x6599;&#x8BF4;&#x7A0B;&#x5E8F;&#x5904;&#x4E8E;&#x201C;&#x8FD0;&#x884C;&#x201D;&#x65F6;&#x70B9;&#x51FB;push&#x4E5F;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x4EE3;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x201C;&#x8FD0;&#x884C;&#x201D;&#x662F;&#x5426;&#x6307;&#x7684;&#x662F;Active&#x72B6;&#x6001;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x5728;active&#x72B6;&#x6001;&#x662F;&#x6536;&#x4E0D;&#x5230;push&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;&#x786E;&#x5B9E;&#x5728;&#x4E0A;&#x9762;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4E2D;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x4E00;&#x4E0B;&#x5224;&#x65AD;&#xFF1A;&#x70B9;&#x51FB;push&#x65F6;&#x7A0B;&#x5E8F;&#x5904;&#x4E8E;active&#x8FD8;&#x662F;inactive&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;Remote notification UserInfo : %@&quot;,userInfo);</span><br><span class="line">    application.applicationIconBadgeNumber = 0 ;</span><br><span class="line">    if (application.applicationState == UIApplicationStateActive) {</span><br><span class="line">        NSLog(@&quot;--------active when tap push info&quot;);</span><br><span class="line">        //&#x7A0B;&#x5E8F;&#x5F53;&#x524D;&#x6B63;&#x5904;&#x4E8E;&#x524D;&#x53F0;</span><br><span class="line">    }</span><br><span class="line">    else if(application.applicationState == UIApplicationStateInactive)</span><br><span class="line">    {</span><br><span class="line">        NSLog(@&quot;--------inactive when tap push info&quot;);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x5BF9;&#x4E8E;&#x60C5;&#x51B5;2&#xFF0C;&#x5728;&#x70B9;&#x51FB;push&#x6D88;&#x606F;&#x8FDB;&#x5165;&#x7A0B;&#x5E8F;&#x540E;&#xFF0C;&#x4F1A;&#x6267;&#x884C;else if&#x90E8;&#x5206;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<h4 id="&#x60C5;&#x51B5;&#x4E09;"><a href="#&#x60C5;&#x51B5;&#x4E09;" class="headerlink" title="&#x60C5;&#x51B5;&#x4E09;"></a>&#x60C5;&#x51B5;&#x4E09;</h4><p>&#x4E0A;&#x4E00;&#x6BB5;&#x63D0;&#x5230;&#x4E86;&#xFF0C;&#x5176;&#x5B9E;&#x6211;&#x5728;&#x524D;&#x53F0;&#x8FD0;&#x884C;&#x65F6;&#x6CA1;&#x6709;&#x6536;&#x5230;push&#x6D88;&#x606F;&#xFF0C;&#x53EF;&#x80FD;&#x54EA;&#x91CC;&#x6CA1;&#x6709;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x5728;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x7684;if&#x4E2D;&#x6267;&#x884C;&#x81EA;&#x5DF1;&#x7684;&#x5904;&#x7406;&#x4EE3;&#x7801;&#x5C31;&#x597D;&#x4E86;&#x3002;</p>
+<h4 id="&#x60C5;&#x51B5;&#x56DB;"><a href="#&#x60C5;&#x51B5;&#x56DB;" class="headerlink" title="&#x60C5;&#x51B5;&#x56DB;"></a>&#x60C5;&#x51B5;&#x56DB;</h4><p> &#x70B9;&#x51FB;&#x684C;&#x9762;&#x56FE;&#x6807;&#x8C8C;&#x4F3C;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x83B7;&#x53D6;push&#x6D88;&#x606F;&#x4EE5;&#x53CA;&#x5176;&#x643A;&#x5E26;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x611F;&#x89C9;&#x82E5;&#x8981;&#x5B9E;&#x73B0;&#x8FD8;&#x5F97;&#x5177;&#x4F53;&#x95EE;&#x9898;&#x5177;&#x4F53;&#x5206;&#x6790;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x5FAE;&#x4FE1;&#x7684;&#x89C6;&#x5C4F;&#x901A;&#x8BDD;&#xFF0C;&#x70B9;&#x51FB;push&#x6D88;&#x606F;&#x8FDB;&#x5165;&#x7A0B;&#x5E8F;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x65B9;&#x6CA1;&#x6709;&#x6302;&#x65AD;&#xFF0C;&#x662F;&#x4F1A;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x63A5;&#x542C;&#x754C;&#x9762;&#x7684;&#xFF1B;&#x8FD9;&#x65F6;&#x5982;&#x679C;&#x70B9;&#x51FB;&#x684C;&#x9762;&#x56FE;&#x6807;&#x8FDB;&#x5165;&#x7A0B;&#x5E8F;&#xFF0C;&#x867D;&#x7136;&#x4E5F;&#x662F;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x63A5;&#x542C;&#x753B;&#x9762;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x89C2;&#x5BDF;&#x5230;&#x4E24;&#x8005;&#x7684;&#x51FA;&#x73B0;&#x7684;&#x65B9;&#x5F0F;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x524D;&#x8005;&#x7531;&#x65E0;&#x5230;&#x6709;&#x7684;&#x6548;&#x679C;&#x51FA;&#x73B0;&#xFF0C;&#x540E;&#x8005;&#x50CF;&#x662F;&#x901A;&#x8FC7;modal&#x8FDB;&#x5165;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x731C;&#x6D4B;&#xFF0C;&#x540E;&#x8005;&#x7684;&#x60C5;&#x51B5;&#x53EF;&#x80FD;&#x548C;&#x5FAE;&#x4FE1;&#x6536;&#x5230;&#x666E;&#x901A;&#x6D88;&#x606F;&#xFF0C;&#x518D;&#x901A;&#x8FC7;&#x70B9;&#x51FB;&#x684C;&#x9762;&#x8FDB;&#x5165;&#x662F;&#x4E00;&#x6837;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x2014;&#x2014;&#x901A;&#x8FC7;&#x4E00;&#x79CD;&#x72EC;&#x7279;&#x7684;pull&#x65B9;&#x6CD5;&#xFF0C;&#x662F;&#x5426;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x72EC;&#x7279;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x770B;&#x5404;&#x4E2A;app&#x5177;&#x4F53;&#x7684;&#x9700;&#x6C42;&#x4E86;&#xFF0C;&#x5047;&#x5982;&#x4E00;&#x4E2A;&#x65B0;&#x95FB;&#x7C7B;&#x7684;app&#x63A8;&#x9001;&#x4E86;&#x6D88;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x8FD9;&#x4E2A;push&#xFF0C;&#x5219;&#x4F1A;&#x8FDB;&#x5165;&#x8FD9;&#x4E2A;&#x65B0;&#x95FB;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4ECD;&#x7136;&#x70B9;&#x51FB;&#x684C;&#x9762;&#x56FE;&#x6807;&#x8FDB;&#x5165;&#x7A0B;&#x5E8F;&#xFF0C;&#x662F;&#x4E0D;&#x4F1A;&#x8FDB;&#x5165;push&#x63A8;&#x9001;&#x8FC7;&#x6765;&#x7684;&#x90A3;&#x6761;&#x65B0;&#x95FB;&#x7684;&#x9875;&#x9762;&#x91CC;&#x7684;&#xFF0C;&#x4F60;&#x8BF4;4&#x4E0D;4&#xFF1F; </p>
+<p>&#x6240;&#x4EE5;&#x8BF4;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x771F;&#x5B9E;&#x7684;&#x9700;&#x6C42;&#x4F1A;&#x6709;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x56FA;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#xFF08;&#x6BD4;&#x5982;&#x4E00;&#x5B9A;&#x4F1A;&#x5B58;&#x5728;&#x4EE3;&#x7406;&#x51FD;&#x6570;&#x81EA;&#x52A8;<br>&#x88AB;&#x8C03;&#x7528;&#xFF09;&#x5B9E;&#x73B0;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD8;&#x8981;&#x9488;&#x5BF9;&#x9700;&#x6C42;&#x901A;&#x8FC7;&#x5177;&#x4F53;&#x7684;&#x8BBE;&#x8BA1;&#x5B9E;&#x73B0;&#xFF01;</p>
+<p> done&#xFF01;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/19/Push-Notification（一）/" rel="next" title="Push_Notification（一）">
+                <i class="fa fa-chevron-left"></i> Push_Notification（一）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/19/Push-Notification（三）/" rel="prev" title="Push_Notification（三）">
+                Push_Notification（三） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="NaQiang" />
+          <p class="site-author-name" itemprop="name">NaQiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#情况一"><span class="nav-number">1.1.</span> <span class="nav-text">情况一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情况二"><span class="nav-number">1.2.</span> <span class="nav-text">情况二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情况三"><span class="nav-number">1.3.</span> <span class="nav-text">情况三</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情况四"><span class="nav-number">1.4.</span> <span class="nav-text">情况四</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NaQiang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

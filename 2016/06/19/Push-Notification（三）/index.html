@@ -1,0 +1,590 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x9700;&amp;#x6C42;&amp;#x70B9;&amp;#x51FB;push notification &amp;#x6D88;&amp;#x606F;&amp;#x8FDB;&amp;#x5165;&amp;#x5E94;&amp;#x7528;&amp;#xFF0C;&amp;#x76F4;&amp;#x63A5;&amp;#x8DF3;&amp;#x8F6C;&amp;#x5230;&amp;#x76F8;&amp;#x5E94;&amp;#x9875;&amp;#x9762;&amp;#xFF01;&amp;#x6700;&amp;#x8FD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Push_Notification（三）">
+<meta property="og:url" content="http://yoursite.com/2016/06/19/Push-Notification（三）/index.html">
+<meta property="og:site_name" content="NSBlacker">
+<meta property="og:description" content="&amp;#x9700;&amp;#x6C42;&amp;#x70B9;&amp;#x51FB;push notification &amp;#x6D88;&amp;#x606F;&amp;#x8FDB;&amp;#x5165;&amp;#x5E94;&amp;#x7528;&amp;#xFF0C;&amp;#x76F4;&amp;#x63A5;&amp;#x8DF3;&amp;#x8F6C;&amp;#x5230;&amp;#x76F8;&amp;#x5E94;&amp;#x9875;&amp;#x9762;&amp;#xFF01;&amp;#x6700;&amp;#x8FD">
+<meta property="og:updated_time" content="2016-06-19T11:46:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Push_Notification（三）">
+<meta name="twitter:description" content="&amp;#x9700;&amp;#x6C42;&amp;#x70B9;&amp;#x51FB;push notification &amp;#x6D88;&amp;#x606F;&amp;#x8FDB;&amp;#x5165;&amp;#x5E94;&amp;#x7528;&amp;#xFF0C;&amp;#x76F4;&amp;#x63A5;&amp;#x8DF3;&amp;#x8F6C;&amp;#x5230;&amp;#x76F8;&amp;#x5E94;&amp;#x9875;&amp;#x9762;&amp;#xFF01;&amp;#x6700;&amp;#x8FD">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Push_Notification（三） | NSBlacker </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">NSBlacker</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">永远年轻 永远臭名昭著</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Push_Notification（三）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-19T19:10:34+08:00" content="2016-06-19">
+              2016-06-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="&#x9700;&#x6C42;"><a href="#&#x9700;&#x6C42;" class="headerlink" title="&#x9700;&#x6C42;"></a>&#x9700;&#x6C42;</h3><p>&#x70B9;&#x51FB;push notification &#x6D88;&#x606F;&#x8FDB;&#x5165;&#x5E94;&#x7528;&#xFF0C;&#x76F4;&#x63A5;&#x8DF3;&#x8F6C;&#x5230;&#x76F8;&#x5E94;&#x9875;&#x9762;&#xFF01;<br>&#x6700;&#x8FD1;&#x6709;&#x9047;&#x5230;&#x4E86;&#x4E0A;&#x9762;&#x8FD9;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x9700;&#x6C42;&#xFF1A;</p>
+<p>&#x7F51;&#x4E0A;&#x627E;&#x4E86;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;&#xFF0C;&#x89C9;&#x5F97;<a href="http://www.cocoachina.com/ios/20150824/13104.html" target="_blank" rel="external">&#x8FD9;&#x7BC7;&#x535A;&#x5BA2;</a>&#x6A21;&#x5757;&#x5316;&#x65B9;&#x5F0F;&#x6700;&#x597D;&#xFF0C;&#x8FD9;&#x91CC;&#x642C;&#x8FD0;&#x8FC7;&#x6765;&#xFF0C;&#x5E76;&#x4E14;&#x9488;&#x5BF9;JavaPNS&#xFF0C;&#x6765;&#x8BF4;&#x660E;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x3002;&#x76F8;&#x5BF9;&#x4E8E;Push Notification(&#x4E00;) &#x6539;&#x52A8;&#x4E0D;&#x5927;&#xFF1A;</p>
+<p>1&#x3001;&#x4EE5;javapns&#x642D;&#x5EFA;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x4E3A;&#x4F8B;&#xFF0C;&#x9700;&#x8981;&#x5B9A;&#x5236;&#x5316;&#x5730;&#x5BF9;payload&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF1B;</p>
+<p>2&#x3001;&#x624B;&#x673A;&#x7AEF;&#x5BF9;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;&#x7684;payload&#x8FDB;&#x884C;&#x89E3;&#x6790;</p>
+<p>3&#x3001;&#x8981;&#x786E;&#x5B9A;&#x597D;&#x534F;&#x8BAE;&#xFF0C;&#x5373;payload&#xFF08;&#x5728;&#x624B;&#x673A;&#x7AEF;&#x4E3A;userInfo&#xFF09;&#x7684;&#x5C01;&#x88C5;&#x5185;&#x5BB9;</p>
+<p>&#x672C;&#x6587;&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x5B9A;&#x5236;&#x6027;&#x6BD4;&#x8F83;&#x597D;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x4E00;&#x5B9A;&#x8981;&#x548C;&#x670D;&#x52A1;&#x5668;&#x786E;&#x5B9A;&#x597D;&#x534F;&#x8BAE;1&#x3001;&#x9700;&#x8981;&#x624B;&#x673A;push&#x7684;&#x89C6;&#x56FE;&#x63A7;&#x5236;&#x5668;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x7684;HSFeedsViewController  2&#x3001;HSFeedsViewController&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#xFF1B;</p>
+<p>&#x63A8;&#x9001;&#x8FC7;&#x7A0B;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x4E5F;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x5C06;&#x670D;&#x52A1;&#x7AEF;&#x5C01;&#x88C5;&#x7684;ID&#x548C;type&#xFF0C;&#x8D4B;&#x503C;&#x7ED9;HSFeedsViewController&#x7684;ID&#x4E0E;type&#x5C5E;&#x6027;&#xFF0C;&#x81F3;&#x4E8E;&#x8981;&#x7528;&#x8FD9;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#x5E72;&#x5565;&#x5C31;&#x770B;&#x5177;&#x4F53;&#x9700;&#x6C42;&#x4E86;&#xFF0C;&#x5982;&#x4F5C;&#x4E3A;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x9875;&#x9762;&#x76F4;&#x63A5;&#x663E;&#x793A;&#x8BE5;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<h3 id="&#x670D;&#x52A1;&#x7AEF;"><a href="#&#x670D;&#x52A1;&#x7AEF;" class="headerlink" title="&#x670D;&#x52A1;&#x7AEF;"></a>&#x670D;&#x52A1;&#x7AEF;</h3><p>&#x9009;&#x7528;javapns&#x4F5C;&#x4E3A;&#x63A8;&#x9001;&#x6846;&#x67B6;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#xFF0C;&#x4E4B;&#x524D;&#x7684;&#x535A;&#x5BA2;&#x4E2D;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x5199;&#x7684;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">import java.util.ArrayList;  </span><br><span class="line">import java.util.List;  </span><br><span class="line">  </span><br><span class="line">import javapns.notification.AppleNotificationServer;  </span><br><span class="line">import javapns.notification.AppleNotificationServerBasicImpl;  </span><br><span class="line">import javapns.notification.PayloadPerDevice;  </span><br><span class="line">import javapns.notification.PushNotificationPayload;  </span><br><span class="line">import javapns.notification.transmission.NotificationProgressListener;  </span><br><span class="line">import javapns.notification.transmission.NotificationThread;  </span><br><span class="line">import javapns.notification.transmission.NotificationThreads;  </span><br><span class="line">  </span><br><span class="line">public class testClass {  </span><br><span class="line">    public static void main(String[] args){    </span><br><span class="line">        String keystore = &quot;cer/aps_developer_identity.p12&quot;;//p12&#x8BC1;&#x4E66;&#x8DEF;&#x5F84;&#x548C;&#x8BC1;&#x4E66;&#x540D;    </span><br><span class="line">        String password = &quot;&#x8BC1;&#x4E66;&#x5BC6;&#x7801;&quot;; // &#x8BC1;&#x4E66;&#x5BC6;&#x7801;    </span><br><span class="line">        String token = &quot;64&#x4F4D;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x6570;&quot;;// device token    </span><br><span class="line">        boolean production = false; // &#x8BBE;&#x7F6E;true&#x4E3A;&#x6B63;&#x5F0F;&#x670D;&#x52A1;&#x5730;&#x5740;&#xFF0C;false&#x4E3A;&#x5F00;&#x53D1;&#x8005;&#x5730;&#x5740;    </span><br><span class="line">        int threadThreads = 10; // &#x7EBF;&#x7A0B;&#x6570;    </span><br><span class="line">    try {    </span><br><span class="line">            // &#x5EFA;&#x7ACB;&#x4E0E;Apple&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;    </span><br><span class="line">            AppleNotificationServer server = new AppleNotificationServerBasicImpl(keystore, password, production  );    </span><br><span class="line">        List&lt;PayloadPerDevice&gt; list = new ArrayList&lt;PayloadPerDevice&gt;();    </span><br><span class="line">        PushNotificationPayload payload = new PushNotificationPayload();    </span><br><span class="line">        &lt;span style=&quot;color:#3366ff;&quot;&gt;payload.addAlert(&quot;TV&#x8BF7;&#x6C42;&#x89C6;&#x9891;&#x901A;&#x8BDD;&quot;);    </span><br><span class="line">        payload.addSound(&quot;default&quot;);// &#x58F0;&#x97F3;    </span><br><span class="line">        payload.addBadge(1);//&#x56FE;&#x6807;&#x5C0F;&#x7EA2;&#x5708;&#x7684;&#x6570;&#x503C;    </span><br><span class="line">        //payload.addCustomDictionary(&quot;url&quot;,&quot;www.baidu.com&quot;);//&#x6DFB;&#x52A0;&#x5B57;&#x5178;&#x7528;&#x9014;&#x4E0D;&#x660E;&#x6682;&#x65F6;&#x5E72;&#x6389;&#xFF0C;&#x5E72;&#x6389;&#x540E;&#x6D4B;&#x8BD5;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x7ED3;&#x679C;  &lt;/span&gt;  </span><br><span class="line">        PayloadPerDevice pay = new PayloadPerDevice(payload,token);// &#x5C06;&#x8981;&#x63A8;&#x9001;&#x7684;&#x6D88;&#x606F;&#x548C;&#x624B;&#x673A;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7ED1;&#x5B9A;    </span><br><span class="line">        list.add(pay);    </span><br><span class="line">        </span><br><span class="line">            NotificationThreads work = new NotificationThreads(server,list,threadThreads);//     </span><br><span class="line">        work.setListener(DEBUGGING_PROGRESS_LISTENER);// &#x5BF9;&#x7EBF;&#x7A0B;&#x7684;&#x76D1;&#x542C;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x52A0;&#x4E0A;&#x8FD9;&#x4E2A;&#x76D1;&#x542C;    </span><br><span class="line">        work.start(); // &#x542F;&#x52A8;&#x7EBF;&#x7A0B;    </span><br><span class="line">        work.waitForAllThreads();// &#x7B49;&#x5F85;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x542F;&#x52A8;&#x5B8C;&#x6210;    </span><br><span class="line">        </span><br><span class="line">     } catch (Exception e) {    </span><br><span class="line">        e.printStackTrace();    </span><br><span class="line">            }    </span><br><span class="line">    }    </span><br><span class="line">      </span><br><span class="line">    public static final NotificationProgressListener DEBUGGING_PROGRESS_LISTENER = new NotificationProgressListener() {    </span><br><span class="line">        public void eventThreadStarted(NotificationThread notificationThread) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: thread #&quot; + notificationThread.getThreadNumber() + &quot; started with &quot; + &quot; devices beginning at message id #&quot; + notificationThread.getFirstMessageIdentifier());    </span><br><span class="line">        }    </span><br><span class="line">        public void eventThreadFinished(NotificationThread thread) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: thread #&quot; + thread.getThreadNumber() + &quot; finished: pushed messages #&quot; + thread.getFirstMessageIdentifier() + &quot; to &quot; + thread.getLastMessageIdentifier() + &quot; toward &quot;+ &quot; devices&quot;);    </span><br><span class="line">        }    </span><br><span class="line">        public void eventConnectionRestarted(NotificationThread thread) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: connection restarted in thread #&quot; + thread.getThreadNumber() + &quot; because it reached &quot; + thread.getMaxNotificationsPerConnection() + &quot; notifications per connection&quot;);    </span><br><span class="line">        }    </span><br><span class="line">        public void eventAllThreadsStarted(NotificationThreads notificationThreads) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: all threads started: &quot; + notificationThreads.getThreads().size());    </span><br><span class="line">        }    </span><br><span class="line">        public void eventAllThreadsFinished(NotificationThreads notificationThreads) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: all threads finished: &quot; + notificationThreads.getThreads().size());    </span><br><span class="line">        }    </span><br><span class="line">        public void eventCriticalException(NotificationThread notificationThread, Exception exception) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: critical exception occurred: &quot; + exception);    </span><br><span class="line">        }    </span><br><span class="line">     };    </span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x7EA2;&#x8272;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x63A8;&#x9001;&#x7684;&#x4E3B;&#x8981;&#x5185;&#x5BB9;&#xFF08;&#x7136;&#x540E;&#x5728;&#x624B;&#x673A;&#x7AEF;&#x7684;userInfo&#x5B57;&#x6BB5;&#x53EF;&#x4EE5;&#x6536;&#x53D6;&#x4EE5;&#x4FBF;&#x540E;&#x9762;&#x89E3;&#x6790;&#xFF0C;&#x8FD9;&#x662F;&#x540E;&#x8BDD;&#xFF09;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x63A8;&#x9001;&#x7684;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x5305;&#x62EC;&#xFF1A;1&#xFF09;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x7684;&#x5177;&#x4F53;&#x5185;&#x5BB9; 2&#xFF09;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x7684;&#x63D0;&#x793A;&#x97F3;&#x7C7B;&#x578B; 3&#xFF09;&#x5E94;&#x7528;&#x56FE;&#x6807;&#x5DE6;&#x4E0A;&#x89D2;&#x8868;&#x793A;&#x6D88;&#x606F;&#x6570;&#x91CF;&#x7684;&#x6570;&#x5B57;4&#xFF09;&#x81EA;&#x5B9A;&#x4E49;&#x5185;&#x5BB9;<br>&#x81EA;&#x5B9A;&#x4E49;&#x5185;&#x5BB9;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x4E0A;&#x9762;&#x88AB;&#x6CE8;&#x91CA;&#x6389;&#x7684;&#x90A3;&#x53E5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x6709;&#x4E09;&#x4E2A;&#x91CD;&#x8F7D;&#x65B9;&#x6CD5;</p>
+<p><code>payload.addCustomDictionary(String key, int value);</code></p>
+<p><code>payload.addCustomDictionary(String key, String value);</code></p>
+<p><code>payload.addCustomDictionary(String key, List value);</code></p>
+<p>&#x8FD9;&#x4E2A;&#x6D88;&#x606F;&#x4F1A;&#x4EE5;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x65B9;&#x5F0F;&#x4F20;&#x5230;&#x624B;&#x673A;&#x7AEF;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5411;&#x624B;&#x673A;&#x7AEF;&#x53D1;&#x9001;&#x4EC0;&#x4E48;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;<br>&#x5982;&#x60F3;&#x8981;&#x624B;&#x673A;&#x7AEF;&#x63A5;&#x6536;&#x7684;userInfo&#x4E3A;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">userInfo:{</span><br><span class="line">    class = HSFeedsViewController;</span><br><span class="line">    property =     {</span><br><span class="line">        ID = 123;</span><br><span class="line">        type = 12;</span><br><span class="line">    };</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x53EA;&#x9700;&#x8981;&#x5728;&#x5C01;&#x88C5;&#x65F6;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x8BED;&#x53E5;&#x5373;&#x53EF;:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;HashMap&lt;String,String&gt;&gt; propertyList = new ArrayList&lt;HashMap&lt;String,String&gt;&gt;();</span><br><span class="line">	    HashMap myMap  = new HashMap();</span><br><span class="line">	    myMap.put(&quot;ID&quot;, &quot;123&quot;);</span><br><span class="line">	    myMap.put(&quot;type&quot;, &quot;12&quot;);</span><br><span class="line">	    propertyList.add(myMap);</span><br><span class="line">	    </span><br><span class="line">	    payload.addCustomDictionary(&quot;class&quot;, &quot;HSFeedsViewController&quot;);</span><br><span class="line">	    payload.addCustomDictionary(&quot;property&quot;,propertyList );</span><br></pre></td></tr></table></figure>
+<p>&#x53EF;&#x80FD;&#x770B;&#x7740;&#x633A;&#x9EBB;&#x70E6;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#xFF0C;addCustomDictionary&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5C06;HashMap&#x53D1;&#x9001;&#xFF0C;&#x53EA;&#x80FD;&#x5C06;HashMap&#x7684;&#x5185;&#x5BB9;&#x88C5;&#x597D;&#x540E;&#xFF0C;&#x653E;&#x5728;&#x4E00;&#x4E2A;List&#x4E2D;&#xFF0C;&#x53D1;&#x51FA;&#x53BB;&#x5373;&#x53EF;&#x3002;</p>
+<h3 id="&#x624B;&#x673A;&#x7AEF;"><a href="#&#x624B;&#x673A;&#x7AEF;" class="headerlink" title="&#x624B;&#x673A;&#x7AEF;"></a>&#x624B;&#x673A;&#x7AEF;</h3><p>&#x7136;&#x800C;&#x7531;&#x4E8E;List&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x624B;&#x673A;&#x7AEF;&#x63A5;&#x6536;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x5176;&#x5B9E;&#x662F;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    class = HSFeedsViewController;</span><br><span class="line">    property =    (</span><br><span class="line"> {</span><br><span class="line">        ID = 123;</span><br><span class="line">        type = 12;</span><br><span class="line">     }</span><br><span class="line">    );</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>property&#x5BF9;&#x5E94;&#x7684;value&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5728;&#x624B;&#x673A;&#x7AEF;&#x505A;&#x4E00;&#x4E0B;&#x7B80;&#x5355;&#x7684;&#x5904;&#x7406;&#x5C31;&#x597D;&#xFF1A;&#x53D6;&#x6570;&#x7EC4;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x91CD;&#x65B0;&#x5C01;&#x88C5;&#x4E3A;&#x4E00;&#x4E2A;dictionary&#x3002;<br>&#x4E0B;&#x9762;&#x5F15;&#x7528;<a href="http://www.cocoachina.com/ios/20150824/13104.html" target="_blank" rel="external">&#x8FD9;&#x7BC7;&#x535A;&#x5BA2;</a>&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5E76;&#x7A0D;&#x52A0;&#x6539;&#x52A8;&#x3002;</p>
+<p>HSFeedsViewController.h&#xFF1A;</p>
+<ul>
+<li><strong>&#x8FDB;&#x5165;&#x8BE5;&#x754C;&#x9762;&#x9700;&#x8981;&#x4F20;&#x7684;&#x5C5E;&#x6027;</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@interface HSFeedsViewController : UIViewController</span><br><span class="line"></span><br><span class="line">// &#x6CE8;&#xFF1A;&#x6839;&#x636E;&#x4E0B;&#x9762;&#x7684;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x5BF9;&#x5E94;&#x7684;&#x9891;&#x9053;&#x5217;&#x8868;&#x6570;&#x636E;</span><br><span class="line"></span><br><span class="line">/** &#x9891;&#x9053;ID */</span><br><span class="line"></span><br><span class="line">@property (nonatomic, copy) NSString *ID;</span><br><span class="line"></span><br><span class="line">/** &#x9891;&#x9053;type */</span><br><span class="line"></span><br><span class="line">@property (nonatomic, copy) NSString *type;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>AppDelegate.m&#xFF1A;</p>
+<ul>
+<li><strong>&#x63A8;&#x9001;&#x8FC7;&#x6765;&#x7684;&#x6D88;&#x606F;&#x89C4;&#x5219;</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// &#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x80AF;&#x5B9A;&#x4E8B;&#x5148;&#x8DDF;&#x670D;&#x52A1;&#x7AEF;&#x6C9F;&#x901A;&#x597D;&#xFF0C;&#x8DF3;&#x8F6C;&#x5BF9;&#x5E94;&#x7684;&#x754C;&#x9762;&#x9700;&#x8981;&#x5BF9;&#x5E94;&#x7684;&#x53C2;&#x6570;</span><br><span class="line">NSDictionary *userInfo = @{</span><br><span class="line"></span><br><span class="line">                           @&quot;class&quot;: @&quot;HSFeedsViewController&quot;,</span><br><span class="line"></span><br><span class="line">                           @&quot;property&quot;: @{</span><br><span class="line"></span><br><span class="line">                                        @&quot;ID&quot;: @&quot;123&quot;,</span><br><span class="line"></span><br><span class="line">                                        @&quot;type&quot;: @&quot;12&quot;</span><br><span class="line"></span><br><span class="line">                                   }</span><br><span class="line"></span><br><span class="line">                           };</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>&#x63A5;&#x6536;&#x63A8;&#x9001;&#x6D88;&#x606F;</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo</span><br><span class="line">{</span><br><span class="line"></span><br><span class="line">    [self push:userInfo];</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>&#x8DF3;&#x8F6C;&#x754C;&#x9762;</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">- (void)push:(NSDictionary *)params</span><br><span class="line"></span><br><span class="line">{</span><br><span class="line">    // &#x7C7B;&#x540D;</span><br><span class="line">    NSString *class =[NSString stringWithFormat:@&quot;%@&quot;, params[@&quot;class&quot;]];</span><br><span class="line"></span><br><span class="line">    const char *className = [class cStringUsingEncoding:NSASCIIStringEncoding];</span><br><span class="line"></span><br><span class="line">    // &#x4ECE;&#x4E00;&#x4E2A;&#x5B57;&#x4E32;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7C7B;</span><br><span class="line"></span><br><span class="line">    Class newClass = objc_getClass(className);</span><br><span class="line"></span><br><span class="line">    if (!newClass)</span><br><span class="line"></span><br><span class="line">    {</span><br><span class="line">        // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;</span><br><span class="line">        Class superClass = [NSObject class];</span><br><span class="line">        newClass = objc_allocateClassPair(superClass, className, 0);</span><br><span class="line"></span><br><span class="line">        // &#x6CE8;&#x518C;&#x4F60;&#x521B;&#x5EFA;&#x7684;&#x8FD9;&#x4E2A;&#x7C7B;</span><br><span class="line">        objc_registerClassPair(newClass);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    // &#x521B;&#x5EFA;&#x5BF9;&#x8C61;</span><br><span class="line">    id instance = [[newClass alloc] init];</span><br><span class="line"></span><br><span class="line">    // &#x5BF9;&#x8BE5;&#x5BF9;&#x8C61;&#x8D4B;&#x503C;&#x5C5E;&#x6027;</span><br><span class="line">    NSDictionary * propertys = params[@&quot;property&quot;];</span><br><span class="line"></span><br><span class="line">    [propertys enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {</span><br><span class="line"></span><br><span class="line">        // &#x68C0;&#x6D4B;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5B58;&#x5728;&#x8BE5;&#x5C5E;&#x6027;</span><br><span class="line">        if ([self checkIsExistPropertyWithInstance:instance verifyPropertyName:key]) {</span><br><span class="line"></span><br><span class="line">            // &#x5229;&#x7528;kvc&#x8D4B;&#x503C;</span><br><span class="line">            [instance setValue:obj forKey:key];</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }];</span><br><span class="line"></span><br><span class="line">    // &#x83B7;&#x53D6;&#x5BFC;&#x822A;&#x63A7;&#x5236;&#x5668;</span><br><span class="line">    UITabBarController *tabVC = (UITabBarController *)self.window.rootViewController;</span><br><span class="line"></span><br><span class="line">    UINavigationController *pushClassStance = (UINavigationController *)tabVC.viewControllers[tabVC.selectedIndex];</span><br><span class="line"></span><br><span class="line">    // &#x8DF3;&#x8F6C;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x63A7;&#x5236;&#x5668;</span><br><span class="line"></span><br><span class="line">    [pushClassStance pushViewController:instance animated:YES];</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>&#x68C0;&#x6D4B;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5B58;&#x5728;&#x8BE5;&#x5C5E;&#x6027;</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)checkIsExistPropertyWithInstance:(id)instance verifyPropertyName:(NSString *)verifyPropertyName</span><br><span class="line"></span><br><span class="line">{</span><br><span class="line">    unsigned int outCount, i;</span><br><span class="line">    </span><br><span class="line">    // &#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x91CC;&#x7684;&#x5C5E;&#x6027;&#x5217;&#x8868;</span><br><span class="line"></span><br><span class="line">    objc_property_t * properties = class_copyPropertyList([instance class], &amp;outCount);</span><br><span class="line">    </span><br><span class="line">    for (i = 0; i &lt; outCount; i++) {</span><br><span class="line"></span><br><span class="line">        objc_property_t property =properties[i];</span><br><span class="line"></span><br><span class="line">        //  &#x5C5E;&#x6027;&#x540D;&#x8F6C;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span><br><span class="line">        NSString *propertyName = [[NSString alloc] initWithCString:property_getName(property) encoding:NSUTF8StringEncoding];</span><br><span class="line"></span><br><span class="line">        // &#x5224;&#x65AD;&#x8BE5;&#x5C5E;&#x6027;&#x662F;&#x5426;&#x5B58;&#x5728;</span><br><span class="line">        if ([propertyName isEqualToString:verifyPropertyName]) {</span><br><span class="line"></span><br><span class="line">            free(properties);</span><br><span class="line"></span><br><span class="line">            return YES;</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    free(properties);</span><br><span class="line"></span><br><span class="line">    return NO;</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/19/Push-Notification（二）/" rel="next" title="Push_Notification（二）">
+                <i class="fa fa-chevron-left"></i> Push_Notification（二）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="NaQiang" />
+          <p class="site-author-name" itemprop="name">NaQiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端"><span class="nav-number">2.</span> <span class="nav-text">服务端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手机端"><span class="nav-number">3.</span> <span class="nav-text">手机端</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NaQiang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

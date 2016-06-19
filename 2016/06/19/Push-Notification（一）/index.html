@@ -1,0 +1,640 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x63A8;&amp;#x9001;&amp;#x539F;&amp;#x7406;
+
+
+&amp;#x5E94;&amp;#x7528;&amp;#x7A0B;&amp;#x5E8F;&amp;#x6CE8;&amp;#x518C;&amp;#x6D88;&amp;#x606F;&amp;#x63A8;&amp;#x9001;&amp;#x3002;&amp;#xFF08;&amp;#x5C31;&amp;#x662F;&amp;#x6BD4;&amp;#x8F83;&amp;#x590D;&amp;#x6742;&amp;#x7684;&amp;#x5236;&amp;#x4F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Push_Notification（一）">
+<meta property="og:url" content="http://yoursite.com/2016/06/19/Push-Notification（一）/index.html">
+<meta property="og:site_name" content="NSBlacker">
+<meta property="og:description" content="&amp;#x63A8;&amp;#x9001;&amp;#x539F;&amp;#x7406;
+
+
+&amp;#x5E94;&amp;#x7528;&amp;#x7A0B;&amp;#x5E8F;&amp;#x6CE8;&amp;#x518C;&amp;#x6D88;&amp;#x606F;&amp;#x63A8;&amp;#x9001;&amp;#x3002;&amp;#xFF08;&amp;#x5C31;&amp;#x662F;&amp;#x6BD4;&amp;#x8F83;&amp;#x590D;&amp;#x6742;&amp;#x7684;&amp;#x5236;&amp;#x4F">
+<meta property="og:image" content="http://img.my.csdn.net/uploads/201301/16/1358324472_5163.jpg">
+<meta property="og:updated_time" content="2016-06-19T11:00:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Push_Notification（一）">
+<meta name="twitter:description" content="&amp;#x63A8;&amp;#x9001;&amp;#x539F;&amp;#x7406;
+
+
+&amp;#x5E94;&amp;#x7528;&amp;#x7A0B;&amp;#x5E8F;&amp;#x6CE8;&amp;#x518C;&amp;#x6D88;&amp;#x606F;&amp;#x63A8;&amp;#x9001;&amp;#x3002;&amp;#xFF08;&amp;#x5C31;&amp;#x662F;&amp;#x6BD4;&amp;#x8F83;&amp;#x590D;&amp;#x6742;&amp;#x7684;&amp;#x5236;&amp;#x4F">
+<meta name="twitter:image" content="http://img.my.csdn.net/uploads/201301/16/1358324472_5163.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Push_Notification（一） | NSBlacker </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">NSBlacker</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">永远年轻 永远臭名昭著</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Push_Notification（一）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-19T17:50:52+08:00" content="2016-06-19">
+              2016-06-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="&#x63A8;&#x9001;&#x539F;&#x7406;"><a href="#&#x63A8;&#x9001;&#x539F;&#x7406;" class="headerlink" title="&#x63A8;&#x9001;&#x539F;&#x7406;"></a>&#x63A8;&#x9001;&#x539F;&#x7406;</h3><hr>
+<p><img src="http://img.my.csdn.net/uploads/201301/16/1358324472_5163.jpg" alt="image"></p>
+<ol>
+<li>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6CE8;&#x518C;&#x6D88;&#x606F;&#x63A8;&#x9001;&#x3002;&#xFF08;&#x5C31;&#x662F;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x5236;&#x4F5C;<em>&#x8BC1;&#x4E66;</em>&#x7684;&#x8FC7;&#x7A0B;&#xFF09;</li>
+<li>IOS&#x8DDF;APNS Server&#x8981;<em>deviceToken</em>&#x3002;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63A5;&#x53D7;deviceToken&#x3002;&#xFF08;&#x5728;Xcode&#x4E2D;&#x7F16;&#x7801;&#x5B9E;&#x73B0;&#xFF09;</li>
+<li>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5C06;deviceToken&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x7AEF;&#x7A0B;&#x5E8F;&#x3002;&#xFF08;&#x670D;&#x52A1;&#x7AEF;&#x7A0B;&#x5E8F;&#x4E3A;&#x56FE;&#x4E2D;&#x7684;&#x201C;Your Server&#x201D;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x6211;&#x4EEC;&#x7684;signaling&#x6216;&#x8005;weixin&#x4E4B;&#x4E00;&#xFF0C;&#x8FD8;&#x8981;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x540C;&#x4E8B;&#x5546;&#x91CF;&#xFF0C;&#x4E0D;&#x786E;&#x5B9A;&#x7528;&#x54EA;&#x4E2A;&#x5408;&#x9002;&#xFF09;</li>
+<li>Your Server&#x5411;APNS&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x4FE1;&#x606F;&#x3002;</li>
+<li>APNS&#x670D;&#x52A1;&#x5C06;&#x63A8;&#x9001;&#x5185;&#x5BB9;&#x53D1;&#x9001;&#x7ED9;iPhone&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;(APNS &#xFF1A;Apple Push Notification Server)</li>
+</ol>
+<p>&#x5176;&#x4E2D;&#x51E0;&#x6761;&#x5DF2;&#x7ECF;&#x505A;&#x4E86;&#x6CE8;&#x89E3;&#xFF0C;&#x5176;&#x4E2D;&#x7B2C;1&#xFF5E;3&#x6B65;&#x662F;&#x7531;iOS&#x7AEF;&#x7684;&#x4EBA;&#x5458;&#x8D1F;&#x8D23;&#x7684;&#xFF1A;&#x5173;&#x4E8E;&#x5982;&#x4F55;&#x5236;&#x4F5C;&#x8BC1;&#x4E66;&#x3001;&#x5982;&#x4F55;&#x83B7;&#x53D6;device token&#x3001;&#x5236;&#x4F5C;&#x548C;&#x83B7;&#x53D6;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x9047;&#x5230;&#x54EA;&#x4E9B;&#x95EE;&#x9898;&#x53CA;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0B;&#x4E00;&#x7BC7;&#x535A;&#x5BA2;&#x6765;&#x5199;&#xFF0C;&#x8FD9;&#x4E00;&#x7BC7;&#x5462;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8BB2;&#x9053;&#x7406;&#xFF5E;&#xFF5E;&#x3002;&#x7B2C;4&#x6B65;&#x662F;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4EBA;&#x5458;&#x8D1F;&#x8D23;&#x3002;&#x7B2C;5&#x6B65;&#x662F;&#x82F9;&#x679C;&#x7684;&#x4E8B;&#x60C5;&#x3002;&#x5173;&#x4E8E;&#x4E0A;&#x9762;&#x8FC7;&#x7A0B;&#x4E2D;&#x6807;&#x8BB0;&#x4E3A;&#x659C;&#x4F53;&#x7684;&#x90E8;&#x5206;&#x5206;&#x522B;&#x90FD;&#x6765;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<h4 id="&#x8BC1;&#x4E66;"><a href="#&#x8BC1;&#x4E66;" class="headerlink" title="&#x8BC1;&#x4E66;"></a>&#x8BC1;&#x4E66;</h4><p>&#x4F5C;&#x7528;&#xFF1A;&#x8BA9;APNS&#x80FD;&#x591F;&#x77E5;&#x9053;&#x5E94;&#x8BE5;&#x7ED9;&#x54EA;&#x4E2A;App&#x63A8;&#x9001;&#x6D88;&#x606F;&#xFF01;</p>
+<p>&#x8BE6;&#x7EC6;&#xFF1A;&#x6B64;&#x5904;&#x7684;&#x8BC1;&#x4E66;&#x662F;&#x82F9;&#x679C;&#x5F00;&#x53D1;&#x8005;&#x5229;&#x7528;&#x5176;&#x5728;&#x82F9;&#x679C;&#x516C;&#x53F8;&#x6CE8;&#x518C;&#x7684;&#x5F00;&#x53D1;&#x6743;&#x9650;&#x7533;&#x8BF7;&#x5E76;&#x5236;&#x4F5C;&#x7684;&#xFF0C;&#x96BE;&#x9053;&#x4E0D;&#x662F;&#x53EA;&#x8981;&#x5728;&#x5F00;&#x53D1;&#x8005;&#x7F51;&#x7AD9;&#x70B9;&#x51FB;&#x4E00;&#x4E0B;&#x7C7B;&#x4F3C;&#x201C;&#x7533;&#x8BF7;&#x201D;&#x6309;&#x952E;&#x5C31;OK&#x5417;&#xFF1F;&#x8FD8;&#x771F;&#x5C31;&#x4E0D;&#x662F;&#xFF01;&#x5F53;iOS App&#x67D0;&#x4E9B;&#x529F;&#x80FD;&#x60F3;&#x8981;&#x548C;&#x82F9;&#x679C;&#x63D0;&#x4F9B;&#x7684;&#x7279;&#x6B8A;&#x670D;&#x52A1;&#xFF08;&#x5982;Game Center&#x3001;Wallet&#x3001;&#x5065;&#x5EB7;&#x6570;&#x636E;&#xFF09;&#x7ED3;&#x5408;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x53E6;&#x5916;&#x7533;&#x8BF7;&#x8BC1;&#x4E66;&#xFF0C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x8BF4;&#x7684;push notification&#xFF0C;&#x4E5F;&#x662F;&#x591A;&#x4E2A;&#x7279;&#x6B8A;&#x670D;&#x52A1;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x3002;&#x8FD9;&#x4E2A;&#x8BC1;&#x4E66;&#x8FD8;&#x8981;&#x548C;App&#x4FE1;&#x606F;&#x3001;&#x5F00;&#x53D1;&#x8005;&#x4FE1;&#x606F;&#xFF0C;&#x5229;&#x7528;openssl&#x547D;&#x4EE4;&#x5408;&#x6210;&#x4E00;&#x4E2A; *.p12&#x683C;&#x5F0F;&#x7684;&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#xFF08;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x540E;&#x9762;&#x7528;&#xFF09;</p>
+<h4 id="device-token"><a href="#device-token" class="headerlink" title="device token"></a>device token</h4><p>&#x4F5C;&#x7528;&#xFF1A;&#x8BA9;APNS&#x80FD;&#x591F;&#x77E5;&#x9053;&#x5E94;&#x8BE5;&#x7ED9;&#x54EA;&#x4E2A;device&#x63A8;&#x9001;&#x6D88;&#x606F;&#xFF01;</p>
+<p>&#x8BE6;&#x7EC6;&#xFF1A;&#x8FD9;&#x4E2A;device token&#x5728;&#x6BCF;&#x6B21;&#x4E00;&#x4E2A;App&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x90FD;&#x4F1A;&#x5411;&#x82F9;&#x679C;&#x7533;&#x8BF7;&#xFF0C;&#x4E0D;&#x51FA;&#x610F;&#x5916;&#x7684;&#x8BDD;&#xFF0C;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;device token&#xFF0C;&#x5728;&#x4E4B;&#x524D;&#x8BF4;&#x660E;push&#x8FC7;&#x7A0B;&#x65F6;&#xFF0C;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x4E5F;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x4E86;&#xFF0C;&#x4E0D;&#x8FC7;&#x5462;&#xFF0C;&#x5173;&#x4E8E;&#x5B83;&#x6709;&#x51E0;&#x4E2A;&#x503C;&#x5F97;&#x7591;&#x95EE;&#x7684;&#x5730;&#x65B9;&#xFF1A;</p>
+<ol>
+<li>device token&#x662F;&#x5565;&#xFF1F;</li>
+<li>&#x4E0D;&#x540C;&#x7684;App&#xFF0C;device token&#x76F8;&#x540C;&#x4E48;&#xFF1F;</li>
+<li>&#x4E00;&#x4E2A;&#x8BBE;&#x5907;&#x4F1A;&#x4EA7;&#x751F;&#x591A;&#x4E2A;device token&#x4E48;&#xFF1F;</li>
+<li>device token&#x4F1A;&#x5931;&#x6548;&#x4E48;&#xFF1F;</li>
+<li>device token&#x548C;UDID&#x662F;&#x4E00;&#x56DE;&#x4E8B;&#x4E48;&#xFF1F;&#xFF08;&#x6CE8;&#x610F;&#x4E0D;&#x662F;UUID&#xFF0C;&#x4E24;&#x8005;&#x533A;&#x522B;&#x8BF7;&#x770B;&#xFF1A;UUID&#x4E0E;UDID&#xFF09;</li>
+<li>&#x4E00;&#x4E2A;UDID&#x53EF;&#x80FD;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;device token&#x4E48;&#xFF1F;&#x53CD;&#x4E4B;&#x7684;&#x60C5;&#x51B5;&#x5462;&#xFF1F;</li>
+</ol>
+<p>&#x7ED3;&#x8BBA;&#xFF1A;</p>
+<ol>
+<li>device token &#x662F;&#x6807;&#x8BB0;&#x8BBE;&#x5907;&#x7684;&#xFF0C;&#x548C;app&#x65E0;&#x5173;&#xFF08;&#x89E3;&#x7B54;&#x95EE;&#x9898;0&#xFF0C;1&#xFF09;&#xFF1B;</li>
+<li>&#x4E00;&#x4E2A;&#x8BBE;&#x5907;&#x7684;device<br>token &#x4E00;&#x822C;&#x662F;&#x4E0D;&#x53D8;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x4F1A;&#x5931;&#x6548;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x8BBE;&#x5907;&#x64E6;&#x9664;&#xFF08;&#x5B98;&#x65B9;&#x8BCD;&#x6C47;&#x662F;be wiped&#xFF09;&#xFF0C;&#x51FA;&#x4E8E;&#x5B89;&#x5168;&#x8003;&#x8651;&#xFF0C;token&#x5FC5;&#x987B;&#x53D8;&#xFF08;&#x89E3;&#x7B54;&#x95EE;&#x9898;2&#xFF0C;3&#xFF09;&#xFF0C;&#x800C;UDID&#x662F;&#x4E0D;&#x53D8;&#x7684;&#xFF08;&#x89E3;&#x7B54;&#x95EE;&#x9898;4&#xFF09;&#xFF1B;</li>
+<li><p>&#x5173;&#x4E8E;&#x95EE;&#x9898;5&#xFF0C;&#x5B9E;&#x9645;&#x5F53;&#x4E2D;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x90FD;&#x4F1A;&#x51FA;&#x73B0;&#xFF0C;&#x4E5F;&#x7684;&#x786E;&#x6709;&#x8FC7;push&#x6DF7;&#x4E71;&#x7684;&#x4E8B;&#x6545;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x6682;&#x65F6;&#x5148;&#x653E;&#x4E0B;&#x4E0D;&#x7BA1;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x62FF;&#x51FA;&#x4E00;&#x4E9B;&#x8D44;&#x6E90;&#x6765;&#x52A8;&#x6001;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4E4B;&#x540E;&#x63D0;&#x51FA;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#x6709;&#x4EBA;&#x505A;&#x8FC7;&#x5B9E;&#x9A8C;&#xFF0C;&#x540C;&#x4E00;&#x4E2A;udid&#x5BF9;&#x5E94;&#x6709;&#x4E0D;&#x540C;&#x7684;device token&#x7684;&#x60C5;&#x51B5;&#x6682;&#x65F6;&#x6709;&#x5982;&#x4E0B;&#x4E24;&#x79CD;&#xFF1A;</p>
+<ol>
+<li>&#x8BBE;&#x5907;&#x64E6;&#x9664;&#x8FC7;&#xFF0C;token&#x53D8;&#x5316;&#x8FC7;&#xFF0C;&#x8001;&#x7684;&#x65B0;&#x7684;&#x90FD;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x5E93;&#x91CC;</li>
+<li>&#x8BBE;&#x5907;&#x540C;&#x65F6;&#x88C5;&#x8FC7;development&#xFF08;&#x6D4B;&#x8BD5;&#x7248;&#xFF09;&#x548C;distribution&#xFF08;&#x53D1;&#x5E03;&#x7248;&#xFF09;&#x7684;&#x7A0B;&#x5E8F;&#x3002;</li>
+</ol>
+</li>
+</ol>
+<h4 id="&#x4FE1;&#x606F;"><a href="#&#x4FE1;&#x606F;" class="headerlink" title="&#x4FE1;&#x606F;"></a>&#x4FE1;&#x606F;</h4><p>&#x8FD9;&#x4E2A;&#x8981;&#x5411;APNS&#x4FE1;&#x606F;&#x5305;&#x62EC;  part1&#xFF1A;device token &#xFF0B; .p12&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#xFF0B;&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#x7684;&#x5BC6;&#x7801;&#xFF0C;&#x8D77;&#x5230;&#x8BC6;&#x522B;&#x8BBE;&#x5907;&#x548C;App&#x7684;&#x4F5C;&#x7528;&#xFF1B;part2&#xFF1A;&#x5177;&#x4F53;&#x63A8;&#x9001;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5373;&#x8BBE;&#x5907;&#x4E0A;&#x7684;&#x663E;&#x793A;&#x5185;&#x5BB9;&#x3002;&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#x7684;&#x5BC6;&#x7801;&#xFF0C;&#x662F;&#x5EFA;&#x7ACB;&#x8FD9;&#x4E2A; .p12&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#x65F6;&#x8BBE;&#x7F6E;&#x7684;&#xFF0C;iOS&#x7AEF;&#x4EBA;&#x5458;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x3002;&#x5728;&#x4E0B;&#x9762;&#x201C;&#x670D;&#x52A1;&#x5668;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x201D;&#x4E2D;&#x4F1A;&#x8BE6;&#x7EC6;&#x8BF4;&#x3002;</p>
+<h3 id="App&#x670D;&#x52A1;&#x7AEF;&#x8981;&#x505A;&#x7684;&#x4E8B;"><a href="#App&#x670D;&#x52A1;&#x7AEF;&#x8981;&#x505A;&#x7684;&#x4E8B;" class="headerlink" title="App&#x670D;&#x52A1;&#x7AEF;&#x8981;&#x505A;&#x7684;&#x4E8B;"></a>App&#x670D;&#x52A1;&#x7AEF;&#x8981;&#x505A;&#x7684;&#x4E8B;</h3><hr>
+<p>&#x5176;&#x5B9E;&#x57FA;&#x672C;&#x4E0A;&#x5DF2;&#x7ECF;&#x8BF4;&#x660E;&#x4E86;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x662F;&#x5355;&#x5217;&#x51FA;&#x6765;&#xFF0C;&#x5E76;&#x9644;&#x4E0A;&#x670D;&#x52A1;&#x7AEF;&#x53C2;&#x8003;&#x7A0B;&#x5E8F;&#x3002;</p>
+<ol>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5411;&#x82F9;&#x679C;&#x7684;APNS&#x53D1;&#x9001;&#x63A8;&#x9001;&#x8BF7;&#x6C42;&#xFF0C;&#x544A;&#x8BC9;&#x82F9;&#x679C;&#xFF1A;&#x6211;&#x77E5;&#x9053;&#x4F60;&#x662F;&#x5927;&#x7237;&#xFF0C;&#x90A3;&#x4F60;&#x5E2E;&#x5FD9;&#x7ED9;&#x6211;&#x5BB6;&#x5E94;&#x7528;&#x63A8;&#x4E2A;&#x6D88;&#x606F;&#x5457;&#xFF1F;&#x54EA;&#x4E2A;&#x8BBE;&#x5907;&#x5C31;&#x770B;device token&#xFF0C;&#x54EA;&#x4E2A;&#x5E94;&#x7528;&#x5C31;&#x770B;p12&#x8BC1;&#x4E66;&#xFF0C;p12&#x8BC1;&#x4E66;&#x7684;&#x5BC6;&#x7801;&#x5565;&#x7684;&#x6211;&#x90FD;&#x7ED9;&#x4F60;&#x63D0;&#x4F9B;&#xFF0C;&#x60A8;&#x8001;&#x770B;&#x6210;&#x4E0D;&#xFF1F;</li>
+<li><p>device token &#x7531;iOS&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4F9B;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8D1F;&#x8D23;&#x5904;&#x7406;&#xFF0C;&#x5904;&#x7406;&#x7684;&#x5185;&#x5BB9;&#x53EF;&#x80FD;&#x5305;&#x62EC;(&#x4E3B;&#x8981;&#x95EE;&#x9898;&#x90FD;&#x96C6;&#x4E2D;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x8BF7;&#x770B;&#x4E00;&#x4E0B;)&#xFF1A;</p>
+<ol>
+<li>&#x628A;&#x4ECE;&#x5BA2;&#x6237;&#x7AEF;&#x63A5;&#x6536;&#x5230;&#x7684;device token&#x548C;&#x5F53;&#x524D;&#x7528;&#x6237;&#x7684;&#x4FE1;&#x606F;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5EFA;&#x7ACB;&#x5173;&#x8054;&#xFF0C;&#x4FDD;&#x8BC1;&#x5728;TV&#x2013;&gt;iOS&#x62E8;&#x6253;&#x65F6;&#xFF08;&#x5373;&#x56FE;&#x4E2D;&#x6240;&#x8BF4;&#x7684;when something interesting happens&#xFF09;&#xFF0C;&#x80FD;&#x591F;&#x627E;&#x5230;&#x6B63;&#x786E;&#x7684;device token&#xFF1B;</li>
+<li>&#x65B0;&#x5EFA;&#x4E00;&#x4EFD;&#x534F;&#x8BAE;&#x6765;&#x63A5;&#x6536;device token&#xFF0C;&#x5F53;&#x63A5;&#x6536;&#x5E76;&#x50A8;&#x5B58;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x8FD4;&#x56DE;&#x8BF8;&#x5982;_devicetoken&#x7684;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x8868;&#x793A;&#x5DF2;&#x6210;&#x529F;&#x63A5;&#x6536;&#xFF1B;</li>
+<li>&#x5BF9;&#x4E8E;&#x4E00;&#x53F0;iOS&#x8BBE;&#x5907;&#xFF0C;&#x5176;device token &#x4E0D;&#x4F1A;&#x8F7B;&#x6613;&#x6539;&#x53D8;&#xFF0C;&#x4F46;&#x662F;&#x4E3A;&#x4E86;&#x5E94;&#x5BF9;device token&#x6539;&#x53D8;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF0C;&#x662F;&#x5426;&#x6BCF;&#x6B21;&#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x90FD;&#x9700;&#x8981;&#x5411;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;&#x4E00;&#x904D;token&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x91CD;&#x65B0;&#x4FDD;&#x5B58;&#x4E00;&#x904D;&#xFF1F;&#x663E;&#x7136;&#x4E0D;&#x597D;&#xFF01;&#x76EE;&#x524D;&#x60F3;&#x5230;&#x7684;&#x7B56;&#x7565;&#x662F;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5F97;&#x5230;&#x8BE5;&#x8BBE;&#x5907;&#x7684;&#x6700;&#x65B0;device token&#x540E;&#x4F1A;&#x4E0E;&#x4E0A;&#x4E00;&#x6B21;&#x5F97;&#x5230;&#x7684;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#xFF0C;&#x5982;&#x4E0D;&#x540C;&#xFF0C;&#x5219;&#x628A;&#x65B0;&#x7684;token&#x53D1;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x6536;&#x5230;&#x540E;&#xFF0C;&#x66FF;&#x6362;&#x4E00;&#x4E0B;&#x4E4B;&#x524D;&#x7684;&#x65E0;&#x6548;token&#x5373;&#x53EF;&#xFF1B;&#x5982;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x4E0D;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4E5F;&#x5C31;&#x65E0;&#x9700;&#x5904;&#x7406;&#xFF0C;&#x4EE5;&#x51CF;&#x8F7B;&#x538B;&#x529B;&#x3002;</li>
+</ol>
+</li>
+<li><p>*.p12&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#xFF0B;&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#x7684;&#x5BC6;&#x7801;&#xFF1A;&#x8FD9;&#x4E24;&#x4E2A;&#x4E5F;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x4EBA;&#x5458;&#x5236;&#x4F5C;&#x597D;&#x63D0;&#x4F9B;&#x7ED9;&#x670D;&#x52A1;&#x7AEF;&#xFF0C;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x7A0B;&#x5E8F;&#x4E2D;&#x76F4;&#x63A5;&#x7528;&#x5C31;&#x597D;&#x3002;&#x4F46;&#x662F;&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#x5206;&#x4E3A;&#x5F00;&#x53D1;&#x7248;&#xFF08;development&#xFF09;&#x548C;&#x4EA7;&#x54C1;&#x7248;&#xFF08;distribution&#xFF09;&#xFF0C;&#x76EE;&#x524D;&#x6D4B;&#x8BD5;&#x7528;&#x7684;&#x662F;&#x5F00;&#x53D1;&#x7248;&#xFF0C;&#x4EE5;&#x540E;&#x6B63;&#x5F0F;&#x53D1;&#x5E03;&#x540E;&#x4F1A;&#x91CD;&#x65B0;&#x5236;&#x4F5C;&#x8BC1;&#x4E66;&#x3002;</p>
+</li>
+<li><p>&#x5177;&#x4F53;&#x63A8;&#x9001;&#x7684;&#x5185;&#x5BB9;&#xFF1A;&#x5C31;&#x662F;&#x8BBE;&#x5907;&#x63A8;&#x9001;&#x754C;&#x9762;&#x7684;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x4E86;&#xFF0C;&#x5982;&#x201C; **&#x60F3;&#x8981;&#x548C;&#x4F60;&#x8FDB;&#x884C;&#x89C6;&#x9891;&#x901A;&#x8BDD;&#x201D;&#xFF0C;&#x4E5F;&#x8981;&#x5728;&#x670D;&#x52A1;&#x5668;&#x8BBE;&#x5B9A;&#x597D;&#x3002;</p>
+</li>
+</ol>
+<h3 id="&#x670D;&#x52A1;&#x5668;&#x4EE3;&#x7801;"><a href="#&#x670D;&#x52A1;&#x5668;&#x4EE3;&#x7801;" class="headerlink" title="&#x670D;&#x52A1;&#x5668;&#x4EE3;&#x7801;"></a>&#x670D;&#x52A1;&#x5668;&#x4EE3;&#x7801;</h3><hr>
+<p>&#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7801;&#x6BCF;&#x79CD;&#x8BED;&#x8A00;&#x90FD;&#x6709;&#x597D;&#x591A;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x4E4B;&#x524D;&#x4E5F;&#x662F;&#x5E9F;&#x4E86;&#x597D;&#x5927;&#x52B2;&#x513F;&#xFF0C;&#x624D;&#x627E;&#x5230;&#x80FD;&#x7528;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x7528;&#x5230;&#x4E86;&#x5404;&#x81EA;&#x8BED;&#x8A00;&#x4E0B;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x3002;</p>
+<ol>
+<li><p>Objective-C&#x7248;</p>
+<p> &#x5927;&#x5BB6;&#x90FD;&#x8BF4;<a href="https://github.com/stefanhafeneger/PushMeBaby" target="_blank" rel="external">&#x8FD9;&#x4E2A;</a>&#x597D;&#x3002;</p>
+</li>
+<li><p>PHP&#x7248;</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">// Put your device token here (without spaces):</span><br><span class="line">$deviceToken = &apos;64&#x4F4D;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x6570;&apos;;//&#x81EA;&#x5DF1;&#x7684;device token</span><br><span class="line"></span><br><span class="line">// Put your private key&apos;s passphrase here:</span><br><span class="line">$passphrase = &apos;&#x8BC1;&#x4E66;&#x7684;&#x5BC6;&#x7801;&apos;;//&#x81EA;&#x5DF1;&#x7684;&#x8BC1;&#x4E66;&#x5BC6;&#x7801;</span><br><span class="line"></span><br><span class="line">// Put your alert message here:</span><br><span class="line">$message = &apos;&#x63A8;&#x9001;&#x5185;&#x5BB9;!&apos;;</span><br><span class="line"></span><br><span class="line">////////////////////////////////////////////////////////////////////////////////</span><br><span class="line"></span><br><span class="line">$ctx = stream_context_create();</span><br><span class="line">stream_context_set_option($ctx, &apos;ssl&apos;, &apos;local_cert&apos;, &apos;*.pem&apos;);//*.pem&#x6362;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x8BC1;&#x4E66;&#xFF0C;&#x4E14;&#x5FC5;&#x987B;&#x4E3A;pem&#x683C;&#x5F0F;&#x7684;</span><br><span class="line">stream_context_set_option($ctx, &apos;ssl&apos;, &apos;passphrase&apos;, $passphrase);</span><br><span class="line"></span><br><span class="line">// Open a connection to the APNS server</span><br><span class="line">$fp = stream_socket_client(</span><br><span class="line">	&apos;ssl://gateway.sandbox.push.apple.com:2195&apos;, $err,</span><br><span class="line">	$errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);</span><br><span class="line"></span><br><span class="line">if (!$fp)</span><br><span class="line">	exit(&quot;Failed to connect: $err $errstr&quot; . PHP_EOL);</span><br><span class="line"></span><br><span class="line">echo &apos;Connected to APNS&apos; . PHP_EOL;</span><br><span class="line"></span><br><span class="line">// Create the payload body</span><br><span class="line">$body[&apos;aps&apos;] = array(</span><br><span class="line">	&apos;alert&apos; =&gt; $message,</span><br><span class="line">	&apos;sound&apos; =&gt; &apos;default&apos;</span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line">// Encode the payload as JSON</span><br><span class="line">$payload = json_encode($body);</span><br><span class="line"></span><br><span class="line">// Build the binary notification</span><br><span class="line">$msg = chr(0) . pack(&apos;n&apos;, 32) . pack(&apos;H*&apos;, $deviceToken) . pack(&apos;n&apos;, strlen($payload)) . $payload;</span><br><span class="line"></span><br><span class="line">// Send it to the server</span><br><span class="line">$result = fwrite($fp, $msg, strlen($msg));</span><br><span class="line"></span><br><span class="line">if (!$result)</span><br><span class="line">	echo &apos;Message not delivered&apos; . PHP_EOL;</span><br><span class="line">else</span><br><span class="line">	echo &apos;Message successfully delivered&apos; . PHP_EOL;</span><br><span class="line"></span><br><span class="line">// Close the connection to the server</span><br><span class="line">fclose($fp);</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>&#x4E2D;&#x6587;&#x7684;&#x5730;&#x65B9;&#x8981;&#x81EA;&#x5DF1;&#x66FF;&#x6362;&#xFF0C;&#x4E14;&#x6CE8;&#x610F;&#x6CE8;&#x91CA;&#x90E8;&#x5206;&#xFF0C;php&#x7248;&#x7528;&#x53E6;&#x4E00;&#x65B9;&#x6CD5;&#x5236;&#x4F5C;&#x7684;.pem&#x6587;&#x4EF6;&#x4F5C;&#x4E3A;&#x8BC1;&#x4E66;&#xFF0C;&#x4E5F;&#x662F;&#x8BC1;&#x4E66;&#x7684;&#x4E00;&#x79CD;&#x683C;&#x5F0F;&#xFF0C;&#x6211;&#x8BD5;&#x4E86;&#xFF0C;&#x8FD9;&#x91CC;&#x7528;.p12&#x6587;&#x4EF6;&#x4E0D;&#x597D;&#x4F7F;&#xFF0C;&#x53EA;&#x80FD;&#x7528;&#x8FD9;&#x4E2A;&#x683C;&#x5F0F;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x4E3A;&#x5565;&#x3002;</p>
+<ol>
+<li>Java&#x7248; </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">import javapns.notification.AppleNotificationServer;</span><br><span class="line">import javapns.notification.AppleNotificationServerBasicImpl;</span><br><span class="line">import javapns.notification.PayloadPerDevice;</span><br><span class="line">import javapns.notification.PushNotificationPayload;</span><br><span class="line">import javapns.notification.transmission.NotificationProgressListener;</span><br><span class="line">import javapns.notification.transmission.NotificationThread;</span><br><span class="line">import javapns.notification.transmission.NotificationThreads;</span><br><span class="line"></span><br><span class="line">public class testClass {</span><br><span class="line">	public static void main(String[] args){  </span><br><span class="line">	    String keystore = &quot;cer/aps_developer_identity.p12&quot;;//p12&#x8BC1;&#x4E66;&#x8DEF;&#x5F84;&#x548C;&#x8BC1;&#x4E66;&#x540D;  </span><br><span class="line">	    String password = &quot;&#x8BC1;&#x4E66;&#x5BC6;&#x7801;&quot;; // &#x8BC1;&#x4E66;&#x5BC6;&#x7801;  </span><br><span class="line">	    String token = &quot;64&#x4F4D;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x6570;&quot;;// device token  </span><br><span class="line">	    boolean production = false; // &#x8BBE;&#x7F6E;true&#x4E3A;&#x6B63;&#x5F0F;&#x670D;&#x52A1;&#x5730;&#x5740;&#xFF0C;false&#x4E3A;&#x5F00;&#x53D1;&#x8005;&#x5730;&#x5740;  </span><br><span class="line">	    int threadThreads = 10; // &#x7EBF;&#x7A0B;&#x6570;  </span><br><span class="line">	try {  </span><br><span class="line">	        // &#x5EFA;&#x7ACB;&#x4E0E;Apple&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;  </span><br><span class="line">	        AppleNotificationServer server = new AppleNotificationServerBasicImpl(keystore, password, production  );  </span><br><span class="line">	    List&lt;PayloadPerDevice&gt; list = new ArrayList&lt;PayloadPerDevice&gt;();  </span><br><span class="line">	    PushNotificationPayload payload = new PushNotificationPayload();  </span><br><span class="line">	    payload.addAlert(&quot;TV&#x8BF7;&#x6C42;&#x89C6;&#x9891;&#x901A;&#x8BDD;&quot;);  </span><br><span class="line">	    payload.addSound(&quot;default&quot;);// &#x58F0;&#x97F3;  </span><br><span class="line">	        payload.addBadge(1);//&#x56FE;&#x6807;&#x5C0F;&#x7EA2;&#x5708;&#x7684;&#x6570;&#x503C;  </span><br><span class="line">	    //payload.addCustomDictionary(&quot;url&quot;,&quot;www.baidu.com&quot;);//&#x6DFB;&#x52A0;&#x5B57;&#x5178;&#x7528;&#x9014;&#x4E0D;&#x660E;&#x6682;&#x65F6;&#x5E72;&#x6389;&#xFF0C;&#x5E72;&#x6389;&#x540E;&#x6D4B;&#x8BD5;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x7ED3;&#x679C;  </span><br><span class="line">	    PayloadPerDevice pay = new PayloadPerDevice(payload,token);// &#x5C06;&#x8981;&#x63A8;&#x9001;&#x7684;&#x6D88;&#x606F;&#x548C;&#x624B;&#x673A;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7ED1;&#x5B9A;  </span><br><span class="line">	    list.add(pay);  </span><br><span class="line">	  </span><br><span class="line">	        NotificationThreads work = new NotificationThreads(server,list,threadThreads);//   </span><br><span class="line">	    work.setListener(DEBUGGING_PROGRESS_LISTENER);// &#x5BF9;&#x7EBF;&#x7A0B;&#x7684;&#x76D1;&#x542C;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x52A0;&#x4E0A;&#x8FD9;&#x4E2A;&#x76D1;&#x542C;  </span><br><span class="line">	    work.start(); // &#x542F;&#x52A8;&#x7EBF;&#x7A0B;  </span><br><span class="line">	    work.waitForAllThreads();// &#x7B49;&#x5F85;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x542F;&#x52A8;&#x5B8C;&#x6210;  </span><br><span class="line">	  </span><br><span class="line">	 } catch (Exception e) {  </span><br><span class="line">	    e.printStackTrace();  </span><br><span class="line">	        }  </span><br><span class="line">	}  </span><br><span class="line">	</span><br><span class="line">	public static final NotificationProgressListener DEBUGGING_PROGRESS_LISTENER = new NotificationProgressListener() {  </span><br><span class="line">        public void eventThreadStarted(NotificationThread notificationThread) {  </span><br><span class="line">            System.out.println(&quot;   [EVENT]: thread #&quot; + notificationThread.getThreadNumber() + &quot; started with &quot; + &quot; devices beginning at message id #&quot; + notificationThread.getFirstMessageIdentifier());  </span><br><span class="line">        }  </span><br><span class="line">        public void eventThreadFinished(NotificationThread thread) {  </span><br><span class="line">            System.out.println(&quot;   [EVENT]: thread #&quot; + thread.getThreadNumber() + &quot; finished: pushed messages #&quot; + thread.getFirstMessageIdentifier() + &quot; to &quot; + thread.getLastMessageIdentifier() + &quot; toward &quot;+ &quot; devices&quot;);  </span><br><span class="line">        }  </span><br><span class="line">        public void eventConnectionRestarted(NotificationThread thread) {  </span><br><span class="line">            System.out.println(&quot;   [EVENT]: connection restarted in thread #&quot; + thread.getThreadNumber() + &quot; because it reached &quot; + thread.getMaxNotificationsPerConnection() + &quot; notifications per connection&quot;);  </span><br><span class="line">        }  </span><br><span class="line">        public void eventAllThreadsStarted(NotificationThreads notificationThreads) {  </span><br><span class="line">            System.out.println(&quot;   [EVENT]: all threads started: &quot; + notificationThreads.getThreads().size());  </span><br><span class="line">        }  </span><br><span class="line">        public void eventAllThreadsFinished(NotificationThreads notificationThreads) {  </span><br><span class="line">            System.out.println(&quot;   [EVENT]: all threads finished: &quot; + notificationThreads.getThreads().size());  </span><br><span class="line">        }  </span><br><span class="line">        public void eventCriticalException(NotificationThread notificationThread, Exception exception) {  </span><br><span class="line">            System.out.println(&quot;   [EVENT]: critical exception occurred: &quot; + exception);  </span><br><span class="line">        }  </span><br><span class="line">     };  </span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x7528;&#x7684;&#x8BC1;&#x4E66;&#x662F;p12&#x683C;&#x5F0F;&#x7684;&#xFF0C;&#x5176;&#x4ED6;&#x683C;&#x5F0F;&#x4E5F;&#x4E0D;&#x597D;&#x4F7F;&#xFF0C;java&#x7528;&#x4E86;javapns&#x6846;&#x67B6;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#xFF0C;&#x4E3A;&#x4E86;&#x5177;&#x6709;&#x4EE3;&#x8868;&#x6027;&#xFF0C;&#x6211;&#x653E;&#x4E86;&#x4E00;&#x4E2A;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x4E0B;&#x534A;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x8D1F;&#x8D23;&#x8FDB;&#x57CE;&#x7BA1;&#x7406;&#xFF0C;<br>&#x9700;&#x8981;&#x7528;&#x5230;&#x7684;&#x5305;&#x6709;</p>
+<ol>
+<li>JavaPNS2.1.jar</li>
+<li>bcprov-jdk15-146.jar</li>
+<li>log4j-1.2.15.jar</li>
+<li>commons-io-2.0.1.sources.jar</li>
+<li>commons-lang-2.6.jar<br>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#xFF0C;&#x6211;&#x628A;&#x8FD9;&#x4E9B;&#x5305;&#x653E;&#x5728;<a href="http://pan.baidu.com/s/1ges5KOj" target="_blank" rel="external">&#x4E91;&#x76D8;</a>&#x91CC;&#x4E86;&#xFF0C;&#x63D0;&#x53D6;&#x7801;&#xFF1A;76ss</li>
+</ol>
+<h3 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h3><hr>
+<p>&#x8BC1;&#x4E66;&#x5236;&#x4F5C;&#x8BF7;&#x53C2;&#x8003;<a href="http://blog.csdn.net/zhenzhenzhao12/article/details/7980399" target="_blank" rel="external">&#x6B64;&#x7BC7;</a>&#x4E2D;&#x7684;&#x76F8;&#x5173;&#x90E8;&#x5206;&#x3002;&#x5728;java&#x7248;&#x672C;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x662F;p12&#x6587;&#x4EF6;&#xFF0C;&#x6700;&#x7EC8;&#x4EA4;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x4F7F;&#x7528;&#x4E5F;&#x662F;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;<strong>&#x5982;&#x679C;&#x662F;java&#x53C2;&#x8003;&#x8FD9;&#x4E00;&#x7BC7;&#x5C31;&#x591F;&#x4E86;</strong>&#x3002;</p>
+<p>&#x5982;&#x679C;&#x670D;&#x52A1;&#x5668;&#x662F;PHP&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x5C06;p12&#x6587;&#x4EF6;&#x7EE7;&#x7EED;&#x5C01;&#x88C5;&#x6210;ck12&#xFF0C;<br>&#x5C06;&#x8BC1;&#x4E66;&#x5C01;&#x88C5;&#x4E3A;ck12&#x6587;&#x4EF6;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x53C2;&#x8003;<a href="http://blog.csdn.net/daydreamingboy/article/details/7977098" target="_blank" rel="external">&#x6B64;&#x7BC7;</a> &#x4E2D;&#x7684;&#x76F8;&#x5173;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x4EE5;&#x53CA;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x8BC1;&#x4E66;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x53C2;&#x8003;<a href="http://blogread.cn/it/article/7128?f=wb" target="_blank" rel="external">&#x6B64;&#x7BC7;</a></p>
+<p>done&#xFF01;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/15/NSLayoutContraint设置相对布局/" rel="next" title="NSLayoutContraint设置相对布局">
+                <i class="fa fa-chevron-left"></i> NSLayoutContraint设置相对布局
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/19/Push-Notification（二）/" rel="prev" title="Push_Notification（二）">
+                Push_Notification（二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="NaQiang" />
+          <p class="site-author-name" itemprop="name">NaQiang</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#推送原理"><span class="nav-number">1.</span> <span class="nav-text">推送原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#证书"><span class="nav-number">1.1.</span> <span class="nav-text">证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#device-token"><span class="nav-number">1.2.</span> <span class="nav-text">device token</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息"><span class="nav-number">1.3.</span> <span class="nav-text">信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App服务端要做的事"><span class="nav-number">2.</span> <span class="nav-text">App服务端要做的事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器代码"><span class="nav-number">3.</span> <span class="nav-text">服务器代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NaQiang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
