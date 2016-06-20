@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="AutoLayout iOS," />
+  <meta name="keywords" content="Constraint,Autolayout," />
 
 
 
@@ -93,7 +93,7 @@ AutoLayout&amp;#x7ED9;&amp;#x6211;&amp;#x7684;&amp;#x611F;&amp;#x89C9;&amp;#x5C3
 <meta property="og:description" content="&amp;#x9700;&amp;#x6C42;
 AutoLayout&amp;#x7ED9;&amp;#x6211;&amp;#x7684;&amp;#x611F;&amp;#x89C9;&amp;#x5C31;&amp;#x662F;&amp;#x5145;&amp;#x5206;&amp;#x5229;&amp;#x7528;&amp;#x4E86;&amp;#x5E03;&amp;#x5C40;&amp;#x7684;&amp;#x76F8;&amp;#x5BF9;&amp;#x6027;&amp;#xFF1A;&amp;#x5BF9;&amp;#x4E8E;&amp;#x4E">
 <meta property="og:image" content="http://yoursite.com/2016/06/15/NSLayoutContraint设置相对布局/constraint01.jpg">
-<meta property="og:updated_time" content="2016-06-19T09:42:26.000Z">
+<meta property="og:updated_time" content="2016-06-19T15:34:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NSLayoutContraint设置相对布局">
 <meta name="twitter:description" content="&amp;#x9700;&amp;#x6C42;
@@ -179,6 +179,26 @@ AutoLayout&amp;#x7ED9;&amp;#x6211;&amp;#x7684;&amp;#x611F;&amp;#x89C9;&amp;#x5C3
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -254,6 +274,37 @@ AutoLayout&amp;#x7ED9;&amp;#x6211;&amp;#x7684;&amp;#x611F;&amp;#x89C9;&amp;#x5C3
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -283,6 +334,7 @@ AutoLayout&amp;#x7ED9;&amp;#x6211;&amp;#x7684;&amp;#x611F;&amp;#x89C9;&amp;#x5C3
 <blockquote>
 <p>&#x867D;&#x7136;&#x597D;&#x591A;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x5F53;&#x524D;&#x63A7;&#x4EF6;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x5176;&#x4ED6;&#x63A7;&#x4EF6;&#x6539;&#x53D8;&#x4F4D;&#x7F6E;&#x65F6;&#xFF0C;&#x6211;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x597D;&#x5C3A;&#x5BF8;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x201C;&#x7275;&#x4E00;&#x53D1;&#x800C;&#x52A8;&#x5168;&#x8EAB;&#x201D;&#x7684;&#x6548;&#x679C;&#x3002;</p>
 </blockquote>
+<a id="more"></a>
 <p>&#x5728;storyboard&#x4E2D;&#x53EF;&#x4EE5;drag&#x5B8C;&#x5404;&#x79CD;&#x7A7A;&#x95F4;&#x4E4B;&#x540E;&#xFF0C;&#x7136;&#x540E;&#x8BBE;&#x7F6E;&#x5404;&#x79CD;Constraints&#xFF0C;&#x76F8;&#x5BF9;&#x5E03;&#x5C40;&#x4E5F;&#x5C31;&#x8BBE;&#x7F6E;&#x597D;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4E0D;&#x7528;&#x6545;&#x4E8B;&#x7248;&#xFF0C;&#x7528;&#x4EE3;&#x7801;&#x600E;&#x6837;&#x5B9E;&#x73B0;&#x8FD9;&#x6837;&#x7684;&#x529F;&#x80FD;&#x2014;&#x2014;<code>NSLayoutContraint</code>&#x3002;</p>
 <h3 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;"><a href="#&#x4F7F;&#x7528;&#x65B9;&#x6CD5;" class="headerlink" title="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;"></a>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h3><hr>
 <ol>
@@ -342,7 +394,9 @@ item1 setTranslatesAutoresizingMaskIntoConstraints:NO];</code></p>
       
         <div class="post-tags">
           
-            <a href="/tags/AutoLayout-iOS/" rel="tag">#AutoLayout iOS</a>
+            <a href="/tags/Constraint/" rel="tag">#Constraint</a>
+          
+            <a href="/tags/Autolayout/" rel="tag">#Autolayout</a>
           
         </div>
       
@@ -435,11 +489,18 @@ item1 setTranslatesAutoresizingMaskIntoConstraints:NO];</code></p>
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

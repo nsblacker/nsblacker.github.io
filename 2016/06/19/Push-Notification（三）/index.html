@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Push Notification," />
 
 
 
@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/06/19/Push-Notification（三）/index.html">
 <meta property="og:site_name" content="NSBlacker">
 <meta property="og:description" content="&amp;#x9700;&amp;#x6C42;&amp;#x70B9;&amp;#x51FB;push notification &amp;#x6D88;&amp;#x606F;&amp;#x8FDB;&amp;#x5165;&amp;#x5E94;&amp;#x7528;&amp;#xFF0C;&amp;#x76F4;&amp;#x63A5;&amp;#x8DF3;&amp;#x8F6C;&amp;#x5230;&amp;#x76F8;&amp;#x5E94;&amp;#x9875;&amp;#x9762;&amp;#xFF01;&amp;#x6700;&amp;#x8FD">
-<meta property="og:updated_time" content="2016-06-19T11:46:52.000Z">
+<meta property="og:updated_time" content="2016-06-19T15:36:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Push_Notification（三）">
 <meta name="twitter:description" content="&amp;#x9700;&amp;#x6C42;&amp;#x70B9;&amp;#x51FB;push notification &amp;#x6D88;&amp;#x606F;&amp;#x8FDB;&amp;#x5165;&amp;#x5E94;&amp;#x7528;&amp;#xFF0C;&amp;#x76F4;&amp;#x63A5;&amp;#x8DF3;&amp;#x8F6C;&amp;#x5230;&amp;#x76F8;&amp;#x5E94;&amp;#x9875;&amp;#x9762;&amp;#xFF01;&amp;#x6700;&amp;#x8FD">
@@ -174,6 +174,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -249,6 +269,37 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -276,8 +327,7 @@
 <p>1&#x3001;&#x4EE5;javapns&#x642D;&#x5EFA;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x4E3A;&#x4F8B;&#xFF0C;&#x9700;&#x8981;&#x5B9A;&#x5236;&#x5316;&#x5730;&#x5BF9;payload&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF1B;</p>
 <p>2&#x3001;&#x624B;&#x673A;&#x7AEF;&#x5BF9;&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x9001;&#x7684;payload&#x8FDB;&#x884C;&#x89E3;&#x6790;</p>
 <p>3&#x3001;&#x8981;&#x786E;&#x5B9A;&#x597D;&#x534F;&#x8BAE;&#xFF0C;&#x5373;payload&#xFF08;&#x5728;&#x624B;&#x673A;&#x7AEF;&#x4E3A;userInfo&#xFF09;&#x7684;&#x5C01;&#x88C5;&#x5185;&#x5BB9;</p>
-<p>&#x672C;&#x6587;&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x5B9A;&#x5236;&#x6027;&#x6BD4;&#x8F83;&#x597D;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x4E00;&#x5B9A;&#x8981;&#x548C;&#x670D;&#x52A1;&#x5668;&#x786E;&#x5B9A;&#x597D;&#x534F;&#x8BAE;1&#x3001;&#x9700;&#x8981;&#x624B;&#x673A;push&#x7684;&#x89C6;&#x56FE;&#x63A7;&#x5236;&#x5668;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x7684;HSFeedsViewController  2&#x3001;HSFeedsViewController&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#xFF1B;</p>
-<p>&#x63A8;&#x9001;&#x8FC7;&#x7A0B;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x4E5F;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x5C06;&#x670D;&#x52A1;&#x7AEF;&#x5C01;&#x88C5;&#x7684;ID&#x548C;type&#xFF0C;&#x8D4B;&#x503C;&#x7ED9;HSFeedsViewController&#x7684;ID&#x4E0E;type&#x5C5E;&#x6027;&#xFF0C;&#x81F3;&#x4E8E;&#x8981;&#x7528;&#x8FD9;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#x5E72;&#x5565;&#x5C31;&#x770B;&#x5177;&#x4F53;&#x9700;&#x6C42;&#x4E86;&#xFF0C;&#x5982;&#x4F5C;&#x4E3A;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x9875;&#x9762;&#x76F4;&#x63A5;&#x663E;&#x793A;&#x8BE5;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x672C;&#x6587;&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x5B9A;&#x5236;&#x6027;&#x6BD4;&#x8F83;&#x597D;&#xFF0C;&#x524D;&#x63D0;&#x662F;&#x4E00;&#x5B9A;&#x8981;&#x548C;&#x670D;&#x52A1;&#x5668;&#x786E;&#x5B9A;&#x597D;&#x534F;&#x8BAE;1&#x3001;&#x9700;&#x8981;&#x624B;&#x673A;push&#x7684;&#x89C6;&#x56FE;&#x63A7;&#x5236;&#x5668;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x7684;HSFeedsViewController  2&#x3001;HSFeedsViewController&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#xFF1B;<br><a id="more"></a><br>&#x63A8;&#x9001;&#x8FC7;&#x7A0B;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x4E5F;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x5C06;&#x670D;&#x52A1;&#x7AEF;&#x5C01;&#x88C5;&#x7684;ID&#x548C;type&#xFF0C;&#x8D4B;&#x503C;&#x7ED9;HSFeedsViewController&#x7684;ID&#x4E0E;type&#x5C5E;&#x6027;&#xFF0C;&#x81F3;&#x4E8E;&#x8981;&#x7528;&#x8FD9;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#x5E72;&#x5565;&#x5C31;&#x770B;&#x5177;&#x4F53;&#x9700;&#x6C42;&#x4E86;&#xFF0C;&#x5982;&#x4F5C;&#x4E3A;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x9875;&#x9762;&#x76F4;&#x63A5;&#x663E;&#x793A;&#x8BE5;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
 <h3 id="&#x670D;&#x52A1;&#x7AEF;"><a href="#&#x670D;&#x52A1;&#x7AEF;" class="headerlink" title="&#x670D;&#x52A1;&#x7AEF;"></a>&#x670D;&#x52A1;&#x7AEF;</h3><p>&#x9009;&#x7528;javapns&#x4F5C;&#x4E3A;&#x63A8;&#x9001;&#x6846;&#x67B6;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#xFF0C;&#x4E4B;&#x524D;&#x7684;&#x535A;&#x5BA2;&#x4E2D;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x5199;&#x7684;&#xFF1A;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">import java.util.ArrayList;  </span><br><span class="line">import java.util.List;  </span><br><span class="line">  </span><br><span class="line">import javapns.notification.AppleNotificationServer;  </span><br><span class="line">import javapns.notification.AppleNotificationServerBasicImpl;  </span><br><span class="line">import javapns.notification.PayloadPerDevice;  </span><br><span class="line">import javapns.notification.PushNotificationPayload;  </span><br><span class="line">import javapns.notification.transmission.NotificationProgressListener;  </span><br><span class="line">import javapns.notification.transmission.NotificationThread;  </span><br><span class="line">import javapns.notification.transmission.NotificationThreads;  </span><br><span class="line">  </span><br><span class="line">public class testClass {  </span><br><span class="line">    public static void main(String[] args){    </span><br><span class="line">        String keystore = &quot;cer/aps_developer_identity.p12&quot;;//p12&#x8BC1;&#x4E66;&#x8DEF;&#x5F84;&#x548C;&#x8BC1;&#x4E66;&#x540D;    </span><br><span class="line">        String password = &quot;&#x8BC1;&#x4E66;&#x5BC6;&#x7801;&quot;; // &#x8BC1;&#x4E66;&#x5BC6;&#x7801;    </span><br><span class="line">        String token = &quot;64&#x4F4D;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x6570;&quot;;// device token    </span><br><span class="line">        boolean production = false; // &#x8BBE;&#x7F6E;true&#x4E3A;&#x6B63;&#x5F0F;&#x670D;&#x52A1;&#x5730;&#x5740;&#xFF0C;false&#x4E3A;&#x5F00;&#x53D1;&#x8005;&#x5730;&#x5740;    </span><br><span class="line">        int threadThreads = 10; // &#x7EBF;&#x7A0B;&#x6570;    </span><br><span class="line">    try {    </span><br><span class="line">            // &#x5EFA;&#x7ACB;&#x4E0E;Apple&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;    </span><br><span class="line">            AppleNotificationServer server = new AppleNotificationServerBasicImpl(keystore, password, production  );    </span><br><span class="line">        List&lt;PayloadPerDevice&gt; list = new ArrayList&lt;PayloadPerDevice&gt;();    </span><br><span class="line">        PushNotificationPayload payload = new PushNotificationPayload();    </span><br><span class="line">        &lt;span style=&quot;color:#3366ff;&quot;&gt;payload.addAlert(&quot;TV&#x8BF7;&#x6C42;&#x89C6;&#x9891;&#x901A;&#x8BDD;&quot;);    </span><br><span class="line">        payload.addSound(&quot;default&quot;);// &#x58F0;&#x97F3;    </span><br><span class="line">        payload.addBadge(1);//&#x56FE;&#x6807;&#x5C0F;&#x7EA2;&#x5708;&#x7684;&#x6570;&#x503C;    </span><br><span class="line">        //payload.addCustomDictionary(&quot;url&quot;,&quot;www.baidu.com&quot;);//&#x6DFB;&#x52A0;&#x5B57;&#x5178;&#x7528;&#x9014;&#x4E0D;&#x660E;&#x6682;&#x65F6;&#x5E72;&#x6389;&#xFF0C;&#x5E72;&#x6389;&#x540E;&#x6D4B;&#x8BD5;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x7ED3;&#x679C;  &lt;/span&gt;  </span><br><span class="line">        PayloadPerDevice pay = new PayloadPerDevice(payload,token);// &#x5C06;&#x8981;&#x63A8;&#x9001;&#x7684;&#x6D88;&#x606F;&#x548C;&#x624B;&#x673A;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7ED1;&#x5B9A;    </span><br><span class="line">        list.add(pay);    </span><br><span class="line">        </span><br><span class="line">            NotificationThreads work = new NotificationThreads(server,list,threadThreads);//     </span><br><span class="line">        work.setListener(DEBUGGING_PROGRESS_LISTENER);// &#x5BF9;&#x7EBF;&#x7A0B;&#x7684;&#x76D1;&#x542C;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x52A0;&#x4E0A;&#x8FD9;&#x4E2A;&#x76D1;&#x542C;    </span><br><span class="line">        work.start(); // &#x542F;&#x52A8;&#x7EBF;&#x7A0B;    </span><br><span class="line">        work.waitForAllThreads();// &#x7B49;&#x5F85;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x542F;&#x52A8;&#x5B8C;&#x6210;    </span><br><span class="line">        </span><br><span class="line">     } catch (Exception e) {    </span><br><span class="line">        e.printStackTrace();    </span><br><span class="line">            }    </span><br><span class="line">    }    </span><br><span class="line">      </span><br><span class="line">    public static final NotificationProgressListener DEBUGGING_PROGRESS_LISTENER = new NotificationProgressListener() {    </span><br><span class="line">        public void eventThreadStarted(NotificationThread notificationThread) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: thread #&quot; + notificationThread.getThreadNumber() + &quot; started with &quot; + &quot; devices beginning at message id #&quot; + notificationThread.getFirstMessageIdentifier());    </span><br><span class="line">        }    </span><br><span class="line">        public void eventThreadFinished(NotificationThread thread) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: thread #&quot; + thread.getThreadNumber() + &quot; finished: pushed messages #&quot; + thread.getFirstMessageIdentifier() + &quot; to &quot; + thread.getLastMessageIdentifier() + &quot; toward &quot;+ &quot; devices&quot;);    </span><br><span class="line">        }    </span><br><span class="line">        public void eventConnectionRestarted(NotificationThread thread) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: connection restarted in thread #&quot; + thread.getThreadNumber() + &quot; because it reached &quot; + thread.getMaxNotificationsPerConnection() + &quot; notifications per connection&quot;);    </span><br><span class="line">        }    </span><br><span class="line">        public void eventAllThreadsStarted(NotificationThreads notificationThreads) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: all threads started: &quot; + notificationThreads.getThreads().size());    </span><br><span class="line">        }    </span><br><span class="line">        public void eventAllThreadsFinished(NotificationThreads notificationThreads) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: all threads finished: &quot; + notificationThreads.getThreads().size());    </span><br><span class="line">        }    </span><br><span class="line">        public void eventCriticalException(NotificationThread notificationThread, Exception exception) {    </span><br><span class="line">            System.out.println(&quot;   [EVENT]: critical exception occurred: &quot; + exception);    </span><br><span class="line">        }    </span><br><span class="line">     };    </span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>&#x7EA2;&#x8272;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x63A8;&#x9001;&#x7684;&#x4E3B;&#x8981;&#x5185;&#x5BB9;&#xFF08;&#x7136;&#x540E;&#x5728;&#x624B;&#x673A;&#x7AEF;&#x7684;userInfo&#x5B57;&#x6BB5;&#x53EF;&#x4EE5;&#x6536;&#x53D6;&#x4EE5;&#x4FBF;&#x540E;&#x9762;&#x89E3;&#x6790;&#xFF0C;&#x8FD9;&#x662F;&#x540E;&#x8BDD;&#xFF09;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x63A8;&#x9001;&#x7684;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x5305;&#x62EC;&#xFF1A;1&#xFF09;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x7684;&#x5177;&#x4F53;&#x5185;&#x5BB9; 2&#xFF09;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x7684;&#x63D0;&#x793A;&#x97F3;&#x7C7B;&#x578B; 3&#xFF09;&#x5E94;&#x7528;&#x56FE;&#x6807;&#x5DE6;&#x4E0A;&#x89D2;&#x8868;&#x793A;&#x6D88;&#x606F;&#x6570;&#x91CF;&#x7684;&#x6570;&#x5B57;4&#xFF09;&#x81EA;&#x5B9A;&#x4E49;&#x5185;&#x5BB9;<br>&#x81EA;&#x5B9A;&#x4E49;&#x5185;&#x5BB9;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x4E0A;&#x9762;&#x88AB;&#x6CE8;&#x91CA;&#x6389;&#x7684;&#x90A3;&#x53E5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x6709;&#x4E09;&#x4E2A;&#x91CD;&#x8F7D;&#x65B9;&#x6CD5;</p>
@@ -332,6 +382,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Push-Notification/" rel="tag">#Push Notification</a>
+          
+        </div>
       
 
       
@@ -418,11 +474,18 @@
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
