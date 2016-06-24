@@ -1,0 +1,828 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Menlo:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java,Reference," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x8FD9;20&amp;#x5404;&amp;#x4E2A;&amp;#x4EE3;&amp;#x7801;&amp;#x6BB5;&amp;#x662F;&amp;#x6211;&amp;#x5728;&amp;#x4E4B;&amp;#x524D;&amp;#x5B66;&amp;#x4E60;Java&amp;#x65F6;&amp;#xFF0C;&amp;#x5728;&amp;#x67D0;&amp;#x4E2A;&amp;#x7F51;&amp;#x7AD9;&amp;#x770B;&amp;#x5230;&amp;#x7684;&amp;#xFF0C;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20段有用的Java片段一">
+<meta property="og:url" content="http://yoursite.com/2016/06/24/20段有用的Java片段/index.html">
+<meta property="og:site_name" content="NSBlacker">
+<meta property="og:description" content="&amp;#x8FD9;20&amp;#x5404;&amp;#x4E2A;&amp;#x4EE3;&amp;#x7801;&amp;#x6BB5;&amp;#x662F;&amp;#x6211;&amp;#x5728;&amp;#x4E4B;&amp;#x524D;&amp;#x5B66;&amp;#x4E60;Java&amp;#x65F6;&amp;#xFF0C;&amp;#x5728;&amp;#x67D0;&amp;#x4E2A;&amp;#x7F51;&amp;#x7AD9;&amp;#x770B;&amp;#x5230;&amp;#x7684;&amp;#xFF0C;&amp;">
+<meta property="og:updated_time" content="2016-06-24T05:39:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="20段有用的Java片段一">
+<meta name="twitter:description" content="&amp;#x8FD9;20&amp;#x5404;&amp;#x4E2A;&amp;#x4EE3;&amp;#x7801;&amp;#x6BB5;&amp;#x662F;&amp;#x6211;&amp;#x5728;&amp;#x4E4B;&amp;#x524D;&amp;#x5B66;&amp;#x4E60;Java&amp;#x65F6;&amp;#xFF0C;&amp;#x5728;&amp;#x67D0;&amp;#x4E2A;&amp;#x7F51;&amp;#x7AD9;&amp;#x770B;&amp;#x5230;&amp;#x7684;&amp;#xFF0C;&amp;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 20段有用的Java片段一 | NSBlacker </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">NSBlacker</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">此人决不闷骚</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                20段有用的Java片段一
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-24T12:48:56+08:00" content="2016-06-24">
+              2016-06-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Reference/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/24/20段有用的Java片段/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/24/20段有用的Java片段/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/24/20段有用的Java片段/" class="leancloud_visitors" data-flag-title="20段有用的Java片段一">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>&#x8FD9;20&#x5404;&#x4E2A;&#x4EE3;&#x7801;&#x6BB5;&#x662F;&#x6211;&#x5728;&#x4E4B;&#x524D;&#x5B66;&#x4E60;Java&#x65F6;&#xFF0C;&#x5728;&#x67D0;&#x4E2A;&#x7F51;&#x7AD9;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x5F53;&#x65F6;&#x76F4;&#x63A5;&#x526A;&#x5230;&#x4E86;<code>&#x6709;&#x9053;&#x4E91;&#x7B14;&#x8BB0;</code>&#x4E2D;&#xFF0C;&#x597D;&#x4E45;&#x4E0D;&#x5199;Java&#xFF0C;&#x6700;&#x8FD1;&#x6574;&#x7406;&#x7B14;&#x8BB0;&#xFF0C;&#x89C9;&#x5F97;&#x8FD9;&#x4E9B;&#x5C0F;&#x77E5;&#x8BC6;&#x4F5C;&#x4E3A;Reference&#x8FD8;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x642C;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x535A;&#x5BA2;&#x4E2D;&#xFF0C;&#x5411;&#x539F;&#x4F5C;&#x8005;&#x8868;&#x793A;&#x611F;&#x8C22;&#xFF01;&#x4E4B;&#x540E;&#x5728;<a href="http://nsblacker.github.io/categories/Reference/" target="_blank" rel="external">Reference</a>&#x4E2D;&#x4F1A;&#x968F;&#x65F6;&#x8BB0;&#x5F55;&#x6709;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#xFF0C;&#x4EE5;&#x63D0;&#x9AD8;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x3002;</p>
+</blockquote>
+<a id="more"></a>
+<p>&#x4E0B;&#x9762;&#x662F;20&#x4E2A;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;Java&#x7A0B;&#x5E8F;&#x7247;&#x6BB5;&#xFF0C;&#x5E0C;&#x671B;&#x80FD;&#x5BF9;&#x4F60;&#x6709;&#x7528;&#x3002;<br>&#x672C;&#x7BC7;&#x8BB0;&#x5F55;1-10</p>
+<p>1 . &#x5B57;&#x7B26;&#x4E32;&#x6709;&#x6574;&#x578B;&#x7684;&#x76F8;&#x4E92;&#x8F6C;&#x6362;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String a = String.valueOf(<span class="number">2</span>);   <span class="comment">//integer to numeric string  int i = Integer.parseInt(a); //numeric string to an int</span></span><br></pre></td></tr></table></figure>
+<p>2 . &#x5411;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x5185;&#x5BB9;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">BufferedWriter out = <span class="keyword">null</span>;  </span><br><span class="line"><span class="keyword">try</span> {      </span><br><span class="line">	out = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(&#x201D;filename&#x201D;, <span class="keyword">true</span>)); </span><br><span class="line">	out.write(&#x201D;aString&#x201D;);  </span><br><span class="line">	} <span class="keyword">catch</span> (IOException e) {      </span><br><span class="line">	<span class="comment">// error processing code  </span></span><br><span class="line">	} <span class="keyword">finally</span> {      </span><br><span class="line">	<span class="keyword">if</span> (out != <span class="keyword">null</span>) {</span><br><span class="line">		out.close();      </span><br><span class="line">	}  </span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>3 . &#x5F97;&#x5230;&#x5F53;&#x524D;&#x65B9;&#x6CD5;&#x7684;&#x540D;&#x5B57;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String methodName = Thread.currentThread().getStackTrace()[<span class="number">1</span>].getMethodName();</span><br></pre></td></tr></table></figure>
+<p>4 . &#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x5230;&#x65E5;&#x671F;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">java.util.Date = java.text.DateFormat.getDateInstance().parse(date String);</span><br><span class="line"></span><br><span class="line"><span class="comment">//&#x6216;&#x8005;&#x662F;&#xFF1A;</span></span><br><span class="line"></span><br><span class="line">SimpleDateFormat format = <span class="keyword">new</span> SimpleDateFormat( <span class="string">&quot;dd.MM.yyyy&quot;</span> );  </span><br><span class="line">Date date = format.parse( myString );</span><br></pre></td></tr></table></figure>
+<p>5 . &#x4F7F;&#x7528;JDBC&#x94FE;&#x63A5;Oracle</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OracleJdbcTest</span>  </span>{      </span><br><span class="line">	String driverClass = <span class="string">&quot;oracle.jdbc.driver.OracleDriver&quot;</span>;</span><br><span class="line">	Connection con;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FileInputStream fs)</span> <span class="keyword">throws</span> ClassNotFoundException, SQLException, FileNotFoundException, IOException</span>{          </span><br><span class="line">	Properties props = <span class="keyword">new</span> Properties();</span><br><span class="line">	props.load(fs);          </span><br><span class="line">	String url = props.getProperty(<span class="string">&quot;db.url&quot;</span>);          </span><br><span class="line">	String userName = props.getProperty(<span class="string">&quot;db.user&quot;</span>);          </span><br><span class="line">	String password = props.getProperty(<span class="string">&quot;db.password&quot;</span>);          </span><br><span class="line">	Class.forName(driverClass);          </span><br><span class="line">	con=DriverManager.getConnection(url, userName, password);      }      </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fetch</span><span class="params">()</span> <span class="keyword">throws</span> SQLException, IOException</span>{</span><br><span class="line">		PreparedStatement ps = con.prepareStatement(<span class="string">&quot;select SYSDATE from dual&quot;</span>);</span><br><span class="line">		ResultSet rs = ps.executeQuery();          </span><br><span class="line">		<span class="keyword">while</span> (rs.next()){              </span><br><span class="line">		<span class="comment">// do the thing you do         </span></span><br><span class="line">		 }          </span><br><span class="line">		 rs.close();          </span><br><span class="line">		 ps.close();      </span><br><span class="line">	}      </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		OracleJdbcTest test = <span class="keyword">new</span> OracleJdbcTest();    </span><br><span class="line">		test.init();          </span><br><span class="line">		test.fetch();      </span><br><span class="line">		}  </span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>6 . &#x628A; Java util.Date &#x8F6C;&#x6210; sql.Date</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.util.Date utilDate = <span class="keyword">new</span> java.util.Date();  </span><br><span class="line">java.sql.Date sqlDate = <span class="keyword">new</span> java.sql.Date(utilDate.getTime());</span><br></pre></td></tr></table></figure>
+<p>7 . &#x4F7F;&#x7528;NIO&#x8FDB;&#x884C;&#x5FEB;&#x901F;&#x7684;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fileCopy</span><span class="params">( File in, File out )</span><span class="keyword">throws</span> IOException</span>{</span><br><span class="line">	FileChannel inChannel = <span class="keyword">new</span> FileInputStream( in ).getChannel();</span><br><span class="line">	FileChannel outChannel = <span class="keyword">new</span> FileOutputStream( out ).getChannel();</span><br><span class="line">	<span class="keyword">try</span>{  	</span><br><span class="line">	     	inChannel.transferTo(<span class="number">0</span>, inChannel.size(), outChannel);</span><br><span class="line">	     <span class="comment">// original -- apparently has trouble copying large files on Windows              </span></span><br><span class="line">	     <span class="comment">// magic number for Windows, 64Mb - 32Kb)</span></span><br><span class="line">	      	<span class="keyword">int</span> maxCount = (<span class="number">64</span> * <span class="number">1024</span> * <span class="number">1024</span>) - (<span class="number">32</span> * <span class="number">1024</span>);              				<span class="keyword">long</span> size = inChannel.size();</span><br><span class="line">	      	<span class="keyword">long</span> position = <span class="number">0</span>;</span><br><span class="line">	      	<span class="keyword">while</span> ( position &lt; size ){	</span><br><span class="line">	      		position += inChannel.transferTo( position, maxCount, outChannel );</span><br><span class="line">	      	}          </span><br><span class="line">	 }<span class="keyword">finally</span>{</span><br><span class="line">	  </span><br><span class="line">	  	<span class="keyword">if</span> ( inChannel != <span class="keyword">null</span> ){                 </span><br><span class="line">	  		inChannel.close();</span><br><span class="line">	  	}              </span><br><span class="line">	  	<span class="keyword">if</span> ( outChannel != <span class="keyword">null</span> ){                  </span><br><span class="line">	  		outChannel.close();</span><br><span class="line">	  	}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>8 . &#x521B;&#x5EFA;&#x56FE;&#x7247;&#x7684;&#x7F29;&#x7565;&#x56FE;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">createThumbnail</span><span class="params">(String filename, <span class="keyword">int</span> thumbWidth, <span class="keyword">int</span> thumbHeight, <span class="keyword">int</span> quality, String outFilename)</span>  </span><br><span class="line">        <span class="keyword">throws</span> InterruptedException, FileNotFoundException, IOException  </span><br><span class="line">    </span>{  </span><br><span class="line">        <span class="comment">// load image from filename  </span></span><br><span class="line">        Image image = Toolkit.getDefaultToolkit().getImage(filename);  </span><br><span class="line">        MediaTracker mediaTracker = <span class="keyword">new</span> MediaTracker(<span class="keyword">new</span> Container());  </span><br><span class="line">        mediaTracker.addImage(image, <span class="number">0</span>);  </span><br><span class="line">        mediaTracker.waitForID(<span class="number">0</span>);  </span><br><span class="line">        <span class="comment">// use this to test for errors at this point: System.out.println(mediaTracker.isErrorAny());  </span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// determine thumbnail size from WIDTH and HEIGHT  </span></span><br><span class="line">        <span class="keyword">double</span> thumbRatio = (<span class="keyword">double</span>)thumbWidth / (<span class="keyword">double</span>)thumbHeight;  </span><br><span class="line">        <span class="keyword">int</span> imageWidth = image.getWidth(<span class="keyword">null</span>);  </span><br><span class="line">        <span class="keyword">int</span> imageHeight = image.getHeight(<span class="keyword">null</span>);  </span><br><span class="line">        <span class="keyword">double</span> imageRatio = (<span class="keyword">double</span>)imageWidth / (<span class="keyword">double</span>)imageHeight;  </span><br><span class="line">        <span class="keyword">if</span> (thumbRatio &lt; imageRatio) {  </span><br><span class="line">            thumbHeight = (<span class="keyword">int</span>)(thumbWidth / imageRatio);  </span><br><span class="line">        } <span class="keyword">else</span> {  </span><br><span class="line">            thumbWidth = (<span class="keyword">int</span>)(thumbHeight * imageRatio);  </span><br><span class="line">        }  </span><br><span class="line"></span><br><span class="line">        <span class="comment">// draw original image to thumbnail image object and  </span></span><br><span class="line">        <span class="comment">// scale it to the new size on-the-fly  </span></span><br><span class="line">        BufferedImage thumbImage = <span class="keyword">new</span> BufferedImage(thumbWidth, thumbHeight, BufferedImage.TYPE_INT_RGB);  </span><br><span class="line">        Graphics2D graphics2D = thumbImage.createGraphics();  </span><br><span class="line">        graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);  </span><br><span class="line">        graphics2D.drawImage(image, <span class="number">0</span>, <span class="number">0</span>, thumbWidth, thumbHeight, <span class="keyword">null</span>);  </span><br><span class="line"></span><br><span class="line">        <span class="comment">// save thumbnail image to outFilename  </span></span><br><span class="line">        BufferedOutputStream out = <span class="keyword">new</span> BufferedOutputStream(<span class="keyword">new</span> FileOutputStream(outFilename));  </span><br><span class="line">        JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);  </span><br><span class="line">        JPEGEncodeParam param = encoder.getDefaultJPEGEncodeParam(thumbImage);  </span><br><span class="line">        quality = Math.max(<span class="number">0</span>, Math.min(quality, <span class="number">100</span>));  </span><br><span class="line">        param.setQuality((<span class="keyword">float</span>)quality / <span class="number">100.0f</span>, <span class="keyword">false</span>);  </span><br><span class="line">        encoder.setJPEGEncodeParam(param);  </span><br><span class="line">        encoder.encode(thumbImage);  </span><br><span class="line">        out.close();  </span><br><span class="line">    }</span><br></pre></td></tr></table></figure>
+<p>9 . &#x521B;&#x5EFA; JSON &#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;</p>
+<p>&#x8BF7;&#x5148;&#x9605;&#x8BFB;<a href="http://viralpatel.net/blogs/creating-parsing-json-data-with-java-servlet-struts-jsp-json/" target="_blank" rel="external">&#x8FD9;&#x7BC7;</a>&#x6587;&#x7AE0; &#x4E86;&#x89E3;&#x4E00;&#x4E9B;&#x7EC6;&#x8282;&#xFF0C;&#x5E76;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;JAR &#x6587;&#x4EF6;&#xFF1A;<a href="http://viralpatel.net/blogs/download/json/json-rpc-1.0.jar" target="_blank" rel="external">json-rpc-1.0.jar (75 kb)</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.json.JSONObject;  </span><br><span class="line">...  </span><br><span class="line">...  </span><br><span class="line">JSONObject json = <span class="keyword">new</span> JSONObject();  </span><br><span class="line">json.put(<span class="string">&quot;city&quot;</span>, <span class="string">&quot;Mumbai&quot;</span>);  </span><br><span class="line">json.put(<span class="string">&quot;country&quot;</span>, <span class="string">&quot;India&quot;</span>);  </span><br><span class="line">...  </span><br><span class="line">String output = json.toString();  </span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>10 . &#x4F7F;&#x7528;iText JAR&#x751F;&#x6210;PDFd</p>
+<p>&#x9605;&#x8BFB;<a href="http://viralpatel.net/blogs/generate-pdf-file-in-java-using-itext-jar/" target="_blank" rel="external">&#x8FD9;&#x7BC7;</a>&#x6587;&#x7AE0; &#x4E86;&#x89E3;&#x66F4;&#x591A;&#x7EC6;&#x8282;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;  </span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;  </span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;  </span><br><span class="line"><span class="keyword">import</span> java.util.Date;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.lowagie.text.Document;  </span><br><span class="line"><span class="keyword">import</span> com.lowagie.text.Paragraph;  </span><br><span class="line"><span class="keyword">import</span> com.lowagie.text.pdf.PdfWriter;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GeneratePDF</span> </span>{  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{  </span><br><span class="line">        <span class="keyword">try</span> {  </span><br><span class="line">            OutputStream file = <span class="keyword">new</span> FileOutputStream(<span class="keyword">new</span> File(<span class="string">&quot;C:\\Test.pdf&quot;</span>));  </span><br><span class="line"></span><br><span class="line">            Document document = <span class="keyword">new</span> Document();  </span><br><span class="line">            PdfWriter.getInstance(document, file);  </span><br><span class="line">            document.open();  </span><br><span class="line">            document.add(<span class="keyword">new</span> Paragraph(<span class="string">&quot;Hello Kiran&quot;</span>));  </span><br><span class="line">            document.add(<span class="keyword">new</span> Paragraph(<span class="keyword">new</span> Date().toString()));  </span><br><span class="line"></span><br><span class="line">            document.close();  </span><br><span class="line">            file.close();  </span><br><span class="line"></span><br><span class="line">        } <span class="keyword">catch</span> (Exception e) {  </span><br><span class="line"></span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        }  </span><br><span class="line">    }  </span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="那强 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>加个微信 成为朋友吧</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag">#Java</a>
+          
+            <a href="/tags/Reference/" rel="tag">#Reference</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/22/数据持久化-概述/" rel="next" title="数据持久化:概述">
+                <i class="fa fa-chevron-left"></i> 数据持久化:概述
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/24/20段有用的Java片段二/" rel="prev" title="20段有用的Java片段二">
+                20段有用的Java片段二 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/06/24/20段有用的Java片段/"
+     data-title="20段有用的Java片段一"
+     data-content=""
+     data-url="http://yoursite.com/2016/06/24/20段有用的Java片段/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/24/20段有用的Java片段/"
+           data-title="20段有用的Java片段一" data-url="http://yoursite.com/2016/06/24/20段有用的Java片段/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="那强" />
+          <p class="site-author-name" itemprop="name">那强</p>
+          <p class="site-description motion-element" itemprop="description">不问是非 只争高下</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/nsblacker" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/nq1991" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">那强</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"nsblackerhexo"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("NrFrAP2G6o7Fkg5AMJ0fSXRR-gzGzoHsz", "OfSTWB6PxCBjmsEgmt5kxzYv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>
