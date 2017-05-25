@@ -90,19 +90,19 @@
 
 
 
-<meta name="description" content="&amp;#x524D;&amp;#x8A00;
-&amp;#x5728;&amp;#x786C;&amp;#x4EF6;&amp;#x7BC7;&amp;#x4E2D;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B89;&amp;#x88C5;&amp;#x4E86;Tesla K40&amp;#x52A0;&amp;#x901F;&amp;#x5361;&amp;#x5B89;&amp;#x88C5;&amp;#x5728;&amp;#x673A;&amp;#x7BB1;&amp;#x4E2D;&amp;#xFF0C;&amp;#x63A5;&amp;#x4E0">
+<meta name="description" content="前言
+在硬件篇中已经安装了Tesla K40加速卡安装在机箱中，接下来详细记录一下软件环境的搭建，更深层地，试着研究如何将该卡应用在大型工程运算中，主要是Visual Studio和Matlab环境下的运算。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tesla K40c加速卡的安装已使用（2）软件篇">
 <meta property="og:url" content="http://yoursite.com/2016/06/25/cuda2/index.html">
 <meta property="og:site_name" content="NSBlacker">
-<meta property="og:description" content="&amp;#x524D;&amp;#x8A00;
-&amp;#x5728;&amp;#x786C;&amp;#x4EF6;&amp;#x7BC7;&amp;#x4E2D;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B89;&amp;#x88C5;&amp;#x4E86;Tesla K40&amp;#x52A0;&amp;#x901F;&amp;#x5361;&amp;#x5B89;&amp;#x88C5;&amp;#x5728;&amp;#x673A;&amp;#x7BB1;&amp;#x4E2D;&amp;#xFF0C;&amp;#x63A5;&amp;#x4E0">
+<meta property="og:description" content="前言
+在硬件篇中已经安装了Tesla K40加速卡安装在机箱中，接下来详细记录一下软件环境的搭建，更深层地，试着研究如何将该卡应用在大型工程运算中，主要是Visual Studio和Matlab环境下的运算。">
 <meta property="og:updated_time" content="2016-06-25T07:24:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tesla K40c加速卡的安装已使用（2）软件篇">
-<meta name="twitter:description" content="&amp;#x524D;&amp;#x8A00;
-&amp;#x5728;&amp;#x786C;&amp;#x4EF6;&amp;#x7BC7;&amp;#x4E2D;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B89;&amp;#x88C5;&amp;#x4E86;Tesla K40&amp;#x52A0;&amp;#x901F;&amp;#x5361;&amp;#x5B89;&amp;#x88C5;&amp;#x5728;&amp;#x673A;&amp;#x7BB1;&amp;#x4E2D;&amp;#xFF0C;&amp;#x63A5;&amp;#x4E0">
+<meta name="twitter:description" content="前言
+在硬件篇中已经安装了Tesla K40加速卡安装在机箱中，接下来详细记录一下软件环境的搭建，更深层地，试着研究如何将该卡应用在大型工程运算中，主要是Visual Studio和Matlab环境下的运算。">
 
 
 
@@ -347,42 +347,42 @@
       
 
       
-        <h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><hr>
-<p>&#x5728;<em>&#x786C;&#x4EF6;&#x7BC7;</em>&#x4E2D;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x4E86;Tesla K40&#x52A0;&#x901F;&#x5361;&#x5B89;&#x88C5;&#x5728;&#x673A;&#x7BB1;&#x4E2D;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x8BE6;&#x7EC6;&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x8F6F;&#x4EF6;&#x73AF;&#x5883;&#x7684;&#x642D;&#x5EFA;&#xFF0C;&#x66F4;&#x6DF1;&#x5C42;&#x5730;&#xFF0C;&#x8BD5;&#x7740;&#x7814;&#x7A76;&#x5982;&#x4F55;&#x5C06;&#x8BE5;&#x5361;&#x5E94;&#x7528;&#x5728;&#x5927;&#x578B;&#x5DE5;&#x7A0B;&#x8FD0;&#x7B97;&#x4E2D;&#xFF0C;&#x4E3B;&#x8981;&#x662F;Visual Studio&#x548C;Matlab&#x73AF;&#x5883;&#x4E0B;&#x7684;&#x8FD0;&#x7B97;&#x3002;</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><hr>
+<p>在<em>硬件篇</em>中已经安装了Tesla K40加速卡安装在机箱中，接下来详细记录一下软件环境的搭建，更深层地，试着研究如何将该卡应用在大型工程运算中，主要是Visual Studio和Matlab环境下的运算。</p>
 <a id="more"></a>
-<h3 id="&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x73AF;&#x5883;"><a href="#&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x73AF;&#x5883;" class="headerlink" title="&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x73AF;&#x5883;"></a>&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x73AF;&#x5883;</h3><hr>
-<p>&#x4E3A;&#x4E86;&#x5E94;&#x5BF9;&#x4EE5;&#x540E;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x8FD9;&#x79CD;&#x9519;&#x8BEF;&#xFF0C;&#x73B0;&#x8BB0;&#x5F55;&#x642D;&#x5EFA;&#x73AF;&#x5883;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x5B9E;&#x9A8C;&#x5BA4;PC&#x4E2D;&#x7684;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x3002;&#x5148;&#x4E0A;&#x642D;&#x5EFA;&#x73AF;&#x5883;&#x7684;<a href="http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-microsoft-windows/index.html#system-requirements" target="_blank" rel="external">&#x5B98;&#x65B9;&#x6559;&#x7A0B;</a></p>
-<p>&#x8BE5;&#x6559;&#x7A0B;&#x4E0D;&#x4EC5;&#x7ED9;&#x51FA;&#x4E86;&#x73AF;&#x5883;&#x642D;&#x5EFA;&#x65B9;&#x6CD5;&#xFF0C;&#x73AF;&#x5883;&#x642D;&#x5EFA;&#x6210;&#x529F;&#x4E0E;&#x5426;&#x7684;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD8;&#x7ED9;&#x51FA;&#x4E86;&#x666E;&#x901A;vs&#x5DE5;&#x7A0B;&#x6267;&#x884C;&#x52A0;&#x901F;&#x670D;&#x52A1;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
-<p>&#x73B0;&#x5C06;&#x82F1;&#x6587;&#x7248;&#x5E9F;&#x8BDD;&#x53BB;&#x6389;&#xFF0C;&#x6574;&#x7406;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x3002;</p>
-<p>&#x5B9E;&#x9A8C;&#x5BA4;&#x8F6F;&#x4EF6;&#x73AF;&#x5883;&#x4ECB;&#x7ECD;:</p>
+<h3 id="软件安装环境"><a href="#软件安装环境" class="headerlink" title="软件安装环境"></a>软件安装环境</h3><hr>
+<p>为了应对以后可能出现的这种错误，现记录搭建环境的过程，以及在实验室PC中的实际情况。先上搭建环境的<a href="http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-microsoft-windows/index.html#system-requirements" target="_blank" rel="external">官方教程</a></p>
+<p>该教程不仅给出了环境搭建方法，环境搭建成功与否的测试方法，还给出了普通vs工程执行加速服务的方法。</p>
+<p>现将英文版废话去掉，整理以下内容。</p>
+<p>实验室软件环境介绍:</p>
 <ul>
-<li>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF1A;win8 64bit </li>
-<li>vs&#x7248;&#x672C;&#xFF1A;    2013</li>
-<li>&#x8FDC;&#x7A0B;&#x767B;&#x5F55;&#x4FE1;&#x606F;<ul>
-<li>LAN&#x5730;&#x5740;&#xFF1A;192.168.1.222</li>
-<li>user&#xFF1A;Administrator</li>
-<li>pwd&#xFF1A;1111</li>
+<li>操作系统：win8 64bit </li>
+<li>vs版本：    2013</li>
+<li>远程登录信息<ul>
+<li>LAN地址：192.168.1.222</li>
+<li>user：Administrator</li>
+<li>pwd：1111</li>
 </ul>
 </li>
 </ul>
-<p>&#x73AF;&#x5883;&#x642D;&#x5EFA;&#x53EA;&#x9700;&#x8981;4&#x4E2A;&#x4E1C;&#x897F;:</p>
+<p>环境搭建只需要4个东西:</p>
 <ol>
-<li>&#x4E00;&#x4E2A;GPU </li>
-<li>&#x4E00;&#x4E2A;Windows&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
-<li>&#x4E00;&#x4E2A;VisualStudio</li>
-<li>&#x4E00;&#x4E2A;toolkit</li>
+<li>一个GPU </li>
+<li>一个Windows操作系统</li>
+<li>一个VisualStudio</li>
+<li>一个toolkit</li>
 </ol>
-<h3 id="&#x5B89;&#x88C5;"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</h3><h4 id="&#x5B89;&#x88C5;NVIDIA-CUDA-Toolkit"><a href="#&#x5B89;&#x88C5;NVIDIA-CUDA-Toolkit" class="headerlink" title="&#x5B89;&#x88C5;NVIDIA CUDA Toolkit"></a>&#x5B89;&#x88C5;NVIDIA CUDA Toolkit</h4><p>&#x9996;&#x5148;&#x4ECB;&#x7ECD;CUDA&#xFF0C;&#x8FD9;&#x4E1C;&#x897F;&#x5C31;&#x662F;&#x82F1;&#x4F1F;&#x8FBE;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x4E2A;platform&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x5E73;&#x53F0;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x624D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;GPU&#x5F3A;&#x5927;&#x7684;&#x6027;&#x80FD;&#xFF08;&#x4E3B;&#x8981;&#x662F;&#x5E76;&#x884C;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x8BA1;&#x7B97;&#xFF09;;</p>
-<p>&#x6309;&#x6211;&#x7684;&#x4E2A;&#x4EBA;&#x7406;&#x89E3;&#xFF1A;<code>Nvidia CUDA Toolkit</code>&#x4E4B;&#x4E8E;<code>Visual Studio</code>&#xFF0C;&#x5C31;&#x50CF;<code>ADT&#xFF08;Android Development tools&#xFF09;</code>&#x4E4B;&#x4E8E;<code>Eclipse</code></p>
-<p>&#x90FD;&#x662F;&#x76F8;&#x5F53;&#x4E8E;&#x7ED9;IDE&#x5B89;&#x88C5;&#x4E86;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x4F7F;&#x5176;&#x80FD;&#x591F;&#x652F;&#x6301;&#x67D0;&#x4E9B;&#x7279;&#x5B9A;&#x7684;&#x7F16;&#x7A0B;&#x9700;&#x6C42;&#x3002;&#x6309;&#x7167;&#x8BF4;&#x660E;&#x6587;&#x6863;&#x7684;&#x4ECB;&#x7ECD;&#xFF0C;&#x5F53;&#x4F60;&#x5728;vs&#x4E2D;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;CUDA&#x5DE5;&#x7A0B;&#x540E;&#xFF0C;&#x8FD9;&#x4E2A;&#x5DE5;&#x7A0B;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x9884;&#x5148;&#x914D;&#x7F6E;&#x4E86;CUDA build&#x683C;&#x5F0F;&#x7684;C++&#x5DE5;&#x7A0B; (.vcxproj) ,C++&#x5DE5;&#x7A0B;&#x600E;&#x4E48;&#x7F16;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C31;&#x600E;&#x4E48;&#x7F16;&#xFF01;&#xFF08;&#x662F;&#x5426;&#x9700;&#x8981;&#x5F15;&#x5165;&#x5176;&#x4ED6;&#x5E93;&#x4EC0;&#x4E48;&#x7684;&#xFF0C;&#x5F85;&#x5B9E;&#x8DF5;&#xFF09;&#x3002;</p>
-<p>&#x8FD9;&#x4E1C;&#x897F;&#x505A;&#x7684;&#x975E;&#x5E38;&#x597D;&#xFF0C;&#x628A;&#x8981;&#x7528;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x96C6;&#x6210;&#x5728;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;.exe&#x4E2D;&#x4E86;&#xFF0C;<a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="external">&#x4E0B;&#x8F7D;</a></p>
-<p>&#x6700;&#x7EC8;&#x662F;&#x4E00;&#x4E2A;&#x5C06;&#x8FD1;1GB&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x5B9E;&#x9A8C;&#x5BA4;&#x5B89;&#x88C5;&#x7684;&#x662F;&#x7248;&#x672C;&#x662F;<code>cuda_6.5.14_windows_general_64_bit</code></p>
-<p>&#x8BE5;&#x7248;&#x672C;&#x9002;&#x5408;win7&#x4E0E;win8&#xFF0C;&#x6309;&#x7167;&#x6587;&#x6863;&#x987A;&#x5E8F;&#xFF0C;&#x672C;&#x5E94;&#x8BE5;&#x5B89;&#x88C5;&#x9A71;&#x52A8;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x5728;&#x5B89;&#x88C5;&#x8FD9;&#x4E2A;tookit&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5B83;&#x5DF2;&#x7ECF;&#x5E2E;&#x5FD9;&#x628A;<code>&#x9A71;&#x52A8;</code>&#x3001;<code>cuda</code>&#x3001;<code>&#x7528;&#x4F8B;</code>&#x3001;<code>&#x4E0E;vs&#x8FDE;&#x63A5;</code>&#xFF0C;&#x751A;&#x81F3;<code>&#x73AF;&#x5883;&#x53D8;&#x91CF;</code>&#x90FD;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x8BBE;&#x7F6E;&#x5B8C;&#x6BD5;&#x3002;</p>
-<p><strong>&#x5B89;&#x88C5;&#x8FD9;&#x4E48;&#x4E2A;&#x8F6F;&#x4EF6;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x73AF;&#x5883;&#x5C31;&#x5DF2;&#x7ECF;&#x642D;&#x5EFA;&#x597D;&#x4E86;&#x3002;</strong></p>
-<h4 id="toolkit&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x5206;&#x89E3;"><a href="#toolkit&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x5206;&#x89E3;" class="headerlink" title="toolkit&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x5206;&#x89E3;"></a>toolkit&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x5206;&#x89E3;</h4><p>&#x6709;&#x5FC5;&#x8981;&#x5206;&#x89E3;&#x4E00;&#x4E0B;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#xFF0C;&#x56E0;&#x4E3A;&#x8BE5;&#x73AF;&#x5883;&#x4E0B;&#x7684;&#x597D;&#x591A;&#x64CD;&#x4F5C;&#x5DE5;&#x5177;&#x548C;&#x7528;&#x4F8B;&#x90FD;&#x5728;&#x8FD9;&#x4E9B;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x8FD9;&#x91CC;&#x5217;&#x51FA;&#x6765;&#xFF0C;&#x65B9;&#x4FBF;&#x67E5;&#x627E;.</p>
-<p>&#x6709;&#x8FD9;&#x4E48;&#x51E0;&#x4E2A;&#x73A9;&#x610F;&#x513F;&#x603B;&#x662F;&#x8981;&#x63D0;&#x5230;&#xFF1A;</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="安装NVIDIA-CUDA-Toolkit"><a href="#安装NVIDIA-CUDA-Toolkit" class="headerlink" title="安装NVIDIA CUDA Toolkit"></a>安装NVIDIA CUDA Toolkit</h4><p>首先介绍CUDA，这东西就是英伟达开发的一个platform，在这个平台上，我们才可以使用GPU强大的性能（主要是并行的高性能计算）;</p>
+<p>按我的个人理解：<code>Nvidia CUDA Toolkit</code>之于<code>Visual Studio</code>，就像<code>ADT（Android Development tools）</code>之于<code>Eclipse</code></p>
+<p>都是相当于给IDE安装了一个强大的插件，使其能够支持某些特定的编程需求。按照说明文档的介绍，当你在vs中建立一个CUDA工程后，这个工程就是一个预先配置了CUDA build格式的C++工程 (.vcxproj) ,C++工程怎么编，这个就怎么编！（是否需要引入其他库什么的，待实践）。</p>
+<p>这东西做的非常好，把要用的东西，集成在一个一个.exe中了，<a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="external">下载</a></p>
+<p>最终是一个将近1GB的可执行文件，实验室安装的是版本是<code>cuda_6.5.14_windows_general_64_bit</code></p>
+<p>该版本适合win7与win8，按照文档顺序，本应该安装驱动，但我们在安装这个tookit的过程中，它已经帮忙把<code>驱动</code>、<code>cuda</code>、<code>用例</code>、<code>与vs连接</code>，甚至<code>环境变量</code>都已经安装设置完毕。</p>
+<p><strong>安装这么个软件，实际上环境就已经搭建好了。</strong></p>
+<h4 id="toolkit安装路径分解"><a href="#toolkit安装路径分解" class="headerlink" title="toolkit安装路径分解"></a>toolkit安装路径分解</h4><p>有必要分解一下安装路径，因为该环境下的好多操作工具和用例都在这些目录下，这里列出来，方便查找.</p>
+<p>有这么几个玩意儿总是要提到：</p>
 <ol>
-<li>CUDA Toolkit<br>&#x8DEF;&#x5F84;&#xFF1A; C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5 <ul>
+<li>CUDA Toolkit<br>路径： C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5 <ul>
 <li>Bin\ the compiler executables and runtime libraries</li>
 <li>Include\    the header files needed to compile CUDA programs</li>
 <li>Lib\the library files needed to link CUDA programs</li>
@@ -395,64 +395,64 @@
 </li>
 </ul>
 </li>
-<li><p>CUDA Samples<br>&#x8DEF;&#x5F84;&#xFF1A; C:\Application Data\NVIDIA Corporation\CUDA Samples\v6.5.</p>
-<p>&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x4F8B;&#x5B50;&#x5206;&#x88C5;&#x5728;<br> 0_Simple, 1_Utilities, 2_Graphics, 3_Imaging, 4_Finance, 5_Simulations, 6_Advanced, 7_CUDALibraries &#x90FD;&#x662F;&#x5DF2;&#x7ECF;&#x7F16;&#x8BD1;&#x597D;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x6311;&#x4E00;&#x4E9B;&#x8FD0;&#x884C;&#x4E00;&#x4E0B;&#xFF0C;&#x8FD0;&#x884C;&#x65B9;&#x6CD5;&#x89C1;<a href="#note">Note</a></p>
+<li><p>CUDA Samples<br>路径： C:\Application Data\NVIDIA Corporation\CUDA Samples\v6.5.</p>
+<p>不同类型的例子分装在<br> 0_Simple, 1_Utilities, 2_Graphics, 3_Imaging, 4_Finance, 5_Simulations, 6_Advanced, 7_CUDALibraries 都是已经编译好的，可以挑一些运行一下，运行方法见<a href="#note">Note</a></p>
 </li>
 </ol>
-<h4 id="&#x91CD;&#x8981;&#x5DE5;&#x5177;&#x548C;&#x6587;&#x6863;"><a href="#&#x91CD;&#x8981;&#x5DE5;&#x5177;&#x548C;&#x6587;&#x6863;" class="headerlink" title="&#x91CD;&#x8981;&#x5DE5;&#x5177;&#x548C;&#x6587;&#x6863;"></a>&#x91CD;&#x8981;&#x5DE5;&#x5177;&#x548C;&#x6587;&#x6863;</h4><p>   &#x7ED3;&#x5408;&#x4E0A;&#x9762;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x8FD9;&#x91CC;&#x8BF4;&#x660E;&#x51E0;&#x4E2A;&#x91CD;&#x8981;&#x5DE5;&#x5177;</p>
+<h4 id="重要工具和文档"><a href="#重要工具和文档" class="headerlink" title="重要工具和文档"></a>重要工具和文档</h4><p>   结合上面的过程，这里说明几个重要工具</p>
 <ul>
 <li><p><code>nvidia-smi</code>    </p>
-<p>&#x8DEF;&#x5F84;&#xFF1A;C:\Program Files\NVIDIA Corporation\NVSMI</p>
-<p>GPU&#x7684;&#x63A7;&#x5236;&#x53F0;:  &#x72B6;&#x6001;&#x76D1;&#x6D4B;&#x3001;&#x6A21;&#x5F0F;&#x5207;&#x6362;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x6DFB;&#x52A0;&#x5230;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x6253;&#x5F00;cmd&#x540E;&#x8BFE;&#x76F4;&#x63A5;&#x8FD0;&#x884C;nvidia-smi &#x53EF;&#x4EE5;&#x4E4B;&#x95F4;&#x770B;&#x89C1;GPU&#x7684;&#x8FD0;&#x884C;&#x60C5;&#x51B5;&#x3002;<br><code>nvidia-smi -h</code>&#x67E5;&#x770B;&#x547D;&#x4EE4;&#x5E2E;&#x52A9;&#xFF0C;&#x53E6;&#x5916;&#xFF0C;&#x5728;&#x5176;&#x76EE;&#x5F55;&#x4E0B;&#x6709;nvidia-smi.pdf&#x4F7F;&#x7528;&#x6587;&#x6863;</p>
-<p><code>nvidia-smi -dm 1/0</code>  &#x66F4;&#x6539;&#x663E;&#x5361;&#x7684;&#x9A71;&#x52A8;&#x6A21;&#x5F0F;   1&#xFF1A;TCC      /    0&#xFF1A;WDDM</p>
+<p>路径：C:\Program Files\NVIDIA Corporation\NVSMI</p>
+<p>GPU的控制台:  状态监测、模式切换，可以将其添加到环境变量了，所以打开cmd后课直接运行nvidia-smi 可以之间看见GPU的运行情况。<br><code>nvidia-smi -h</code>查看命令帮助，另外，在其目录下有nvidia-smi.pdf使用文档</p>
+<p><code>nvidia-smi -dm 1/0</code>  更改显卡的驱动模式   1：TCC      /    0：WDDM</p>
 </li>
 <li><p>nvcc   </p>
-<p>&#x8DEF;&#x5F84;&#xFF1A;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\bin</p>
-<p>&#x8FD9;&#x4E1C;&#x897F;&#x662F;&#x76F8;&#x5F53;&#x4E8E;gcc&#xFF0C;&#x4E5F;&#x5C31;&#x662F;cuda&#x4E0B;&#x7684;compiler&#xFF0C;&#x5C31;&#x9171;~~</p>
-<p>  &#x8FD8;&#x662F;&#x9488;&#x5BF9;cuda toolkit&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x67E5;&#x770B;cuda&#x7684;&#x7248;&#x672C;&#x5C31;&#x7528;&#x8FD9;&#x4E1C;&#x897F;&#x4E86;<code>nvcc -v</code>&#xFF0C;&#x5176;&#x4ED6;&#x547D;&#x4EE4;&#x8FD8;&#x6CA1;&#x7814;&#x7A76;&#x3002;</p>
+<p>路径：C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\bin</p>
+<p>这东西是相当于gcc，也就是cuda下的compiler，就酱~~</p>
+<p>  还是针对cuda toolkit的命令行工具，查看cuda的版本就用这东西了<code>nvcc -v</code>，其他命令还没研究。</p>
 </li>
-<li><p>CUDA&#x6587;&#x6863;&#xFF0C;&#x4E0A;&#x9762;&#x5DF2;&#x7ECF;&#x7ED9;&#x51FA;&#x4E86;</p>
+<li><p>CUDA文档，上面已经给出了</p>
 </li>
 </ul>
 <p><span id="note"></span></p>
-<h4 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h4><p>Note0&#xFF1A;&#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x7CFB;&#x7EDF;&#x5F53;&#x524D;&#x7684;&#x9A71;&#x52A8;&#x73AF;&#x5883;&#x5728;TCC&#xFF08;&#x4E00;&#x79CD;&#x652F;&#x6301;tesla&#x5361;&#x7684;&#x9A71;&#x52A8;&#x6A21;&#x5F0F;&#xFF09;&#x6A21;&#x5F0F;&#x4E0B;.</p>
-<p>Note1&#xFF1A;&#x597D;&#x591A;&#x5DE5;&#x5177;&#x90FD;&#x662F;&#x901A;&#x8FC7;cmd&#x6253;&#x5F00;&#xFF0C;&#x5E76;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E0B;&#x5DE5;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x54EA;&#x4E9B;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x201C;&#x4E0D;&#x662F;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;&#x201D;&#xFF0C;&#x628A;&#x8BE5;&#x547D;&#x4EE4;&#x6240;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5230;&#x73AF;&#x5883;&#x53D8;&#x91CF;path&#x4E2D;&#x3002;</p>
-<p>Note2&#xFF1A;&#x5982;&#x679C;&#x76F4;&#x63A5;&#x53CC;&#x51FB;.exe&#x6587;&#x4EF6;&#xFF0C;&#x4F1A;&#x95EA;&#x9000;&#x770B;&#x4E0D;&#x5230;&#x7ED3;&#x679C;&#xFF0C;&#x9700;&#x8981;&#x5728;cmd&#x8FD0;&#x884C;&#x3002;</p>
-<p>Note3&#xFF1A;&#x5982;&#x547D;&#x4EE4;&#x884C;&#x4E0B;&#x8FD0;&#x884C;test.exe&#x6587;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x5728;test.exe&#x6587;&#x4EF6;&#x6240;&#x5728;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x7A7A;&#x767D;&#x5904;&#xFF0C;&#x6309;shift+&#x53F3;&#x952E;&#xFF0C;&#x4E4B;&#x540E;&#x9009;&#x62E9;&#x201C;&#x5728;&#x6B64;&#x5904;&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#x884C;&#x201D;&#x7136;&#x540E;&#x8F93;&#x5165;test&#x5373;&#x53EF;&#x3002;</p>
-<h4 id="&#x5565;&#x662F;TCC&#x548C;WWDM&#xFF1F;"><a href="#&#x5565;&#x662F;TCC&#x548C;WWDM&#xFF1F;" class="headerlink" title="&#x5565;&#x662F;TCC&#x548C;WWDM&#xFF1F;"></a>&#x5565;&#x662F;TCC&#x548C;WWDM&#xFF1F;</h4><p>&#x8FD9;&#x5C31;&#x662F;NVIDIA&#x7684;&#x4E24;&#x79CD;&#x9A71;&#x52A8;&#x6A21;&#x5F0F;&#xFF0C;TCC&#x53EA;&#x652F;&#x6301;undisplay&#x7684;device&#xFF0C;&#x5982;&#x6211;&#x4EEC;&#x7684;tesla&#x5361;&#xFF1B;&#x800C;WWDM&#x5C31;&#x662F;windows&#x4E0B;&#x6B63;&#x5E38;&#x7684;&#x9A71;&#x52A8;&#x6A21;&#x5F0F;&#xFF0C;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#x5207;&#x6362;&#x65B9;&#x6CD5;&#x7528;&#x4E0A;&#x9762;&#x7684;nvidia-smi -dm &#x540E;&#x63A5;0&#x6216;1&#x5373;&#x53EF;&#xFF0C;&#x66F4;&#x6539;&#x540E;&#x9700;&#x8981;&#x91CD;&#x542F;&#x3002;</p>
-<p><del>&#x4E0B;&#x9762;&#x8FD9;&#x6BB5;&#x9664;&#x4E86;&#x73AF;&#x5883;&#x642D;&#x5EFA;&#x8005;&#x53EF;&#x5FFD;&#x7565;<br>&#x73B0;&#x5728;&#x5373;&#x4F7F;&#x5207;&#x6362;&#x56DE;WWDM&#x4E5F;&#x5E76;&#x4E0D;&#x80FD;&#x4F7F;&#x5FC3;&#x810F;&#x673A;&#x7684;&#x663E;&#x793A;&#x5668;&#x663E;&#x793A;&#x5185;&#x5BB9;&#xFF0C;&#x539F;&#x56E0;&#x662F;&#x5F53;pci&#x63D2;&#x5165;&#x7C7B;&#x663E;&#x5361;&#x8BBE;&#x5907;&#x540E;&#xFF0C;&#x4E3B;&#x677F;&#x7684;&#x96C6;&#x6210;&#x663E;&#x5361;&#x5C06;&#x88AB;&#x5C4F;&#x853D;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x8981;pci&#x63D2;&#x7740;tesla&#xFF0C;&#x4E3B;&#x677F;&#x90FD;&#x4F1A;&#x5C06;&#x5176;&#x8BC6;&#x522B;&#x4E3A;&#x72EC;&#x7ACB;&#x663E;&#x5361;&#x8BBE;&#x5907;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;&#x6211;&#x4EEC;&#x4E5F;&#x6CA1;&#x6709;&#x505A;&#x96C6;&#x663E;&#x4E0E;tesla&#x7684;&#x4EA4;&#x706B;&#xFF0C;&#x6240;&#x4EE5;&#x663E;&#x793A;&#x5C4F;&#x65E0;&#x6CD5;&#x663E;&#x793A;&#x3002;<br>    &#x6211;&#x731C;&#x60F3;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x4EE5;&#x540E;&#x6362;&#x4E3B;&#x677F;&#x65F6;&#xFF0C;&#x8003;&#x8651;&#x5230;&#x53EF;&#x80FD;&#x518D;&#x52A0;&#x4E00;&#x5757;tesla&#xFF0C;&#x6240;&#x4EE5;&#x5EFA;&#x8BAE;&#x4E70;&#x5E26;&#x6709;3&#x4E2A;&#x4EE5;&#x4E0A;pci-e 16x&#x63D2;&#x69FD;&#x7684;&#x4E3B;&#x677F;&#xFF0C;&#x9664;&#x4E86;&#x4E24;&#x4E2A;tesla&#xFF0C;&#x518D;&#x52A0;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x72EC;&#x7ACB;&#x663E;&#x5361;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x8FD9;&#x6837;&#x5173;&#x6389;TCC&#x6A21;&#x5F0F;&#x540E;&#xFF0C;&#x5E94;&#x8BE5;&#x80FD;&#x591F;&#x4F7F;&#x666E;&#x901A;&#x72EC;&#x7ACB;&#x663E;&#x5361;&#x542F;&#x52A8;&#xFF0C;&#x4EE5;&#x9A71;&#x52A8;&#x663E;&#x793A;&#x5668;&#x3002;<br>    &#x81F3;&#x4E8E;&#x591A;tesla&#xFF0C;&#x4EE5;&#x53CA;&#x548C;&#x72EC;&#x663E;&#x7684;&#x4EA4;&#x706B;</del></p>
-<h3 id="&#x901A;&#x8FC7;cuda&#x7ED9;&#x7A0B;&#x5E8F;&#x52A0;&#x901F;"><a href="#&#x901A;&#x8FC7;cuda&#x7ED9;&#x7A0B;&#x5E8F;&#x52A0;&#x901F;" class="headerlink" title="&#x901A;&#x8FC7;cuda&#x7ED9;&#x7A0B;&#x5E8F;&#x52A0;&#x901F;"></a>&#x901A;&#x8FC7;cuda&#x7ED9;&#x7A0B;&#x5E8F;&#x52A0;&#x901F;</h3><p>&#x8FD9;&#x4E2A;<a href="http://blog.csdn.net/yanghangjun/article/details/6067534" target="_blank" rel="external">&#x535A;&#x5BA2;</a>&#x5F88;&#x6709;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x65B0;&#x5EFA;&#x9879;&#x76EE;&#x90A3;&#x90E8;&#x5206;&#x6CA1;&#x6709;&#x7528;</p>
-<h4 id="vs&#x4E0B;&#x7684;C-C-&#x5DE5;&#x7A0B;"><a href="#vs&#x4E0B;&#x7684;C-C-&#x5DE5;&#x7A0B;" class="headerlink" title="vs&#x4E0B;&#x7684;C/C++&#x5DE5;&#x7A0B;"></a>vs&#x4E0B;&#x7684;C/C++&#x5DE5;&#x7A0B;</h4><p>&#x6309;&#x7167;<a href="http://blog.csdn.net/wufenxia/article/details/17401197" target="_blank" rel="external">&#x6B64;&#x535A;&#x5BA2;</a>&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x8FD9;&#x662F;4.2&#x7248;&#x672C;&#x7684;&#xFF0C;6.5&#x7248;&#x672C;&#x6309;&#x4EE5;&#x4E0B;&#x8FC7;&#x7A0B;&#x8BBE;&#x7F6E;&#x5373;&#x53EF;&#xFF1A;</p>
+<h4 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h4><p>Note0：必须保证系统当前的驱动环境在TCC（一种支持tesla卡的驱动模式）模式下.</p>
+<p>Note1：好多工具都是通过cmd打开，并在命令行下工作，如果哪些命令提示“不是系统命令”，把该命令所在的路径添加到环境变量path中。</p>
+<p>Note2：如果直接双击.exe文件，会闪退看不到结果，需要在cmd运行。</p>
+<p>Note3：如命令行下运行test.exe文件，需要在test.exe文件所在文件夹的空白处，按shift+右键，之后选择“在此处运行命令行”然后输入test即可。</p>
+<h4 id="啥是TCC和WWDM？"><a href="#啥是TCC和WWDM？" class="headerlink" title="啥是TCC和WWDM？"></a>啥是TCC和WWDM？</h4><p>这就是NVIDIA的两种驱动模式，TCC只支持undisplay的device，如我们的tesla卡；而WWDM就是windows下正常的驱动模式，两种模式切换方法用上面的nvidia-smi -dm 后接0或1即可，更改后需要重启。</p>
+<p><del>下面这段除了环境搭建者可忽略<br>现在即使切换回WWDM也并不能使心脏机的显示器显示内容，原因是当pci插入类显卡设备后，主板的集成显卡将被屏蔽，所以只要pci插着tesla，主板都会将其识别为独立显卡设备，再加上我们也没有做集显与tesla的交火，所以显示屏无法显示。<br>    我猜想的解决方法：以后换主板时，考虑到可能再加一块tesla，所以建议买带有3个以上pci-e 16x插槽的主板，除了两个tesla，再加一个普通独立显卡的位置，这样关掉TCC模式后，应该能够使普通独立显卡启动，以驱动显示器。<br>    至于多tesla，以及和独显的交火</del></p>
+<h3 id="通过cuda给程序加速"><a href="#通过cuda给程序加速" class="headerlink" title="通过cuda给程序加速"></a>通过cuda给程序加速</h3><p>这个<a href="http://blog.csdn.net/yanghangjun/article/details/6067534" target="_blank" rel="external">博客</a>很有用，但是新建项目那部分没有用</p>
+<h4 id="vs下的C-C-工程"><a href="#vs下的C-C-工程" class="headerlink" title="vs下的C/C++工程"></a>vs下的C/C++工程</h4><p>按照<a href="http://blog.csdn.net/wufenxia/article/details/17401197" target="_blank" rel="external">此博客</a>的过程，这是4.2版本的，6.5版本按以下过程设置即可：</p>
 <ol>
-<li><p>&#x65B0;&#x5EFA;win32&#x63A7;&#x5236;&#x53F0;&#x9879;&#x76EE;&#xFF1B;</p>
+<li><p>新建win32控制台项目；</p>
 </li>
-<li><p>&#x5728;&#x5411;&#x5BFC;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8BBE;&#x7F6E;&#x4E2D;&#x9009;&#x62E9;&#x7A7A;&#x9879;&#x76EE;&#x590D;&#x9009;&#x6846;&#xFF1B;</p>
+<li><p>在向导的应用程序设置中选择空项目复选框；</p>
 </li>
-<li><p>&#x7136;&#x540E;&#x5411;&#x9879;&#x76EE;&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x5939;&#x7C7B;&#x578B;&#x53EF;&#x9009;&#x62E9;cpp&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5199;&#x540D;&#x79F0;&#x65F6;&#x53EF;&#x76F4;&#x63A5;&#x5199;.cu&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5199;&#x6210;.cpp&#x4E4B;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x91CD;&#x547D;&#x540D;&#xFF1B;</p>
+<li><p>然后向项目添加文件，文件夹类型可选择cpp文件夹，写名称时可直接写.cu文件，也可以写成.cpp之后再进行重命名；</p>
 </li>
-<li><p>&#x5728;&#x9879;&#x76EE;&#x540D;&#x79F0;&#x4E0A;&#x53F3;&#x51FB;&#xFF0C;&#x5FEB;&#x6377;&#x83DC;&#x5355;&#x4E2D;&#x9009;&#x62E9;&#x201C;&#x751F;&#x6210;&#x81EA;&#x5B9A;&#x4E49;&#x201D;&#x547D;&#x4EE4;&#xFF0C;&#x5728;&#x6253;&#x5F00;&#x7684;&#x5BF9;&#x8BDD;&#x6846;&#x4E2D;&#x9009;&#x62E9;CUDA6.5&#xFF1B;</p>
+<li><p>在项目名称上右击，快捷菜单中选择“生成自定义”命令，在打开的对话框中选择CUDA6.5；</p>
 </li>
-<li><p>&#x53F3;&#x952E;.cu&#x6587;&#x4EF6;&#xFF0C;&#x9009;&#x62E9;&#x5C5E;&#x6027;&#xFF0C;&#x9879;&#x7C7B;&#x578B;&#x8BBE;&#x4E3A; CUDA C/C++&#xFF1B;</p>
+<li><p>右键.cu文件，选择属性，项类型设为 CUDA C/C++；</p>
 </li>
-<li><p>&#x53F3;&#x952E;&#x9879;&#x76EE;&#x540D;&#x79F0;&#xFF0C;&#x9009;&#x62E9;&#x5C5E;&#x6027;&#xFF0C;&#x68C0;&#x67E5;&#x4E00;&#x4E0B;&#xFF0C;&#x4FDD;&#x6301;&#x9ED8;&#x8BA4;&#xFF1B;</p>
+<li><p>右键项目名称，选择属性，检查一下，保持默认；</p>
 </li>
-<li><p>linker&#x2013;&gt;&#x8F93;&#x5165;&#x2013;&gt;&#x9644;&#x52A0;&#x4EE5;&#x6765;&#x5E93;&#x4E2D;&#x6DFB;&#x52A0;&#x201D;cudart.lib;&#x201D;</p>
+<li><p>linker–&gt;输入–&gt;附加以来库中添加”cudart.lib;”</p>
 </li>
-<li><p>cu&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x5934;&#x6587;&#x4EF6;<br>  #include<stdio.h><br>  #include<stdlib.h><br>  #include<cuda_runtime.h>//&#x63D0;&#x4F9B;&#x4E86;&#x65F6;&#x95F4;&#x8BA1;&#x7B97;&#x7684;&#x529F;&#x80FD;&#x51FD;&#x6570;</cuda_runtime.h></stdlib.h></stdio.h></p>
+<li><p>cu文件中添加以下头文件<br>  #include<stdio.h><br>  #include<stdlib.h><br>  #include<cuda_runtime.h>//提供了时间计算的功能函数</cuda_runtime.h></stdlib.h></stdio.h></p>
 <ol>
-<li>&#x82E5;&#x4F7F;&#x7528;arrayfire&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5C5E;&#x6027;&#x2013;VC++&#x76EE;&#x5F55;&#x2013;&#x5305;&#x542B;&#x76EE;&#x5F55;&#x3002;  &#x6DFB;&#x52A0;AF_PATH</li>
+<li>若使用arrayfire，则需要属性–VC++目录–包含目录。  添加AF_PATH</li>
 </ol>
 </li>
 </ol>
-<p>&#x4EE5;&#x4E0A;&#x6B65;&#x9AA4;&#x53EF;&#x4EE5;&#x4F7F;cuda&#x5DE5;&#x7A0B;&#x5728;VS&#x4E2D;&#x76F4;&#x63A5;build&#x2013;run</p>
-<p>&#x53E6;: &#x5BF9;.cu&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x7528;nvcc&#x5DE5;&#x5177;<a href="http://wenku.baidu.com/link?url=MQpZ18aahzEERiDnXhd1qLUcTMimOsfI848eRlhUcRoR1zAV2-8OvMeBN-1HoFKis6R2FHwRx1JI_n_R1VrXJ6QcgxTNfE5Noasa2jLh_vO" target="_blank" rel="external">&#x624B;&#x52A8;&#x7F16;&#x8BD1;</a></p>
-<p>&#x53E6;: &#x5173;&#x4E8E;cuda&#x7684;<a href="http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-microsoft-windows/index.html#system-requirements" target="_blank" rel="external">&#x8FD0;&#x884C;&#x65F6;&#x95F4;</a></p>
-<p>2.MATLAB<br>&#x53BB;&#x7F51;&#x4E0A;&#x67E5;matlab cuda&#x4E00;&#x5927;&#x63A8;&#x6559;&#x7A0B;&#xFF1A;</p>
-<p><a href="http://www.360doc.com/content/13/1029/20/13256259_325141433.shtml" target="_blank" rel="external">&#x6559;&#x7A0B;1</a></p>
-<p><a href="http://blog.csdn.net/vbskj/article/details/5962427" target="_blank" rel="external">&#x6559;&#x7A0B;2</a></p>
-<p><a href="http://blog.csdn.net/hongqiang200/article/details/6273406" target="_blank" rel="external">&#x6559;&#x7A0B;3</a></p>
-<p><a href="http://www.nvidia.com.tw/object/tesla-matlab-accelerations-tw.html" target="_blank" rel="external">&#x6559;&#x7A0B;4</a></p>
-<p>&#x73AF;&#x5883;&#x6211;&#x5DF2;&#x914D;&#x597D;&#xFF0C;&#x53EA;&#x7528;&#x8FC7;&#x7A0B;&#x505A;&#x7B80;&#x5355;&#x6574;&#x7406;.</p>
+<p>以上步骤可以使cuda工程在VS中直接build–run</p>
+<p>另: 对.cu文件可以用nvcc工具<a href="http://wenku.baidu.com/link?url=MQpZ18aahzEERiDnXhd1qLUcTMimOsfI848eRlhUcRoR1zAV2-8OvMeBN-1HoFKis6R2FHwRx1JI_n_R1VrXJ6QcgxTNfE5Noasa2jLh_vO" target="_blank" rel="external">手动编译</a></p>
+<p>另: 关于cuda的<a href="http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-microsoft-windows/index.html#system-requirements" target="_blank" rel="external">运行时间</a></p>
+<p>2.MATLAB<br>去网上查matlab cuda一大推教程：</p>
+<p><a href="http://www.360doc.com/content/13/1029/20/13256259_325141433.shtml" target="_blank" rel="external">教程1</a></p>
+<p><a href="http://blog.csdn.net/vbskj/article/details/5962427" target="_blank" rel="external">教程2</a></p>
+<p><a href="http://blog.csdn.net/hongqiang200/article/details/6273406" target="_blank" rel="external">教程3</a></p>
+<p><a href="http://www.nvidia.com.tw/object/tesla-matlab-accelerations-tw.html" target="_blank" rel="external">教程4</a></p>
+<p>环境我已配好，只用过程做简单整理.</p>
 <p>done!</p>
 
       
@@ -594,7 +594,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

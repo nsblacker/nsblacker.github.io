@@ -90,25 +90,40 @@
 
 
 
-<meta name="description" content="&amp;#x524D;&amp;#x8A00;
-&amp;#x8FD9;&amp;#x7BC7;&amp;#x8BE6;&amp;#x7EC6;&amp;#x8BB0;&amp;#x5F55;&amp;#x4E86;&amp;#x5728;Ubuntu&amp;#x4E2D;&amp;#x642D;&amp;#x5EFA;J2EE&amp;#x73AF;&amp;#x5883;&amp;#x7684;&amp;#x8FC7;&amp;#x7A0B;&amp;#xFF0C;&amp;#x5305;&amp;#x62EC;
+<meta name="description" content="前言
+这篇详细记录了在Ubuntu中搭建J2EE环境的过程，包括
 
-&amp;#x914D;&amp;#x7F6E;&amp;#x">
+配置基础Java环境
+安装tomcat
+与Eclipse的连接
+安装数据库
+
+其中引用他人的方法均已给出链接。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu搭建J2EE环境 Part1">
 <meta property="og:url" content="http://yoursite.com/2016/06/25/Ubuntu搭建J2EE环境/index.html">
 <meta property="og:site_name" content="NSBlacker">
-<meta property="og:description" content="&amp;#x524D;&amp;#x8A00;
-&amp;#x8FD9;&amp;#x7BC7;&amp;#x8BE6;&amp;#x7EC6;&amp;#x8BB0;&amp;#x5F55;&amp;#x4E86;&amp;#x5728;Ubuntu&amp;#x4E2D;&amp;#x642D;&amp;#x5EFA;J2EE&amp;#x73AF;&amp;#x5883;&amp;#x7684;&amp;#x8FC7;&amp;#x7A0B;&amp;#xFF0C;&amp;#x5305;&amp;#x62EC;
+<meta property="og:description" content="前言
+这篇详细记录了在Ubuntu中搭建J2EE环境的过程，包括
 
-&amp;#x914D;&amp;#x7F6E;&amp;#x">
+配置基础Java环境
+安装tomcat
+与Eclipse的连接
+安装数据库
+
+其中引用他人的方法均已给出链接。">
 <meta property="og:updated_time" content="2016-06-25T10:22:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu搭建J2EE环境 Part1">
-<meta name="twitter:description" content="&amp;#x524D;&amp;#x8A00;
-&amp;#x8FD9;&amp;#x7BC7;&amp;#x8BE6;&amp;#x7EC6;&amp;#x8BB0;&amp;#x5F55;&amp;#x4E86;&amp;#x5728;Ubuntu&amp;#x4E2D;&amp;#x642D;&amp;#x5EFA;J2EE&amp;#x73AF;&amp;#x5883;&amp;#x7684;&amp;#x8FC7;&amp;#x7A0B;&amp;#xFF0C;&amp;#x5305;&amp;#x62EC;
+<meta name="twitter:description" content="前言
+这篇详细记录了在Ubuntu中搭建J2EE环境的过程，包括
 
-&amp;#x914D;&amp;#x7F6E;&amp;#x">
+配置基础Java环境
+安装tomcat
+与Eclipse的连接
+安装数据库
+
+其中引用他人的方法均已给出链接。">
 
 
 
@@ -353,75 +368,75 @@
       
 
       
-        <h3 id="&#x524D;&#x8A00;"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</h3><hr>
-<p>&#x8FD9;&#x7BC7;&#x8BE6;&#x7EC6;&#x8BB0;&#x5F55;&#x4E86;&#x5728;Ubuntu&#x4E2D;&#x642D;&#x5EFA;J2EE&#x73AF;&#x5883;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5305;&#x62EC;</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><hr>
+<p>这篇详细记录了在Ubuntu中搭建J2EE环境的过程，包括</p>
 <ul>
-<li>&#x914D;&#x7F6E;&#x57FA;&#x7840;Java&#x73AF;&#x5883;</li>
-<li>&#x5B89;&#x88C5;tomcat</li>
-<li>&#x4E0E;Eclipse&#x7684;&#x8FDE;&#x63A5;</li>
-<li>&#x5B89;&#x88C5;&#x6570;&#x636E;&#x5E93;</li>
+<li>配置基础Java环境</li>
+<li>安装tomcat</li>
+<li>与Eclipse的连接</li>
+<li>安装数据库</li>
 </ul>
-<p>&#x5176;&#x4E2D;&#x5F15;&#x7528;&#x4ED6;&#x4EBA;&#x7684;&#x65B9;&#x6CD5;&#x5747;&#x5DF2;&#x7ED9;&#x51FA;&#x94FE;&#x63A5;&#x3002;</p>
+<p>其中引用他人的方法均已给出链接。</p>
 <a id="more"></a>
-<h3 id="&#x7528;&#x5230;&#x7684;&#x57FA;&#x7840;&#x547D;&#x4EE4;"><a href="#&#x7528;&#x5230;&#x7684;&#x57FA;&#x7840;&#x547D;&#x4EE4;" class="headerlink" title="&#x7528;&#x5230;&#x7684;&#x57FA;&#x7840;&#x547D;&#x4EE4;"></a>&#x7528;&#x5230;&#x7684;&#x57FA;&#x7840;&#x547D;&#x4EE4;</h3><hr>
-<p>&#x6E90;&#x7801;&#x5305;(tar.gz)&#x5B89;&#x88C5;&#x6D89;&#x53CA;&#x7684;&#x547D;&#x4EE4;: </p>
+<h3 id="用到的基础命令"><a href="#用到的基础命令" class="headerlink" title="用到的基础命令"></a>用到的基础命令</h3><hr>
+<p>源码包(tar.gz)安装涉及的命令: </p>
 <ul>
-<li>&#x89E3;xx.tar.gz&#xFF1A;tar zxf xx.tar.gz  [&#x76EE;&#x6807;&#x5730;&#x5740;]</li>
-<li>&#x89E3;xx.tar.Z&#xFF1A;tar zxf xx.tar.Z </li>
-<li>&#x89E3;xx.tgz&#xFF1A;tar zxf xx.tgz </li>
-<li>&#x89E3;xx.bz2&#xFF1A;bunzip2 xx.bz2 </li>
-<li>&#x89E3;xx.tar&#xFF1A;tar xf xx.tar</li>
-<li>&#x79FB;&#x52A8; &#xFF1A;mv  &#x6E90;&#x76EE;&#x5F55;   &#x76EE;&#x7684;&#x76EE;&#x5F55;</li>
-<li>&#x6539;&#x540D;&#xFF1A;mv     a     b      &#x5C06;a&#x6539;&#x4E3A;b</li>
-<li>&#x5BDF;&#x770B;&#x7531;apt-get&#x547D;&#x4EE4;&#x5B89;&#x88C5;&#x7684;&#x8F6F;&#x4EF6;&#x8DEF;&#x5F84;&#xFF1A;dpkg -L &#x8F6F;&#x4EF6;&#x5305;&#x540D; </li>
-<li>&#x5378;&#x8F7D;,&#x82E5;&#x6CA1;&#x6709;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#xFF0C;&#x76F4;&#x63A5;&#x5220;&#x9664;&#x8F6F;&#x4EF6;&#x5305;&#x6587;&#x4EF6;&#x5939;&#x5373;&#x53EF;&#xFF0C;rm -rf [&#x76EE;&#x6807;&#x8F6F;&#x4EF6;&#x6587;&#x4EF6;&#x5939;]</li>
-<li>&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x6587;&#x4EF6;&#xFF1A;gedit /etc/environment </li>
-<li>&#x5C06;aimei2.txt&#x7684;utf-8&#x7F16;&#x7801;&#xFF0C;&#x8F6C;&#x4E3A;am1.txt&#x7684;gbk&#x7F16;&#x7801;</li>
+<li>解xx.tar.gz：tar zxf xx.tar.gz  [目标地址]</li>
+<li>解xx.tar.Z：tar zxf xx.tar.Z </li>
+<li>解xx.tgz：tar zxf xx.tgz </li>
+<li>解xx.bz2：bunzip2 xx.bz2 </li>
+<li>解xx.tar：tar xf xx.tar</li>
+<li>移动 ：mv  源目录   目的目录</li>
+<li>改名：mv     a     b      将a改为b</li>
+<li>察看由apt-get命令安装的软件路径：dpkg -L 软件包名 </li>
+<li>卸载,若没有编译安装，直接删除软件包文件夹即可，rm -rf [目标软件文件夹]</li>
+<li>环境变量文件：gedit /etc/environment </li>
+<li>将aimei2.txt的utf-8编码，转为am1.txt的gbk编码</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iconv -f gbk -t utf-<span class="number">8</span> aimei2.txt -o am1.txt</span><br></pre></td></tr></table></figure>
 <ul>
-<li>&#x7ED9;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5939;&#x6743;&#x9650;&#x547D;&#x4EE4; <code>sudo chmod -R 777</code></li>
+<li>给当前文件夹权限命令 <code>sudo chmod -R 777</code></li>
 </ul>
-<h3 id="&#x5B89;&#x88C5;&#x65B9;&#x6CD5;"><a href="#&#x5B89;&#x88C5;&#x65B9;&#x6CD5;" class="headerlink" title="&#x5B89;&#x88C5;&#x65B9;&#x6CD5;"></a>&#x5B89;&#x88C5;&#x65B9;&#x6CD5;</h3><blockquote>
-<p>&#x65B9;&#x6CD5;&#x5747;&#x6765;&#x81EA;&#x81EA;&#x5DF1;&#x4EE5;&#x5F80;&#x7684;&#x603B;&#x7ED3;&#x4EE5;&#x53CA;&#x5927;&#x795E;&#x4EEC;&#x7684;&#x5206;&#x4EAB;</p>
+<h3 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h3><blockquote>
+<p>方法均来自自己以往的总结以及大神们的分享</p>
 </blockquote>
-<h4 id="Jdk"><a href="#Jdk" class="headerlink" title="Jdk"></a>Jdk</h4><p>&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#xFF1A;/usr/java/jdk1.7.0_71</p>
-<p><a href="http://www.cnblogs.com/fnng/archive/2013/01/30/2883815.html" target="_blank" rel="external">&#x65B9;&#x6CD5;</a>  </p>
-<h4 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h4><p>&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#xFF1A;/usr/java/apache-tomcat-6.0.43</p>
-<p><a href="http://blog.csdn.net/ithomer/article/details/7827045" target="_blank" rel="external">&#x65B9;&#x6CD5;</a> &#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x548C;&#x7248;&#x672C;&#x4E0E;&#x672C;&#x673A;&#x4E0D;&#x4E00;&#x6837;</p>
-<p>&#x542F;&#x52A8;&#x4E0E;&#x5173;&#x95ED;&#xFF1A;</p>
+<h4 id="Jdk"><a href="#Jdk" class="headerlink" title="Jdk"></a>Jdk</h4><p>安装目录：/usr/java/jdk1.7.0_71</p>
+<p><a href="http://www.cnblogs.com/fnng/archive/2013/01/30/2883815.html" target="_blank" rel="external">方法</a>  </p>
+<h4 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h4><p>安装目录：/usr/java/apache-tomcat-6.0.43</p>
+<p><a href="http://blog.csdn.net/ithomer/article/details/7827045" target="_blank" rel="external">方法</a> 安装目录和版本与本机不一样</p>
+<p>启动与关闭：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/java/apache-tomcat-<span class="number">6.0</span>.43/bin/stratup.sh  |   shutdown.sh</span><br></pre></td></tr></table></figure>
-<p>&#x6216;&#x8005;&#x5EFA;&#x7ACB;&#x8F6F;&#x8FDE;&#x63A5;&#xFF0C;&#x5C06;tomcat&#x6839;&#x76EE;&#x5F55;&#x6620;&#x5C04;&#x5230;&#x5916;&#x9762;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x5FC5;&#x6BCF;&#x6B21;&#x90FD;&#x8FDB;&#x5165;tomcat&#x7684;&#x6839;&#x76EE;&#x5F55;&#xFF0C;&#x5728;&#x7EC8;&#x7AEF;&#x521D;&#x59CB;&#x76EE;&#x5F55;&#x4E0B;&#x5373;&#x53EF;&#x3002;</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/java/apache-tomcat-<span class="number">6.0</span>.43/bin/stratup.sh ./tomcat(&#x540D;&#x79F0;&#x81EA;&#x5B9A;)</span><br></pre></td></tr></table></figure>
-<p>&#x4E4B;&#x540E;&#x7528;sudo <code>./tomcat</code> &#x5F00;&#x542F;</p>
-<p>&#x7F51;&#x9875;&#x767B;&#x9646;localhost:9090 &#xFF0C;&#x9ED8;&#x8BA4;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x5982;&#x4E0B;&#xFF1A;   </p>
+<p>或者建立软连接，将tomcat根目录映射到外面，这样就不必每次都进入tomcat的根目录，在终端初始目录下即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/java/apache-tomcat-<span class="number">6.0</span>.43/bin/stratup.sh ./tomcat(名称自定)</span><br></pre></td></tr></table></figure>
+<p>之后用sudo <code>./tomcat</code> 开启</p>
+<p>网页登陆localhost:9090 ，默认账号密码如下：   </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user :tomcat     pwd:tomcat</span><br></pre></td></tr></table></figure>
-<p>&#x53EF;&#x4EE5;&#x5728; <code>/usr/java/apache-tomcat-6.0.43/conf/tomcat-users.xml</code> &#x4E2D;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>可以在 <code>/usr/java/apache-tomcat-6.0.43/conf/tomcat-users.xml</code> 中设置。</p>
 <h4 id="eclipse"><a href="#eclipse" class="headerlink" title="eclipse"></a>eclipse</h4><hr>
-<p>&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#xFF1A;/usr/java/eclipse</p>
-<p><a href="http://www.cnblogs.com/fnng/archive/2013/01/30/2883815.htm" target="_blank" rel="external">&#x65B9;&#x6CD5;</a>&#x4E0E;JDK&#x662F;&#x540C;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;.</p>
-<h4 id="&#x6570;&#x636E;&#x5E93;"><a href="#&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;"></a>&#x6570;&#x636E;&#x5E93;</h4><hr>
-<h5 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h5><p>&#x5B89;&#x88C5;&#x76EE;&#x5F55;:<code>usr/local/mysql</code></p>
-<p>&#x4E0D;&#x53EF;&#x66F4;&#x6539;&#xFF01;&#xFF01;&#xFF01;&#x82E5;&#x662F;&#x66F4;&#x6539;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x5173;&#x8054;. <a href="http://www.linuxidc.com/Linux/2013-01/78716.htm" target="_blank" rel="external">&#x65B9;&#x6CD5;</a>     </p>
-<p><a href="http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html" target="_blank" rel="external">&#x540E;&#x7EED;&#x64CD;&#x4F5C;</a>     </p>
-<p>&#x542F;&#x52A8;&#xFF5C;&#x505C;&#x6B62;&#xFF5C;&#x91CD;&#x542F;</p>
+<p>安装目录：/usr/java/eclipse</p>
+<p><a href="http://www.cnblogs.com/fnng/archive/2013/01/30/2883815.htm" target="_blank" rel="external">方法</a>与JDK是同一篇文章.</p>
+<h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><hr>
+<h5 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h5><p>安装目录:<code>usr/local/mysql</code></p>
+<p>不可更改！！！若是更改需要进行文件关联. <a href="http://www.linuxidc.com/Linux/2013-01/78716.htm" target="_blank" rel="external">方法</a>     </p>
+<p><a href="http://www.cnblogs.com/wuhou/archive/2008/09/28/1301071.html" target="_blank" rel="external">后续操作</a>     </p>
+<p>启动｜停止｜重启</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./support-files/mysql.server start  | stop | restart</span><br></pre></td></tr></table></figure>
-<p>&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x8FDB;&#x5165;&#x63A7;&#x5236;&#x53F0;<code>./bin/mysql</code></p>
-<p>&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x7684;&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#xFF0C;&#x53E6;&#x5916;&#x8FD8;&#x6709;<a href="http://blog.163.com/anonymous_ch/blog/static/206824190201391141636949/" target="_blank" rel="external">apt-get&#x5B89;&#x88C5;&#x65B9;&#x6CD5;</a></p>
+<p>启动后，进入控制台<code>./bin/mysql</code></p>
+<p>上面的方法是使用二进制文件的安装过程，另外还有<a href="http://blog.163.com/anonymous_ch/blog/static/206824190201391141636949/" target="_blank" rel="external">apt-get安装方法</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/init.d/</span><br></pre></td></tr></table></figure>
-<p>&#x7136;&#x540E;&#x540E;&#x7528;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x767B;&#x9646;</p>
+<p>然后后用用户名和密码登陆</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -proot</span><br></pre></td></tr></table></figure>
-<p>&#x5BFC;&#x5165;&#x73B0;&#x6709;sql&#x6587;&#x4EF6;</p>
+<p>导入现有sql文件</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;use database_name</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;source database_path</span><br></pre></td></tr></table></figure>
-<p>&#x7528;&#x6237;&#xFF1A;mysql     &#x5BC6;&#x7801;&#xFF1A;&#x65E0;</p>
-<h5 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h5><p>&#x5B89;&#x88C5;&#x76EE;&#x5F55; : <code>/opt/oracle</code></p>
-<p>&#x65B9;&#x6CD5;:<code>&#x5343;&#x96BE;&#x4E07;&#x96BE;&#xFF0C;oracle&#x5728;ubuntu12.04&#x5B89;&#x88C5;</code></p>
-<p>&#x542F;&#x52A8;&#xFF1A;</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sqlplus         user:system       pwd:admin  </span><br><span class="line">``` </span><br><span class="line">&#x767B;&#x9646;&#x6210;&#x529F;&#x5373;&#x53EF;&#x542F;&#x52A8;</span><br><span class="line"></span><br><span class="line">&#x5173;&#x95ED; &#xFF1A;</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">sqlplus        shutdown immeddiate</span><br></pre></td></tr></table></figure>
-<p>&#x7136;&#x540E;web&#x767B;&#x9646;&#xFF1A;<code>https://localhost:1158/em</code></p>
-<p>&#x666E;&#x901A;&#x6743;&#x9650;&#x767B;&#x5F55;<code>user:system    pwd:admin</code><br>&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;&#x767B;&#x5F55;<code>user:sys    pwd:admin</code></p>
-<p>&#x81F3;&#x4E8E;&#x4E24;&#x8005;&#x7684;owner&#x548C;groups &#x6CA1;&#x6709;&#x7EDF;&#x4E00;&#xFF0C;&#x90FD;&#x662F;&#x6309;&#x7167;&#x76F8;&#x5E94;&#x6559;&#x7A0B;&#x5B9A;&#x5236;&#x7684;&#x3002;</p>
+<p>用户：mysql     密码：无</p>
+<h5 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h5><p>安装目录 : <code>/opt/oracle</code></p>
+<p>方法:<code>千难万难，oracle在ubuntu12.04安装</code></p>
+<p>启动：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sqlplus         user:system       pwd:admin  </span><br><span class="line">``` </span><br><span class="line">登陆成功即可启动</span><br><span class="line"></span><br><span class="line">关闭 ：</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">sqlplus        shutdown immeddiate</span><br></pre></td></tr></table></figure>
+<p>然后web登陆：<code>https://localhost:1158/em</code></p>
+<p>普通权限登录<code>user:system    pwd:admin</code><br>管理员权限登录<code>user:sys    pwd:admin</code></p>
+<p>至于两者的owner和groups 没有统一，都是按照相应教程定制的。</p>
 
       
     </div>
@@ -560,7 +575,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

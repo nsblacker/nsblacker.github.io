@@ -90,21 +90,27 @@
 
 
 
-<meta name="description" content="&amp;#x9700;&amp;#x6C42;
-AutoLayout&amp;#x7ED9;&amp;#x6211;&amp;#x7684;&amp;#x611F;&amp;#x89C9;&amp;#x5C31;&amp;#x662F;&amp;#x5145;&amp;#x5206;&amp;#x5229;&amp;#x7528;&amp;#x4E86;&amp;#x5E03;&amp;#x5C40;&amp;#x7684;&amp;#x76F8;&amp;#x5BF9;&amp;#x6027;&amp;#xFF1A;&amp;#x5BF9;&amp;#x4E8E;&amp;#x4E">
+<meta name="description" content="需求
+AutoLayout给我的感觉就是充分利用了布局的相对性：对于一个新添加的控件（item1），我们要在界面中确定它的位置，但是需要保证他和其他控件（item2）保持一定的关系，比如item1一定要在item2上边20个像素点的位置，或者item1的宽度是item2的一半。通过
+［item1 setFrame：CGRectMake(x,y,width,height)］
+可以确定item1的相对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NSLayoutContraint设置相对布局">
 <meta property="og:url" content="http://yoursite.com/2016/06/15/NSLayoutContraint设置相对布局/index.html">
 <meta property="og:site_name" content="NSBlacker">
-<meta property="og:description" content="&amp;#x9700;&amp;#x6C42;
-AutoLayout&amp;#x7ED9;&amp;#x6211;&amp;#x7684;&amp;#x611F;&amp;#x89C9;&amp;#x5C31;&amp;#x662F;&amp;#x5145;&amp;#x5206;&amp;#x5229;&amp;#x7528;&amp;#x4E86;&amp;#x5E03;&amp;#x5C40;&amp;#x7684;&amp;#x76F8;&amp;#x5BF9;&amp;#x6027;&amp;#xFF1A;&amp;#x5BF9;&amp;#x4E8E;&amp;#x4E">
-<meta property="og:image" content="http://yoursite.com/2016/06/15/NSLayoutContraint设置相对布局/constraint01.jpg">
+<meta property="og:description" content="需求
+AutoLayout给我的感觉就是充分利用了布局的相对性：对于一个新添加的控件（item1），我们要在界面中确定它的位置，但是需要保证他和其他控件（item2）保持一定的关系，比如item1一定要在item2上边20个像素点的位置，或者item1的宽度是item2的一半。通过
+［item1 setFrame：CGRectMake(x,y,width,height)］
+可以确定item1的相对">
+<meta property="og:image" content="http://yoursite.com/NSLayoutContraint设置相对布局/constraint01.jpg">
 <meta property="og:updated_time" content="2016-06-23T02:09:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NSLayoutContraint设置相对布局">
-<meta name="twitter:description" content="&amp;#x9700;&amp;#x6C42;
-AutoLayout&amp;#x7ED9;&amp;#x6211;&amp;#x7684;&amp;#x611F;&amp;#x89C9;&amp;#x5C31;&amp;#x662F;&amp;#x5145;&amp;#x5206;&amp;#x5229;&amp;#x7528;&amp;#x4E86;&amp;#x5E03;&amp;#x5C40;&amp;#x7684;&amp;#x76F8;&amp;#x5BF9;&amp;#x6027;&amp;#xFF1A;&amp;#x5BF9;&amp;#x4E8E;&amp;#x4E">
-<meta name="twitter:image" content="http://yoursite.com/2016/06/15/NSLayoutContraint设置相对布局/constraint01.jpg">
+<meta name="twitter:description" content="需求
+AutoLayout给我的感觉就是充分利用了布局的相对性：对于一个新添加的控件（item1），我们要在界面中确定它的位置，但是需要保证他和其他控件（item2）保持一定的关系，比如item1一定要在item2上边20个像素点的位置，或者item1的宽度是item2的一半。通过
+［item1 setFrame：CGRectMake(x,y,width,height)］
+可以确定item1的相对">
+<meta name="twitter:image" content="http://yoursite.com/NSLayoutContraint设置相对布局/constraint01.jpg">
 
 
 
@@ -349,51 +355,51 @@ AutoLayout&amp;#x7ED9;&amp;#x6211;&amp;#x7684;&amp;#x611F;&amp;#x89C9;&amp;#x5C3
       
 
       
-        <h3 id="&#x9700;&#x6C42;"><a href="#&#x9700;&#x6C42;" class="headerlink" title="&#x9700;&#x6C42;"></a>&#x9700;&#x6C42;</h3><hr>
-<p><code>AutoLayout</code>&#x7ED9;&#x6211;&#x7684;&#x611F;&#x89C9;&#x5C31;&#x662F;&#x5145;&#x5206;&#x5229;&#x7528;&#x4E86;&#x5E03;&#x5C40;&#x7684;&#x76F8;&#x5BF9;&#x6027;&#xFF1A;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x63A7;&#x4EF6;&#xFF08;item1&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x5728;&#x754C;&#x9762;&#x4E2D;&#x786E;&#x5B9A;&#x5B83;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x4F46;&#x662F;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x4ED6;&#x548C;&#x5176;&#x4ED6;&#x63A7;&#x4EF6;&#xFF08;item2&#xFF09;&#x4FDD;&#x6301;&#x4E00;&#x5B9A;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x6BD4;&#x5982;item1&#x4E00;&#x5B9A;&#x8981;&#x5728;item2&#x4E0A;&#x8FB9;20&#x4E2A;&#x50CF;&#x7D20;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x6216;&#x8005;item1&#x7684;&#x5BBD;&#x5EA6;&#x662F;item2&#x7684;&#x4E00;&#x534A;&#x3002;&#x901A;&#x8FC7;</p>
-<p><code>&#xFF3B;item1 setFrame&#xFF1A;CGRectMake(x,y,width,height)&#xFF3D;</code></p>
-<p>&#x53EF;&#x4EE5;&#x786E;&#x5B9A;item1&#x7684;&#x76F8;&#x5BF9;&#x4E8E;&#x5C4F;&#x5E55;&#x539F;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;<a id="more"></a>&#x4E5F;&#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x8C03;&#x6574;&#x5927;&#x5C0F;&#x4F7F;&#x5176;&#x5C3A;&#x5BF8;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;item2&#x7684;&#x4F4D;&#x7F6E;&#x6216;&#x8005;&#x5C3A;&#x5BF8;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6240;&#x6709;&#x548C;item2&#x5B58;&#x5728;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x5173;&#x7CFB;&#x7684;item&#x90FD;&#x8981;&#x91CD;&#x65B0;setFrame&#xFF0C;&#x8FD9;&#x662F;&#x663E;&#x7136;&#x4E0D;&#x53EF;&#x53D6;&#x7684;&#x3002;</p>
+        <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><hr>
+<p><code>AutoLayout</code>给我的感觉就是充分利用了布局的相对性：对于一个新添加的控件（item1），我们要在界面中确定它的位置，但是需要保证他和其他控件（item2）保持一定的关系，比如item1一定要在item2上边20个像素点的位置，或者item1的宽度是item2的一半。通过</p>
+<p><code>［item1 setFrame：CGRectMake(x,y,width,height)］</code></p>
+<p>可以确定item1的相对于屏幕原点的位置，<a id="more"></a>也可以手动调整大小使其尺寸满足条件，但是如果item2的位置或者尺寸变化的时候，所有和item2存在相对位置关系的item都要重新setFrame，这是显然不可取的。</p>
 <blockquote>
-<p>&#x867D;&#x7136;&#x597D;&#x591A;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x5F53;&#x524D;&#x63A7;&#x4EF6;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x5176;&#x4ED6;&#x63A7;&#x4EF6;&#x6539;&#x53D8;&#x4F4D;&#x7F6E;&#x65F6;&#xFF0C;&#x6211;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x597D;&#x5C3A;&#x5BF8;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x201C;&#x7275;&#x4E00;&#x53D1;&#x800C;&#x52A8;&#x5168;&#x8EAB;&#x201D;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<p>虽然好多项目中，当前控件需要依赖其他控件改变位置时，我都是通过计算好尺寸之间的依赖关系，从而实现“牵一发而动全身”的效果。</p>
 </blockquote>
-<p>&#x5728;storyboard&#x4E2D;&#x53EF;&#x4EE5;drag&#x5B8C;&#x5404;&#x79CD;&#x7A7A;&#x95F4;&#x4E4B;&#x540E;&#xFF0C;&#x7136;&#x540E;&#x8BBE;&#x7F6E;&#x5404;&#x79CD;Constraints&#xFF0C;&#x76F8;&#x5BF9;&#x5E03;&#x5C40;&#x4E5F;&#x5C31;&#x8BBE;&#x7F6E;&#x597D;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4E0D;&#x7528;&#x6545;&#x4E8B;&#x7248;&#xFF0C;&#x7528;&#x4EE3;&#x7801;&#x600E;&#x6837;&#x5B9E;&#x73B0;&#x8FD9;&#x6837;&#x7684;&#x529F;&#x80FD;&#x2014;&#x2014;<code>NSLayoutContraint</code>&#x3002;</p>
-<h3 id="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;"><a href="#&#x4F7F;&#x7528;&#x65B9;&#x6CD5;" class="headerlink" title="&#x4F7F;&#x7528;&#x65B9;&#x6CD5;"></a>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h3><hr>
+<p>在storyboard中可以drag完各种空间之后，然后设置各种Constraints，相对布局也就设置好了，但是如果不用故事版，用代码怎样实现这样的功能——<code>NSLayoutContraint</code>。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><hr>
 <ol>
-<li>&#x5BF9;&#x8981;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x5E03;&#x5C40;&#x7684;&#x7A7A;&#x95F4;&#x8BBE;&#x7F6E;    <code>setTranslatesAutoresizingMaskIntoConstraints</code>&#x4E3A;NO&#xFF1B;</li>
-<li>&#x58F0;&#x660E;NSLayoutContraint&#x5BF9;&#x8C61;&#xFF1B;</li>
-<li>&#x5BF9;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5E03;&#x5C40;&#x8BBE;&#x7F6E;&#xFF1B;</li>
-<li>&#x5C06;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5230;&#x6240;&#x6709;&#x5173;&#x8054;&#x63A7;&#x4EF6;&#x7684;&#x516C;&#x5171;&#x7236;view&#x4E2D;&#x3002;</li>
+<li>对要使用相对布局的空间设置    <code>setTranslatesAutoresizingMaskIntoConstraints</code>为NO；</li>
+<li>声明NSLayoutContraint对象；</li>
+<li>对这个对象添加布局设置；</li>
+<li>将这个对象添加到所有关联控件的公共父view中。</li>
 </ol>
-<p>&#x5728;&#x8FDB;&#x884C;&#x4E0A;&#x8FF0;&#x8FC7;&#x7A0B;&#x4E4B;&#x524D;&#xFF0C;&#x8981;&#x786E;&#x4FDD;&#x5DF2;&#x7ECF;&#x5C06;item&#x6DFB;&#x52A0;&#x5230;superview&#x4E2D;&#x4E86;<br>    <code>[super.view addSubview :item1];</code></p>
-<p>&#x4E0D;&#x7136;&#x4F1A;crash&#xFF0C;&#x4EB2;&#x6D4B;&#xFF01;</p>
-<h3 id="&#x4F8B;&#x5B50;"><a href="#&#x4F8B;&#x5B50;" class="headerlink" title="&#x4F8B;&#x5B50;"></a>&#x4F8B;&#x5B50;</h3><hr>
-<p>&#x9488;&#x5BF9;&#x4E0A;&#x8FF0;&#x6D41;&#x7A0B;&#xFF0C;&#x5206;&#x522B;&#x7ED9;&#x51FA;&#x4F8B;&#x5B50;</p>
+<p>在进行上述过程之前，要确保已经将item添加到superview中了<br>    <code>[super.view addSubview :item1];</code></p>
+<p>不然会crash，亲测！</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><hr>
+<p>针对上述流程，分别给出例子</p>
 <ol>
-<li><p>&#x524D;&#x63D0;&#x6761;&#x4EF6;</p>
+<li><p>前提条件</p>
 <p> <code>[
 item1 setTranslatesAutoresizingMaskIntoConstraints:NO];</code></p>
 </li>
-<li><p>&#x58F0;&#x660E;NSLayoutContraint&#x7684;&#x5BF9;&#x8C61; </p>
+<li><p>声明NSLayoutContraint的对象 </p>
 </li>
-<li><p>&#x5BF9;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5E03;&#x5C40;&#x8BBE;&#x7F6E;</p>
+<li><p>对这个对象添加布局设置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSLayoutConstraint *atrributeBottom = [NSLayoutConstraint constraintWithItem:item1 </span><br><span class="line">		 attribute:NSLayoutAttributeBottom  </span><br><span class="line">         relatedBy:NSLayoutRelationEqual </span><br><span class="line">            toItem:item2 </span><br><span class="line">         attribute:NSLayoutAttributeTop </span><br><span class="line">        multiplier:1.0constant:-20];</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>&#x5982;&#x679C;&#x8FD9;&#x4E2A;item1&#x548C;item2&#x662F;self.view&#x7684;subview&#xFF0C;&#x5219;&#x5C06;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5230;&#x6240;&#x6709;&#x5173;&#x8054;&#x63A7;&#x4EF6;&#x7684;&#x516C;&#x5171;&#x7236;view&#x4E2D;&#xFF1A;<br><code>[self.viewaddConstraint : atrributeBottom ];</code></p>
+<li><p>如果这个item1和item2是self.view的subview，则将这个对象添加到所有关联控件的公共父view中：<br><code>[self.viewaddConstraint : atrributeBottom ];</code></p>
 </li>
 </ol>
-<p>&#x8FD9;&#x6837;&#x5C31;&#x6EE1;&#x8DB3;&#x4E86;&#x4E0A;&#x6587;&#x4E2D;&#x63D0;&#x5230;&#x7684;&#x201C;item1&#x4E00;&#x5B9A;&#x8981;&#x5728;item2&#x4E0A;&#x8FB9;20&#x4E2A;&#x50CF;&#x7D20;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x201D;&#x3002;<br>&#x56FE;&#x793A;&#x5982;&#x4E0B;&#xFF1A;<br><img src="/2016/06/15/NSLayoutContraint&#x8BBE;&#x7F6E;&#x76F8;&#x5BF9;&#x5E03;&#x5C40;/constraint01.jpg" alt="image"></p>
-<h3 id="&#x8BF4;&#x660E;"><a href="#&#x8BF4;&#x660E;" class="headerlink" title="&#x8BF4;&#x660E;"></a>&#x8BF4;&#x660E;</h3><hr>
-<p>item1&#x4E3A;&#x5F85;&#x5B89;&#x653E;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;item2&#x4E3A;&#x53C2;&#x8003;&#x63A7;&#x4EF6;&#xFF0C;&#x8FD9;&#x6761;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;&#x7684;&#x8BED;&#x53E5;&#x7B2C;&#x4E00;&#x884C;&#xFF0C;&#x6307;&#x51FA;&#x63A7;&#x4EF6;&#x4EE5;&#x53CA;&#x8BE5;&#x63A7;&#x4EF6;&#x672C;&#x6B21;&#x9700;&#x8981;&#x8BBE;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5373; <code>item1.NSLayoutAttributeBottom</code> ,&#x7B2C;&#x4E8C;&#x884C;&#x76F8;&#x5173;&#x8BED;&#x53E5;&#x548C;&#x4F5C;&#x7528;&#x76F8;&#x540C;&#xFF0C;&#x5373;<code>item2.NSLayoutAttributeTop</code>,&#x6307;&#x51FA;&#x8FD9;&#x6B21;&#x8981;&#x786E;&#x5B9A;&#x7684;&#x76F8;&#x5BF9;&#x5173;&#x7CFB;&#x662F;&#xFF0C;item1&#x7684;&#x5E95;&#x8FB9;&#x4E0E;item2&#x7684;&#x9876;&#x8FB9;&#x3002;<br>     &#x90A3;&#x4E48;&#x4ED6;&#x4EEC;&#x5177;&#x4F53;&#x662F;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;&#x5462;&#xFF1F;&#x5C31;&#x662F;&#x7531;related&#xFF0C;mutiplier,constant&#x51B3;&#x5B9A;&#x7684;&#x4E86;&#xFF0C;&#x6309;&#x7167;&#x516C;&#x5F0F;:</p>
+<p>这样就满足了上文中提到的“item1一定要在item2上边20个像素点的位置”。<br>图示如下：<br><img src="NSLayoutContraint设置相对布局/constraint01.jpg" alt="image"></p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><hr>
+<p>item1为待安放的控件，item2为参考控件，这条添加属性的语句第一行，指出控件以及该控件本次需要设定的属性，即 <code>item1.NSLayoutAttributeBottom</code> ,第二行相关语句和作用相同，即<code>item2.NSLayoutAttributeTop</code>,指出这次要确定的相对关系是，item1的底边与item2的顶边。<br>     那么他们具体是什么关系呢？就是由related，mutiplier,constant决定的了，按照公式:</p>
 <p> <code>item1.attribute = multiplier * item.attribute + constant</code></p>
-<p>&#x540C;&#x6837;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8BA9;item1&#x7684;&#x5BBD;&#x5EA6;&#x662F;item2&#x7684;&#x4E00;&#x534A;&#x591A;5&#xFF0C;&#x5219;&#x6709;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSLayoutConstraint *item1Width =[NSLayoutConstraint constraintWithItem:item1 </span><br><span class="line">				 attribute:NSLayoutAttributeWidth </span><br><span class="line">				 relatedBy:NSLayoutRelationEqual </span><br><span class="line">				toItem:item2 </span><br><span class="line">				 attribute:NSLayoutAttributeWidth </span><br><span class="line">				multiplier:0.5 constant:5];</span><br></pre></td></tr></table></figure></p>
-<p>&#x53E6;&#x5916;&#xFF0C;&#x518D;&#x8865;&#x5145;&#x4E00;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x786E;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x4E0D;&#x9700;&#x8981;&#x4EFB;&#x4F55;&#x60F3;item2&#x7684;&#x53C2;&#x7167;&#x7269;&#xFF0C;&#x6BD4;&#x5982;&#x56FA;&#x5B9A;item1&#x7684;&#x5BBD;&#x5EA6;&#x5C31;&#x662F;80&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x628A;&#x53C2;&#x7167;&#x7269;item2&#x8BBE;&#x7F6E;&#x4E3A;nil&#x5C31;&#x597D;&#xFF1A;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSLayoutConstraint *item1Width &#xFF1D;[NSLayoutConstraint</span><br><span class="line">		constraintWithItem:item1 </span><br><span class="line">		attribute:NSLayoutAttributeWidth </span><br><span class="line">		relatedBy:NSLayoutRelationEqual </span><br><span class="line">		toItem:nil </span><br><span class="line">		attribute:NSLayoutAttributeWidth </span><br><span class="line">		multiplier:1.0</span><br><span class="line">		constant:80];</span><br></pre></td></tr></table></figure></p>
-<p>&#x5373; item1.NSLayoutAttributeWidth &#xFF1D; constant</p>
-<h3 id="&#x6CE8;&#x610F;"><a href="#&#x6CE8;&#x610F;" class="headerlink" title="&#x6CE8;&#x610F;"></a>&#x6CE8;&#x610F;</h3><ol>
-<li>multiplier&#x4E0D;&#x80FD;&#x4E3A;0&#xFF1B;</li>
-<li>&#x53EF;&#x4EE5;&#x628A;&#x5168;&#x90E8;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x8C03;&#x7528;&#x65B9;&#x6CD5;<br><code>[self addConstraints: @[atrributeBottom,item1Width] ];</code><br>  &#x5C06;&#x6240;&#x6709;Constraint&#x5C5E;&#x6027;&#x4E00;&#x8D77;&#x52A0;&#x5165;&#x5230;&#x63A7;&#x4EF6;&#x4E2D;&#x3002;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x6DFB;&#x52A0;&#xFF0C;&#x9009;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x4E0D;&#x540C;&#x800C;&#x5DF2;&#xFF1B;</li>
-<li>&#x4E00;&#x5B9A;&#x8981;&#x4FDD;&#x8BC1;&#x6B64;&#x524D;&#x5DF2;&#x7ECF;&#x5C06;&#x63A7;&#x4EF6;&#x6DFB;&#x52A0;&#x5230;&#x516C;&#x5171;&#x7684;superView&#x4E2D;&#x4E86;&#x3002;</li>
+<p>同样，如果想让item1的宽度是item2的一半多5，则有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSLayoutConstraint *item1Width =[NSLayoutConstraint constraintWithItem:item1 </span><br><span class="line">				 attribute:NSLayoutAttributeWidth </span><br><span class="line">				 relatedBy:NSLayoutRelationEqual </span><br><span class="line">				toItem:item2 </span><br><span class="line">				 attribute:NSLayoutAttributeWidth </span><br><span class="line">				multiplier:0.5 constant:5];</span><br></pre></td></tr></table></figure></p>
+<p>另外，再补充一点，如果我们想确定的属性不需要任何想item2的参照物，比如固定item1的宽度就是80，那么只把参照物item2设置为nil就好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSLayoutConstraint *item1Width ＝[NSLayoutConstraint</span><br><span class="line">		constraintWithItem:item1 </span><br><span class="line">		attribute:NSLayoutAttributeWidth </span><br><span class="line">		relatedBy:NSLayoutRelationEqual </span><br><span class="line">		toItem:nil </span><br><span class="line">		attribute:NSLayoutAttributeWidth </span><br><span class="line">		multiplier:1.0</span><br><span class="line">		constant:80];</span><br></pre></td></tr></table></figure></p>
+<p>即 item1.NSLayoutAttributeWidth ＝ constant</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li>multiplier不能为0；</li>
+<li>可以把全部属性设置完成后，调用方法<br><code>[self addConstraints: @[atrributeBottom,item1Width] ];</code><br>  将所有Constraint属性一起加入到控件中。当然也可以单独添加，选用的方法不同而已；</li>
+<li>一定要保证此前已经将控件添加到公共的superView中了。</li>
 </ol>
-<p>done&#xFF01;</p>
+<p>done！</p>
 
       
     </div>
@@ -532,7 +538,7 @@ item1 setTranslatesAutoresizingMaskIntoConstraints:NO];</code></p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
